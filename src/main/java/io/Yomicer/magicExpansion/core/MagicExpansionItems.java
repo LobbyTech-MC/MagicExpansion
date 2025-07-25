@@ -25,7 +25,7 @@ public class MagicExpansionItems {
             Material.PAPER,
             getGradientName("信息"),
             "",
-            getGradientName("Version: Build 9"),
+            getGradientName("Version: Build 12"),
             getGradientName("您在提issues的时候需要展示这个")
     );
     //AUTHOR
@@ -456,6 +456,8 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack COLOR_GLAZED_TERRACOTTA_1 = createDefaultResourceGlow("COLOR_GLAZED_TERRACOTTA_1",Material.PINK_GLAZED_TERRACOTTA);
     public static final SlimefunItemStack COLOR_GLAZED_TERRACOTTA_2 = createDefaultResourceGlow("COLOR_GLAZED_TERRACOTTA_2",Material.PINK_GLAZED_TERRACOTTA);
 
+    public static final SlimefunItemStack JIN_KE_LA = createDefaultResourceGlow("JIN_KE_LA",Material.BONE_MEAL);
+
 
 
     public static final SlimefunItemStack POWER_CORE = themed("POWER_CORE",new CustomItemStack(CustomHead.getHead("96e0c954d5cab4b9714b8a7eaf9742eeaab7dda7fc2effefb1530099ae1309ac")),
@@ -468,6 +470,13 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack PRE_BUILDING_VILLAGE_LOVE_AND_TRADE_HOUSE = createDefaultItemGlow("PRE_BUILDING_VILLAGE_LOVE_AND_TRADE_HOUSE",Material.BARREL);
     public static final SlimefunItemStack PRE_BUILDING_SHULKER_FARM = createDefaultItemGlow("PRE_BUILDING_SHULKER_FARM",Material.SHULKER_BOX);
 
+
+    //更新日志
+    public static final SlimefunItemStack UPDATE_LOG_2025_06_23 = createDefaultItemGlow("UPDATE_LOG_2025_06_23",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_06_29 = createDefaultItemGlow("UPDATE_LOG_2025_06_29",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_07_12 = createDefaultItemGlow("UPDATE_LOG_2025_07_12",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_07_20 = createDefaultItemGlow("UPDATE_LOG_2025_07_20",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_07_23 = createDefaultItemGlow("UPDATE_LOG_2025_07_23",Material.PAPER);
 
 
 
@@ -567,10 +576,22 @@ public class MagicExpansionItems {
     //材料工坊
     public static final SlimefunItemStack PRE_BUILDINGS_MACHINE_RESOURCE_ADVANCED = createDefaultRecipeMachine("PRE_BUILDINGS_MACHINE_RESOURCE_ADVANCED",Material.SEA_LANTERN);
 
+    //材料工坊
+    public static final SlimefunItemStack INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE = createDefaultRecipeMachine("INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE",Material.FURNACE);
+    public static final SlimefunItemStack INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE_ULTRA = createDefaultRecipeMachine("INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE_ULTRA",Material.BLAST_FURNACE);
+
 
 
     //普通机器
     public static final SlimefunItemStack PHANTON_SUPPRESSION = createDefaultMachine("PHANTON_SUPPRESSION",Material.LIGHT_BLUE_GLAZED_TERRACOTTA);
+
+
+
+    //魔法泥土园
+    public static final SlimefunItemStack DIRT_MEAL_MACHINE = createDefaultTemplateMachine("DIRT_MEAL_MACHINE",Material.VERDANT_FROGLIGHT);
+    //魔法捕鱼场
+    public static final SlimefunItemStack FISHING_MACHINE = createDefaultTemplateMachine("FISHING_MACHINE",Material.ORANGE_GLAZED_TERRACOTTA);
+
 
 
 
@@ -580,6 +601,64 @@ public class MagicExpansionItems {
 
 
 
+    public static final SlimefunItemStack GEO_MINER_PLUS = createDefaultGeoResource("GEO_MINER_PLUS",Material.MAGENTA_GLAZED_TERRACOTTA);
+
+    public static final SlimefunItemStack FIVE_ELEMENT_MINER = themed("FIVE_ELEMENT_MINER",new CustomItemStack(CustomHead.getHead("846472b7bd8de52a101584ea2dd7db190d417ca548bb6568379acebdd02b1799")),
+            get("GEO.FIVE_ELEMENT_MINER.Name"),getList("GEO.FIVE_ELEMENT_MINER.Lore"));
+
+
+    public static final SlimefunItemStack RSC_MAGIC_MINER = themed("RSC_MAGIC_MINER",new CustomItemStack(CustomHead.getHead("846472b7bd8de52a101584ea2dd7db190d417ca548bb6568379acebdd02b1799")),
+            get("GEO.RSC_MAGIC_MINER.Name"),getList("GEO.RSC_MAGIC_MINER.Lore"));
+
+    //GEO资源
+    public static final SlimefunItemStack GOLD_ELEMENT = createDefaultGeoResource("GOLD_ELEMENT",Material.YELLOW_DYE);
+    public static final SlimefunItemStack WOOD_ELEMENT = createDefaultGeoResource("WOOD_ELEMENT",Material.GREEN_DYE);
+    public static final SlimefunItemStack WATER_ELEMENT = createDefaultGeoResource("WATER_ELEMENT",Material.LIGHT_BLUE_DYE);
+    public static final SlimefunItemStack EARTH_ELEMENT = createDefaultGeoResource("EARTH_ELEMENT",Material.BROWN_DYE);
+    public static final SlimefunItemStack FIRE_ELEMENT = createDefaultGeoResource("FIRE_ELEMENT",Material.RED_DYE);
+
+    public static final SlimefunItemStack FIVE_ELEMENT = themed("FIVE_ELEMENT",new CustomItemStack(CustomHead.getHead("92b4278edb2672c6b32138a0e61e446420caa7fc1508b88e36eaffb14a69206a")),
+            get("GEO.FIVE_ELEMENT.Name"),getList("GEO.FIVE_ELEMENT.Lore"));
+
+
+
+
+    //米哈游-盲盒-崩铁
+    public static final SlimefunItemStack MIHOYO_STAR_RAY_MACHINE = createDefaultMihoyoRole("MIHOYO_STAR_RAY_MACHINE",CustomHead.STAR_HEEAD);
+    public static final SlimefunItemStack HONKAI_STAR_RAIL_BOX = createDefaultMihoyoRole("HONKAI_STAR_RAIL_BOX",CustomHead.BLUE_GIFT_BOX);
+    public static final SlimefunItemStack JING_LIU = createDefaultMihoyoRole("JING_LIU",CustomHead.JING_LIU);
+    public static final SlimefunItemStack SILVER_WOLF = createDefaultMihoyoRole("SILVER_WOLF",CustomHead.SILVER_WOLF);
+    public static final SlimefunItemStack KAFKA = createDefaultMihoyoRole("KAFKA",CustomHead.KAFKA);
+    public static final SlimefunItemStack SUNDAY = createDefaultMihoyoRole("SUNDAY",CustomHead.SUNDAY);
+    public static final SlimefunItemStack LUNAE = createDefaultMihoyoRole("LUNAE",CustomHead.LUNAE);
+    public static final SlimefunItemStack HUOHUO = createDefaultMihoyoRole("HUOHUO",CustomHead.HUOHUO);
+
+
+
+
+
+    //空岛系列
+    public static final SlimefunItemStack SINGLE_CUBE_ORIGIN = themed("SINGLE_CUBE_ORIGIN",Material.DIRT,
+            get("SKY_BLOCK.SINGLE_CUBE_ORIGIN.Name"),getList("SKY_BLOCK.SINGLE_CUBE_ORIGIN.Lore"));
+
+
+    public static final SlimefunItemStack SINGLE_CUBE_ORE = themed("SINGLE_CUBE_ORE",Material.STONE,
+            get("SKY_BLOCK.SINGLE_CUBE_ORE.Name"),getList("SKY_BLOCK.SINGLE_CUBE_ORE.Lore"));
+
+
+
+    //空岛系列-钻石镐
+    public static final SlimefunItemStack SINGLE_DIAMOND_PICKAXE = themed("SINGLE_DIAMOND_PICKAXE",Material.DIAMOND_PICKAXE,
+            get("SKY_BLOCK.SINGLE_DIAMOND_PICKAXE.Name"),getList("SKY_BLOCK.SINGLE_DIAMOND_PICKAXE.Lore"));
+    //空岛系列-钻石斧
+    public static final SlimefunItemStack SINGLE_DIAMOND_AXE = themed("SINGLE_DIAMOND_AXE",Material.DIAMOND_AXE,
+            get("SKY_BLOCK.SINGLE_DIAMOND_AXE.Name"),getList("SKY_BLOCK.SINGLE_DIAMOND_AXE.Lore"));
+    //空岛系列-钻石铲
+    public static final SlimefunItemStack SINGLE_DIAMOND_SHOVEL = themed("SINGLE_DIAMOND_SHOVEL",Material.DIAMOND_SHOVEL,
+            get("SKY_BLOCK.SINGLE_DIAMOND_SHOVEL.Name"),getList("SKY_BLOCK.SINGLE_DIAMOND_SHOVEL.Lore"));
+    //空岛系列-钻石锄
+    public static final SlimefunItemStack SINGLE_DIAMOND_HOE = themed("SINGLE_DIAMOND_HOE",Material.DIAMOND_HOE,
+            get("SKY_BLOCK.SINGLE_DIAMOND_HOE.Name"),getList("SKY_BLOCK.SINGLE_DIAMOND_HOE.Lore"));
 
 
 
@@ -642,6 +721,33 @@ public class MagicExpansionItems {
                 material,
                 get("POWER_MACHINE." + id + ".Name"),
                 getList("POWER_MACHINE." + id + ".Lore")
+        );
+    }
+
+    public static SlimefunItemStack createDefaultGeoResource(String id,Material material) {
+        return themed(
+                id,
+                material,
+                get("GEO." + id + ".Name"),
+                getList("GEO." + id + ".Lore")
+        );
+    }
+
+    public static SlimefunItemStack createDefaultTemplateMachine(String id,Material material) {
+        return themed(
+                id,
+                material,
+                get("TEMPLATE." + id + ".Name"),
+                getList("TEMPLATE." + id + ".Lore")
+        );
+    }
+
+    public static SlimefunItemStack createDefaultMihoyoRole(String id,CustomHead head) {
+        return themed(
+                id,
+                head.getItem(),
+                get("MIHOYO_ROLE." + id + ".Name"),
+                getList("MIHOYO_ROLE." + id + ".Lore")
         );
     }
 

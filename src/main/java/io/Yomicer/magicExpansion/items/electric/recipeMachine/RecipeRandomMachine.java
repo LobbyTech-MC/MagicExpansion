@@ -9,8 +9,10 @@ import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ClickAction;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
+import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
@@ -18,12 +20,13 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
 
-public class RecipeMachine extends AbstractElectricRecipeMachine {
-    private static final int[] INPUT_SLOTS = new int[] { 0,1,2,3, 9,10,11,12, 18,19,20,21, 27,28,29,30, 36,37,38,39, 45,46,47,48  };
-    private static final int[] OUTPUT_SLOTS = new int[] { 5,6,7,8, 14,15,16,17, 23,24,25,26, 32,33,34,35, 41,42,43,44, 50,51,52,53 };
+public class RecipeRandomMachine extends AbstractElectricRecipeMachine {
+    private static final int[] INPUT_SLOTS = new int[] { 0,1,2,3, 9,10,11,12, 18,19,20,21, 27,28,29,30, 36,37,38,39, 45,46,47,48,    5,6,7,8, 14,15,16,17, 23,24,25,26, 32,33,34,35, 41,42,43,44, 50,51,52,53 };
+    private static final int[] OUTPUT_SLOTS = new int[] { 5,6,7,8, 14,15,16,17, 23,24,25,26, 32,33,34,35, 41,42,43,44, 50,51,52,53,    0,1,2,3, 9,10,11,12, 18,19,20,21, 27,28,29,30, 36,37,38,39, 45,46,47,48 };
 
     private static final int[] INPUT_BORDER_SLOTS = new int[] { 13 };
     private static final int[] OUTPUT_BORDER_SLOTS = new int[] { 40 };
@@ -32,7 +35,7 @@ public class RecipeMachine extends AbstractElectricRecipeMachine {
     private static final ItemStack PROGRESS_ITEM = new ItemStack(Material.SOUL_LANTERN);
     private static final ItemStack PROGRESS_STACK = new CustomItemStack(Material.SOUL_CAMPFIRE, getGradientName("信息"), getGradientName("类型：加工机器"), getGradientName("所属附属：魔法"));
 
-    public RecipeMachine(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public RecipeRandomMachine(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 
     }
@@ -45,6 +48,30 @@ public class RecipeMachine extends AbstractElectricRecipeMachine {
     protected void registerDefaultRecipes() {
 
     }
+
+    protected void addOutputs(BlockMenu menu, Block b, ItemStack[] outputs) {
+        List<ItemStack> validOutputs = new ArrayList<>();
+
+        // 收集所有非 null 的输出
+        for (ItemStack output : outputs) {
+            if (output != null) {
+                validOutputs.add(output);
+            }
+        }
+
+        // 如果有有效的输出
+        if (!validOutputs.isEmpty()) {
+            // 如果只有一个，直接输出
+            if (validOutputs.size() == 1) {
+                menu.pushItem(validOutputs.get(0).clone(), getOutputSlots());
+            } else {
+                // 否则随机选一个
+                ItemStack randomOutput = validOutputs.get(new Random().nextInt(validOutputs.size()));
+                menu.pushItem(randomOutput.clone(), getOutputSlots());
+            }
+        }
+    }
+
 
     @Override
 	public List<ItemStack> getDisplayRecipes() {
@@ -68,7 +95,7 @@ public class RecipeMachine extends AbstractElectricRecipeMachine {
 
                 // 添加输出物品（带生产时间）
                 if (i < outputs.length) {
-                    display.add(addLore(outputs[i], "§7生产时间: §e" + productionTime + " 秒"));
+                    display.add(addLore(outputs[i], "§7生产时间: §e" + productionTime + " 秒（概率产出）"));
                 } else {
                     display.add(new ItemStack(Material.AIR)); // 如果没有更多输出物品，添加 AIR
                 }
@@ -100,13 +127,14 @@ public class RecipeMachine extends AbstractElectricRecipeMachine {
 	protected void setupMenu(BlockMenuPreset preset) {
 
         preset.drawBackground(new CustomItemStack(Material.PINK_STAINED_GLASS_PANE," "), BACKGROUND_SLOTS);
-        preset.drawBackground(new CustomItemStack(Material.LIGHT_BLUE_STAINED_GLASS_PANE,getGradientName("←输入槽")), INPUT_BORDER_SLOTS);
-        preset.drawBackground(new CustomItemStack(Material.LIME_STAINED_GLASS_PANE,getGradientName("输出槽→")), OUTPUT_BORDER_SLOTS);
+        preset.drawBackground(new CustomItemStack(Material.LIGHT_BLUE_STAINED_GLASS_PANE,getGradientName("←两侧槽位均可作为输入槽→")), INPUT_BORDER_SLOTS);
+        preset.drawBackground(new CustomItemStack(Material.LIME_STAINED_GLASS_PANE,getGradientName("←两侧槽位均可作为输出槽→")), OUTPUT_BORDER_SLOTS);
     
         preset.addItem(getProgressSlot(), new CustomItemStack(Material.PINK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
 
         preset.addItem(22, PROGRESS_STACK, ChestMenuUtils.getEmptyClickHandler());
 
+        /*
         for (int slot : getOutputSlots()) {
             preset.addMenuClickHandler(slot,new ChestMenu.AdvancedMenuClickHandler() {
                 @Override
@@ -120,6 +148,8 @@ public class RecipeMachine extends AbstractElectricRecipeMachine {
                 }
             });
         }
+
+         */
 	}
 
 	@Override
