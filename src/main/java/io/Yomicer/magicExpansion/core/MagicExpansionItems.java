@@ -81,9 +81,8 @@ public class MagicExpansionItems {
             "8adb25ab9976d89d0bd8118d72c1c06bb907060c1e02a729b652d1e86b1ebbbc",
             getGradientName("改良版镰刀"),
             "",
-            "&7Test Skull_Hash",
             "&7一次性打破5个成熟的农作物",
-            "&7由Fluffy Machine的镰刀改良而来",
+            "&7由蓬松机器的镰刀改良而来",
             "&7不再会连锁破坏未成熟的农作物"
     );
 

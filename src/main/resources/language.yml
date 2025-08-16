@@ -146,7 +146,7 @@ zh_CN:
         - '会使用精神类攻击'
         - '还会使用本命火元素攻击'
     FIREZOMBIE_BODY:
-      Name: '僵尸BOSS躯干'
+      Name: '骷髅躯干'
       Lore:
         - '是腐朽也是新生'
     PRE_BUILDING_TREE_INFO:
@@ -1366,7 +1366,7 @@ zh_CN:
         - '功能: 这是一个无尽方块，挖掘之后会重新生成'
         - '使用方法: 使用特殊的工具来挖掘，否则会掉落本体'
         - ''
-        - 'Magic · Sky Block'
+        - '魔法 · 空岛'
 
     SINGLE_CUBE_ORE:
       Name: '万物生·单方块·矿脉'
@@ -1383,7 +1383,7 @@ zh_CN:
         - '功能: 这是一个无尽方块，挖掘之后会重新生成'
         - '使用方法: 使用特殊的工具来挖掘，否则会掉落本体'
         - ''
-        - 'Magic · Sky Block'
+        - '魔法 · 空岛'
 
 
     SINGLE_DIAMOND_PICKAXE:
@@ -1397,7 +1397,7 @@ zh_CN:
         - '可以用来挖掘单方块的形态。'
         - '挖掘之后就会掉落对应的物品。'
         - ''
-        - 'Magic · Sky Block'
+        - '魔法 · 空岛'
     SINGLE_DIAMOND_AXE:
       Name: '单方块·钻石斧'
       Lore:
@@ -1409,7 +1409,7 @@ zh_CN:
         - '可以用来挖掘单方块的形态。'
         - '挖掘之后就会掉落对应的物品。'
         - ''
-        - 'Magic · Sky Block'
+        - '魔法 · 空岛'
     SINGLE_DIAMOND_SHOVEL:
       Name: '单方块·钻石铲'
       Lore:
@@ -1421,7 +1421,7 @@ zh_CN:
         - '可以用来挖掘单方块的形态。'
         - '挖掘之后就会掉落对应的物品。'
         - ''
-        - 'Magic · Sky Block'
+        - '魔法 · 空岛'
     SINGLE_DIAMOND_HOE:
       Name: '单方块·钻石锄头'
       Lore:
@@ -1433,7 +1433,7 @@ zh_CN:
         - '可以用来挖掘单方块的形态。'
         - '挖掘之后就会掉落对应的物品。'
         - ''
-        - 'Magic · Sky Block'
+        - '魔法 · 空岛'
 
 
 

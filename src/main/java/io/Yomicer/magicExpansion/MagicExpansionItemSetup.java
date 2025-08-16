@@ -1,5 +1,23 @@
 package io.Yomicer.magicExpansion;
 
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.ConvertItem.AdvancedCreateItem;
+import static io.Yomicer.magicExpansion.utils.ConvertItem.BasicCreateItem;
+import static io.Yomicer.magicExpansion.utils.ConvertItem.IfItemXist;
+import static io.Yomicer.magicExpansion.utils.ConvertItem.createItem;
+import static io.Yomicer.magicExpansion.utils.Language.get;
+import static io.Yomicer.magicExpansion.utils.Language.getList;
+import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
+import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.entity.EntityType;
+import org.bukkit.inventory.ItemStack;
+
+import io.Yomicer.magicExpansion.core.MagicExpansionItems;
 import io.Yomicer.magicExpansion.items.electric.entitykillMachinee.EntityKillMachine;
 import io.Yomicer.magicExpansion.items.electric.geoMachine.FiveElementsMiner;
 import io.Yomicer.magicExpansion.items.electric.geoMachine.RSCMagicMiner;
@@ -12,12 +30,12 @@ import io.Yomicer.magicExpansion.items.misc.FireZombieMB;
 import io.Yomicer.magicExpansion.items.misc.HonkaiStarRailBox;
 import io.Yomicer.magicExpansion.items.misc.MagicGeoResourceDefault;
 import io.Yomicer.magicExpansion.items.preBuildings.PreBuildingTree;
-import io.Yomicer.magicExpansion.items.quickMachine.*;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionRandomSummon;
 import io.Yomicer.magicExpansion.items.skyBlock.SingleCubeOre;
 import io.Yomicer.magicExpansion.items.skyBlock.SingleCubeOrigin;
 import io.Yomicer.magicExpansion.items.summonBossItem.FireZombie;
-import io.Yomicer.magicExpansion.items.tools.*;
-import io.Yomicer.magicExpansion.core.MagicExpansionItems;
+import io.Yomicer.magicExpansion.items.tools.InfiniteTool;
+import io.Yomicer.magicExpansion.items.tools.Scythe;
 import io.Yomicer.magicExpansion.utils.ColorGradient;
 import io.Yomicer.magicExpansion.utils.CustomHeadUtils.CustomHead;
 import io.Yomicer.magicExpansion.utils.itemUtils.newItem;
@@ -32,20 +50,6 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.Unplaceabl
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.Capacitor;
 import io.github.thebusybiscuit.slimefun4.implementation.items.geo.GEOMiner;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.entity.EntityType;
-import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nonnull;
-
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_TO_MAGIC_ITEM_BASIC;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.ConvertItem.*;
-import static io.Yomicer.magicExpansion.utils.Language.get;
-import static io.Yomicer.magicExpansion.utils.Language.getList;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
-import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
 
 
 public final class MagicExpansionItemSetup {
@@ -54,23 +58,27 @@ public final class MagicExpansionItemSetup {
     // ItemGroups
     public static final NestedItemGroup magicexpansion = new NestedItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "magicexpansion"),
-            new CustomItemStack(doGlow(Material.LIGHT),"§x§F§D§B§7§D§4§kll§x§F§D§B§7§D§4魔§x§F§A§7§E§B§3法§x§F§F§6§9§B§4拓§x§F§F§6§9§B§4展§x§F§D§B§7§D§4§kll"),0
+            new CustomItemStack(doGlow(Material.LIGHT),"§x§F§D§B§7§D§4§kll§x§F§D§B§7§D§4魔§x§F§F§6§9§B§4法§x§F§D§B§7§D§4§kll"),0
     );
 
+    
     private static final ItemGroup magicexpansioncontribution = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "contribution"), magicexpansion,
             new CustomItemStack(doGlow(Material.COMMAND_BLOCK), "§x§F§D§B§7§D§4§kll§x§F§A§7§E§B§3贡§x§F§F§6§9§B§4献§x§F§F§6§9§B§4§kll"), 0
     );
+    
 
     private static final ItemGroup magicexpansionresource = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "resource"), magicexpansion,
             new CustomItemStack(doGlow(Material.SNOWBALL), ColorGradient.getGradientName("魔法-资源")), 1
     );
 
+    /*
     private static final ItemGroup magicexpansionresourcedlc = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "resourcedlc"), magicexpansion,
             new CustomItemStack(doGlow(Material.TOTEM_OF_UNDYING), "§x§F§D§B§7§D§4补§x§F§A§7§E§B§3丁§x§F§F§6§9§B§4材§x§F§F§6§9§B§4料"), 2
     );
+    */
 
     private static final ItemGroup magicexpansionspecialitem = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "specialitem"), magicexpansion,
@@ -108,7 +116,7 @@ public final class MagicExpansionItemSetup {
 
     private static final ItemGroup magicexpansionboss = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "boss"), magicexpansion,
-            new CustomItemStack(doGlow(Material.ENDER_DRAGON_SPAWN_EGG), ColorGradient.getGradientName("魔法BOSS")), 7
+            new CustomItemStack(doGlow(Material.ENDER_DRAGON_SPAWN_EGG), ColorGradient.getGradientName("魔法怪物")), 7
     );
 
     private static final ItemGroup magicexpansionforge = new SubItemGroup(
@@ -128,12 +136,12 @@ public final class MagicExpansionItemSetup {
 
     public static final ItemGroup magicexpansionhonkai = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "honkai"), magicexpansion,
-            new CustomItemStack(CustomHead.SILVER_WOLF.getItem(), ColorGradient.getGradientName("Honkai: Star Rail")), 10
+            new CustomItemStack(CustomHead.SILVER_WOLF.getItem(), ColorGradient.getGradientName("魔法-盲盒")), 10
     );
 
     public static final ItemGroup magicexpansionskyblock = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "skyblock"), magicexpansion,
-            new CustomItemStack(CustomHead.getHead("7948942fed672ded57f8cdb169a5076062586e77002ee30e07693c025e6f0db5"), ColorGradient.getGradientName("魔法-SkyBlock")), 10
+            new CustomItemStack(CustomHead.getHead("7948942fed672ded57f8cdb169a5076062586e77002ee30e07693c025e6f0db5"), ColorGradient.getGradientName("魔法-空岛")), 10
     );
 
     public static final ItemGroup magicexpansionrscmagic = new SubItemGroup(
@@ -142,10 +150,12 @@ public final class MagicExpansionItemSetup {
     );
 
 
+    /*
     private static final ItemGroup magicexpansionupdateinfo = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "updateinfo"), magicexpansion,
             new CustomItemStack(doGlow(Material.PAPER), ColorGradient.getGradientName("魔法-更新日志")), 11
     );
+    */
 
 
     // 定义一个新的配方类型
@@ -224,6 +234,7 @@ public final class MagicExpansionItemSetup {
 
 
 
+        /*
         //更新日志
         new UnplaceableBlock(magicexpansionupdateinfo, MagicExpansionItems.UPDATE_LOG_2025_06_23, SPECIAL_RECIPE_TYPE, new ItemStack[] {
                 null, null, null,
@@ -254,6 +265,7 @@ public final class MagicExpansionItemSetup {
                 null, null, null,
                 null, null, null
         }).register(plugin);
+        */
 
 
 
@@ -266,6 +278,7 @@ public final class MagicExpansionItemSetup {
                 null, null, null
         }).register(plugin);
 
+        /*
         //初级万能魔法合成材料
         new UnplaceableBlock(magicexpansionresourcedlc, MAGIC_EXPANSION_TO_MAGIC_ITEM_BASIC, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 SlimefunItems.RAINBOW_GLAZED_TERRACOTTA, SlimefunItems.ANCIENT_PEDESTAL, SlimefunItems.RAINBOW_CONCRETE,
@@ -279,6 +292,7 @@ public final class MagicExpansionItemSetup {
                 MAGIC_EXPANSION_TO_MAGIC_ITEM_BASIC, MagicExpansionItems.ELEMENT_INGOT, MAGIC_EXPANSION_TO_MAGIC_ITEM_BASIC,
                 MagicExpansionItems.NETHERITE_INGOT, MAGIC_EXPANSION_TO_MAGIC_ITEM_BASIC, MagicExpansionItems.EMERALD
         }).register(plugin);
+        */
 
 
         //魔法交互核心
