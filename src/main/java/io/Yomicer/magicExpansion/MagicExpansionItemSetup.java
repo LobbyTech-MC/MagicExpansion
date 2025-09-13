@@ -83,7 +83,7 @@ public final class MagicExpansionItemSetup {
     // ItemGroups
     public static final NestedItemGroup magicexpansion = new NestedItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "magicexpansion"),
-            new CustomItemStack(doGlow(Material.LIGHT),"§x§F§D§B§7§D§4§kll§x§F§D§B§7§D§4魔§x§F§F§6§9§B§4法§x§F§D§B§7§D§4§kll"),0
+            new CustomItemStack(doGlow(Material.LIGHT),"§x§F§D§B§7§D§4§kll§x§F§D§B§7§D§4魔§x§F§A§7§E§B§3法§x§F§F§6§9§B§4拓§x§F§F§6§9§B§4展§x§F§D§B§7§D§4§kll"),0
     );
 
     

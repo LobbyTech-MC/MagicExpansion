@@ -36,8 +36,8 @@ public class MagicExpansionItems {
             "8adb25ab9976d89d0bd8118d72c1c06bb907060c1e02a729b652d1e86b1ebbbc",
             getGradientName("开发者 magicsolo"),
             "",
-            getGradientName("Github: Yomicer"),
-            getGradientName("Author of MagicExpansion")
+            getGradientName("Github用户名: Yomicer"),
+            getGradientName("魔法拓展作者")
     );
 
     public static final SlimefunItemStack MAGIC_EXPANSION_QUICK_MACHINE_INFO = new SlimefunItemStack(
