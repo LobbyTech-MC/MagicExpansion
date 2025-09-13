@@ -18,6 +18,8 @@ import org.bukkit.event.Event;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -27,6 +29,7 @@ import java.util.stream.Collectors;
 import static io.Yomicer.magicExpansion.items.summonBossItem.bossSkill.FireZombieSkill.*;
 import static org.bukkit.inventory.EquipmentSlot.HAND;
 
+@EnableAsync
 public class WindElf extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
 
     public WindElf(ItemGroup category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
@@ -35,6 +38,7 @@ public class WindElf extends SimpleSlimefunItem<ItemUseHandler> implements NotPl
 
     @Nonnull
     @Override
+    @Async
     public ItemUseHandler getItemHandler() {
         return e -> {
             // 阻止默认行为（放置方块或使用物品）
@@ -61,6 +65,7 @@ public class WindElf extends SimpleSlimefunItem<ItemUseHandler> implements NotPl
     }
 
 
+    @Async
     private void spawnWindZombie(PlayerRightClickEvent e) {
 
         Player player = e.getPlayer();
@@ -171,10 +176,12 @@ public class WindElf extends SimpleSlimefunItem<ItemUseHandler> implements NotPl
 
 
     // 生成雷击效果
+    @Async
     public void worldStrikeLightningEffect(Location location) {
         location.getWorld().strikeLightningEffect(location); // 只有视觉效果，不会造成伤害
     }
 
+    @Async
     private static List<Player> getNearbyPlayers(LivingEntity mob) {
         return mob.getWorld().getNearbyEntities(mob.getLocation(), 15, 8, 15).stream()
                 .filter(entity -> entity instanceof Player)

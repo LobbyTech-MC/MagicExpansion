@@ -18,6 +18,7 @@ import org.bukkit.event.Event;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.springframework.scheduling.annotation.Async;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -35,6 +36,7 @@ public class FireZombie extends SimpleSlimefunItem<ItemUseHandler> implements No
 
     @Nonnull
     @Override
+    @Async
     public ItemUseHandler getItemHandler() {
         return e -> {
             // 阻止默认行为（放置方块或使用物品）
@@ -61,6 +63,7 @@ public class FireZombie extends SimpleSlimefunItem<ItemUseHandler> implements No
     }
 
 
+    @Async
     private void spawnFireZombie(PlayerRightClickEvent e) {
 
         Player player = e.getPlayer();
@@ -171,10 +174,12 @@ public class FireZombie extends SimpleSlimefunItem<ItemUseHandler> implements No
 
 
     // 生成雷击效果
+    @Async
     public void worldStrikeLightningEffect(Location location) {
         location.getWorld().strikeLightningEffect(location); // 只有视觉效果，不会造成伤害
     }
 
+    @Async
     private static List<Player> getNearbyPlayers(LivingEntity mob) {
         return mob.getWorld().getNearbyEntities(mob.getLocation(), 10, 8, 10).stream()
                 .filter(entity -> entity instanceof Player)

@@ -680,7 +680,7 @@ public final class MagicExpansionItemSetup {
                 null,new ItemStack(Material.CHERRY_LOG),new ItemStack(Material.STRING),
                 new ItemStack(Material.BIRCH_LOG),null, AMETHYST_SHARD
         }, new HashMap<>() {{
-            put(Enchantment.LUCK, 1);
+            put(Enchantment.LUCK_OF_THE_SEA, 1);
             put(Enchantment.LURE, 5);
         }}, false,
                 Map.of(
@@ -706,7 +706,7 @@ public final class MagicExpansionItemSetup {
                 null,STICK,new ItemStack(Material.STRING),
                 STICK,null,SlimefunItems.MAGIC_SUGAR
         }, new HashMap<>() {{
-            put(Enchantment.LUCK, 1);
+            put(Enchantment.LUCK_OF_THE_SEA, 1);
             put(Enchantment.LURE, 2);
         }}, false,
                 Map.of(
@@ -836,7 +836,7 @@ public final class MagicExpansionItemSetup {
                 null,FISHING_ROD_NEW_PLAYER,WIND_SPIRIT,
                 FISHING_STICK_STAR_IRON,null,AMETHYST_SHARD
         }, new HashMap<>() {{
-            put(Enchantment.LUCK, 5);
+            put(Enchantment.LUCK_OF_THE_SEA, 5);
             put(Enchantment.LURE, 5);
         }}, false,
                 Map.of(
@@ -988,7 +988,7 @@ public final class MagicExpansionItemSetup {
                 null,MAGIC_EXPANSION_MAGIC_SUGAR_CANE,FISHING_ROD_FINAL_STRING,
                 MAGIC_EXPANSION_MAGIC_SUGAR_CANE,null, FISHING_ROD_FINAL_HOOK
         }, new HashMap<>() {{
-            put(Enchantment.LUCK, 25);
+            put(Enchantment.LUCK_OF_THE_SEA, 25);
             put(Enchantment.LURE, 5);
         }}, false,
                 Map.of(
