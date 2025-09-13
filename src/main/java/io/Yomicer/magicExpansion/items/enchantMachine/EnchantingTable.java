@@ -1,9 +1,39 @@
 package io.Yomicer.magicExpansion.items.enchantMachine;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
+import static io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils.isItemSimilar;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
+
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
+
 import io.Yomicer.magicExpansion.utils.ColorGradient;
 import io.Yomicer.magicExpansion.utils.itemUtils.newItem;
-import io.Yomicer.magicExpansion.utils.log.Debug;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
@@ -23,24 +53,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
-import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.persistence.PersistentDataContainer;
-import org.bukkit.persistence.PersistentDataType;
 
-import javax.annotation.Nonnull;
-import java.util.*;
-
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
-import static io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils.isItemSimilar;
-
+@EnableAsync
 public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implements EnergyNetComponent {
 
 
@@ -147,6 +161,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
     }
 
 
+    @Async
     protected void tick(Block block) {
         BlockMenu menu = StorageCacheUtils.getMenu(block.getLocation());
 
@@ -172,6 +187,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
      * @param num 1-3 数量
      * @return 修改后的物品
      */
+    @Async
     public static ItemStack randomizeAttributes(ItemStack item, int resourceLevel, Map<String, Integer> POOL, int num) {
         // 计算抽取范围
         int minAttributes = 1;
@@ -225,6 +241,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
      *
      * @return 生成的随机整数
      */
+    @Async
     public static int generateWeightedRandomLevel() {
         double randomValue = RANDOM1.nextDouble() * 100; // 生成 [0, 100) 范围内的随机值
 
@@ -250,6 +267,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
      * @param weightMap  属性及其权重的映射表
      * @return 随机选择的属性列表
      */
+    @Async
     public static List<String> selectRandomAttributesByWeight(int count, Map<String, Integer> weightMap) {
         List<String> selectedAttributes = new ArrayList<>();
         Set<String> usedAttributes = new HashSet<>(); // 用于去重
@@ -277,6 +295,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
      * @param weightMap 属性及其权重的映射表
      * @return 随机选择的属性名称
      */
+    @Async
     public static String getRandomAttributeByWeight(Map<String, Integer> weightMap) {
         // 计算总权重
         int totalWeight = weightMap.values().stream().mapToInt(Integer::intValue).sum();
@@ -303,6 +322,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
      * @param count 属性数量
      * @return 抽取到的属性列表
      */
+    @Async
     private static List<String> selectRandomAttributes(int count,Map<String, Object> POOL) {
         List<String> attributes = new ArrayList<>(POOL.keySet());
         Collections.shuffle(attributes, new Random());
@@ -311,6 +331,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
     }
 
 
+    @Async
     private static void updateLore(ItemMeta meta, List<String> selectedAttributes) {
         PersistentDataContainer pdc = meta.getPersistentDataContainer();
         // 获取当前 Lore 或初始化为空列表
@@ -343,6 +364,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
      * @param item 输入的物品
      * @return 是否包含任意一个属性
      */
+    @Async
     public static boolean hasAnyAttribute(ItemStack item) {
         if(item == null){
             return false;
@@ -371,6 +393,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
 
 
 
+    @Async
     private void craftIfValid(Block block) {
         BlockMenu menu = StorageCacheUtils.getMenu(block.getLocation());
 
@@ -493,11 +516,11 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
                 (player1, slot, item, action) -> {
 
                     if(!isItemSimilar(menu.getItemInSlot(weaponSlot), weaponItem, true)){
-                        player1.sendMessage(ColorGradient.getGradientName("你这小byd又想卡bug了是吧？"));
+                        //player1.sendMessage(ColorGradient.getGradientName("你这小byd又想卡bug了是吧？"));
                         return false;
                     }
                     if(resourceItem.getAmount()<2||!isItemSimilar(menu.getItemInSlot(resourceSlot), resourceItem, true)){
-                        player1.sendMessage(ColorGradient.getGradientName("小byd，没想到吧，这里也被我修复了"));
+                        //player1.sendMessage(ColorGradient.getGradientName("小byd，没想到吧，这里也被我修复了"));
                         return false;
                     }
                     ItemStack output = randomizeAttributes(weaponItem, finalresourceLevel,finalATTRIBUTE_POOL_USE,2);
@@ -522,11 +545,11 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
                 (player1, slot, item, action) -> {
 
                     if(!isItemSimilar(menu.getItemInSlot(weaponSlot), weaponItem, true)){
-                        player1.sendMessage(ColorGradient.getGradientName("你这小byd又想卡bug了是吧？"));
+                        //player1.sendMessage(ColorGradient.getGradientName("你这小byd又想卡bug了是吧？"));
                         return false;
                     }
                     if(resourceItem.getAmount()<3||!isItemSimilar(menu.getItemInSlot(resourceSlot), resourceItem, true)){
-                        player1.sendMessage(ColorGradient.getGradientName("小byd，没想到吧，这里也被我修复了"));
+                        //player1.sendMessage(ColorGradient.getGradientName("小byd，没想到吧，这里也被我修复了"));
                         return false;
                     }
                     ItemStack output = randomizeAttributes(weaponItem, finalresourceLevel,finalATTRIBUTE_POOL_USE,3);
@@ -558,6 +581,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
     }
 
     // Helper method to check if an item is a weapon
+    @Async
     private boolean isWeapon(ItemStack item) {
         if (item == null || item.getType() == Material.AIR) {
             return false;
@@ -571,6 +595,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
     }
 
     // Helper method to check if an item is Lapis Lazuli
+    @Async
     private boolean isLapisLazuli(ItemStack item) {
         if (item == null || item.getType() == Material.AIR) {
             return false;
@@ -579,6 +604,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
     }
 
 
+    @Async
     private void craft(ItemStack output, BlockMenu inv) {
         for (int j = 0; j < 9; j++) {
             ItemStack item = inv.getItemInSlot(getInputSlots()[j]);
@@ -591,6 +617,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
         inv.pushItem(output, outputSlot);
     }
 
+    @Async
     private void craftI1(ItemStack output, BlockMenu inv) {
         ItemStack weapon = inv.getItemInSlot(weaponSlot);
 
@@ -607,6 +634,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
             inv.pushItem(output, outputSlot);
         }
     }
+    @Async
     private void craftI2(ItemStack output, BlockMenu inv) {
         ItemStack weapon = inv.getItemInSlot(weaponSlot);
 
@@ -623,6 +651,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
             inv.pushItem(output, outputSlot);
         }
     }
+    @Async
     private void craftI3(ItemStack output, BlockMenu inv) {
         ItemStack weapon = inv.getItemInSlot(weaponSlot);
 
@@ -668,6 +697,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
 
     @Nonnull
     @Override
+    @Async
     public ItemUseHandler getItemHandler() {
         return null;
     }
@@ -720,6 +750,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
     }
 
 
+    @Async
     private BlockBreakHandler onBreak() {
         return new BlockBreakHandler(false, false) {
             @Override
@@ -736,6 +767,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
         };
     }
 
+    @Async
     private void constructMenu(String displayName) {
         new BlockMenuPreset(getId(), displayName) {
 
@@ -761,6 +793,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
             }
         };
     }
+    @Async
     protected int[] getCustomItemTransport(DirtyChestMenu menu, ItemTransportFlow flow, ItemStack item) {
         if (flow == ItemTransportFlow.WITHDRAW) {
             return getOutputSlots();
@@ -769,10 +802,12 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
         }
     }
 
+    @Async
     protected Comparator<Integer> compareSlots(DirtyChestMenu menu) {
         return Comparator.comparingInt(slot -> menu.getItemInSlot(slot).getAmount());
     }
 
+    @Async
     protected void constructMenu(BlockMenuPreset preset) {
         borders(preset, pinkBorder, lightBlueBorder, yellowBorder, iBorder, iiBorder);
 
@@ -808,6 +843,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
      *
      * @return 包含随机乱码的列表
      */
+    @Async
     public static List<String> generateRandomLore() {
         // 随机生成行数 (2 到 5 行)
         int randomLines = 2 + RANDOM.nextInt(4); // [2, 5]
@@ -828,6 +864,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
      *
      * @return 单行乱码字符串
      */
+    @Async
     private static String generateRandomLine() {
         StringBuilder line = new StringBuilder();
 
@@ -861,6 +898,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
      *
      * @return 随机生成的颜色代码（如 §c、§a、§b 等）
      */
+    @Async
     private static String getRandomColorCode() {
         String[] colorCodes = {
                 "§0", "§1", "§2", "§3", "§4", "§5", "§6", "§7", "§8", "§9",
@@ -875,6 +913,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
      *
      * @return 随机生成的字符
      */
+    @Async
     private static char getRandomCharacter() {
         // 字符范围：大写字母、小写字母、数字、部分符号
         String chars = "鸡你太美ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-=_+[]{}|;:,.<>?";
