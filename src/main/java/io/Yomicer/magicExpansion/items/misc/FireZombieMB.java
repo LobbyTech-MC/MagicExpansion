@@ -58,19 +58,18 @@ public class FireZombieMB extends MultiBlockMachine {
         Slimefun.getDatabaseManager().getBlockDataController().removeBlock(b.getLocation().clone());
         bottomBlackstone.setType(Material.AIR);
         Slimefun.getDatabaseManager().getBlockDataController().removeBlock(b.getLocation().clone().add(0, -1, 0));
-        spawnFireZombie(p);
+        spawnFireZombie(b.getLocation().clone());
     }
 
 
 
-    private void spawnFireZombie(Player player) {
+    private void spawnFireZombie(Location location) {
 
         // 获取玩家位置并生成怪物
-        Location location = player.getLocation();
         LivingEntity mob = (LivingEntity) location.getWorld().spawnEntity(location, EntityType.ZOMBIE);
 
         // 设置怪物名称
-        String zombieName = "§c烈焰僵尸";
+        String zombieName = "§c§l烈焰僵尸";
         mob.setCustomName(zombieName);
         mob.setCustomNameVisible(true);
         // 设置自定义元数据：用于标识这是烈火僵尸
@@ -89,9 +88,9 @@ public class FireZombieMB extends MultiBlockMachine {
 
         // 定义技能列表
         Runnable[] skills = {
-                () -> magicAttackSkill(mob, player),
-                () -> redstoneParticleAttackSkill(mob, player),
-                () -> fireParticleAttackSkill(mob, player),
+                () -> magicAttackSkill(mob, zombieName),
+                () -> redstoneParticleAttackSkill(mob),
+                () -> fireParticleAttackSkill(mob),
         };
 
         // 每隔4-8秒随机释放一个技能

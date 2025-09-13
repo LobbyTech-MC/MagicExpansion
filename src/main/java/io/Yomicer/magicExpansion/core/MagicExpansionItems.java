@@ -1,6 +1,8 @@
 package io.Yomicer.magicExpansion.core;
 
 import io.Yomicer.magicExpansion.utils.CustomHeadUtils.CustomHead;
+import io.Yomicer.magicExpansion.utils.itemUtils.MagicStringBuilder;
+import io.Yomicer.magicExpansion.utils.itemUtils.MagicSugarBuilder;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import org.bukkit.Material;
@@ -25,14 +27,14 @@ public class MagicExpansionItems {
             Material.PAPER,
             getGradientName("信息"),
             "",
-            getGradientName("Version: Build 12"),
+            getGradientName("Version: Build 18"),
             getGradientName("您在提issues的时候需要展示这个")
     );
     //AUTHOR
     public static final SlimefunItemStack MAGIC_EXPANSION_AUTHOR = new SlimefunItemStack(
             "MAGIC_EXPANSION_AUTHOR",
             "8adb25ab9976d89d0bd8118d72c1c06bb907060c1e02a729b652d1e86b1ebbbc",
-            getGradientName("开发者：magicsolo"),
+            getGradientName("开发者 magicsolo"),
             "",
             getGradientName("Github: Yomicer"),
             getGradientName("Author of MagicExpansion")
@@ -85,6 +87,13 @@ public class MagicExpansionItems {
             "&7由蓬松机器的镰刀改良而来",
             "&7不再会连锁破坏未成熟的农作物"
     );
+
+    //虚空之触
+    public static final SlimefunItemStack VOID_TOUCH = themed("VOID_TOUCH",doGlow(Material.WEEPING_VINES),
+            get("Items.VOID_TOUCH.Name"),getList("Items.VOID_TOUCH.Lore"));
+    //虚空之触
+    public static final SlimefunItemStack FIVE_ELEMENT_TOUCH = themed("FIVE_ELEMENT_TOUCH",doGlow(Material.TWISTING_VINES),
+            get("Items.FIVE_ELEMENT_TOUCH.Name"),getList("Items.FIVE_ELEMENT_TOUCH.Lore"));
 
     public static final SlimefunItemStack MAGIC_EXPANSION_RANDOM_SPAWNER = new SlimefunItemStack(
             "MAGIC_EXPANSION_RANDOM_SPAWNER",
@@ -277,6 +286,84 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack MAGIC_EXPANSION_ENCHANTING_TABLE = themed("ENCHANTING_TABLE",doGlow(Material.ENCHANTING_TABLE),
             get("Items.ENCHANTING_TABLE.Name"),getList("Items.ENCHANTING_TABLE.Lore"));
 
+
+
+
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_1 = MagicSugarBuilder.getMagicSugar(1);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_2 = MagicSugarBuilder.getMagicSugar(2);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_3 = MagicSugarBuilder.getMagicSugar(3);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_4 = MagicSugarBuilder.getMagicSugar(4);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_5 = MagicSugarBuilder.getMagicSugar(5);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_6 = MagicSugarBuilder.getMagicSugar(6);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_7 = MagicSugarBuilder.getMagicSugar(7);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_8 = MagicSugarBuilder.getMagicSugar(8);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_9 = MagicSugarBuilder.getMagicSugar(9);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_10 = MagicSugarBuilder.getMagicSugar(10);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_11 = MagicSugarBuilder.getMagicSugar(11);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_12 = MagicSugarBuilder.getMagicSugar(12);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_13 = MagicSugarBuilder.getMagicSugar(13);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_14 = MagicSugarBuilder.getMagicSugar(14);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_15 = MagicSugarBuilder.getMagicSugar(15);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_16 = MagicSugarBuilder.getMagicSugar(16);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_17 = MagicSugarBuilder.getMagicSugar(17);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_18 = MagicSugarBuilder.getMagicSugar(18);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_19 = MagicSugarBuilder.getMagicSugar(19);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_20 = MagicSugarBuilder.getMagicSugar(20);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_21 = MagicSugarBuilder.getMagicSugar(21);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_22 = MagicSugarBuilder.getMagicSugar(22);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_23 = MagicSugarBuilder.getMagicSugar(23);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_24 = MagicSugarBuilder.getMagicSugar(24);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_25 = MagicSugarBuilder.getMagicSugar(25);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_26 = MagicSugarBuilder.getMagicSugar(26);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_27 = MagicSugarBuilder.getMagicSugar(27);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_28 = MagicSugarBuilder.getMagicSugar(28);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_29 = MagicSugarBuilder.getMagicSugar(29);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_30 = MagicSugarBuilder.getMagicSugar(30);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_31 = MagicSugarBuilder.getMagicSugar(31);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_32 = MagicSugarBuilder.getMagicSugar(32);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_33 = MagicSugarBuilder.getMagicSugar(33);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_34 = MagicSugarBuilder.getMagicSugar(34);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_35 = MagicSugarBuilder.getMagicSugar(35);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_36 = MagicSugarBuilder.getMagicSugar(36);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_37 = MagicSugarBuilder.getMagicSugar(37);
+    public static final SlimefunItemStack MAGIC_EXPANSION_MAGIC_SUGAR_CANE = new SlimefunItemStack(
+            "MAGIC_EXPANSION_MAGIC_SUGAR_CANE",
+            doGlow(Material.SUGAR_CANE),
+            getGradientName("甘蔗·量子纠缠态"),
+            "",
+            getGradientName("魔法的第一个毕业物品"),
+            getGradientName("真正意义上的第一个毕业物品")
+    );
+
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_1 = MagicStringBuilder.getString(1);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_2 = MagicStringBuilder.getString(2);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_3 = MagicStringBuilder.getString(3);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_4 = MagicStringBuilder.getString(4);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_5 = MagicStringBuilder.getString(5);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_6 = MagicStringBuilder.getString(6);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_7 = MagicStringBuilder.getString(7);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_8 = MagicStringBuilder.getString(8);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_9 = MagicStringBuilder.getString(9);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_10 = MagicStringBuilder.getString(10);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_11 = MagicStringBuilder.getString(11);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_12 = MagicStringBuilder.getString(12);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_13 = MagicStringBuilder.getString(13);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_14 = MagicStringBuilder.getString(14);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_15 = MagicStringBuilder.getString(15);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_16 = MagicStringBuilder.getString(16);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_17 = MagicStringBuilder.getString(17);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_18 = MagicStringBuilder.getString(18);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_19 = MagicStringBuilder.getString(19);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_20 = MagicStringBuilder.getString(20);
+    public static final SlimefunItemStack MAGIC_EXPANSION_FINAL_STRING_21 = MagicStringBuilder.getString(21);
+
+
+
+
+
+
+
+
     public static final SlimefunItemStack FIRE_ZOMBIE = new SlimefunItemStack(
             "MAGIC_EXPANSION_FIRE_ZOMBIE",
             doGlow(Material.ZOMBIE_SPAWN_EGG),
@@ -293,8 +380,24 @@ public class MagicExpansionItems {
             getGradientName("右键点击中心的方块召唤烈焰僵尸")
     );
 
+    public static final SlimefunItemStack WIND_ELF_SPAWN = themed("WIND_ELF_SPAWN",doGlow(Material.ALLAY_SPAWN_EGG),
+            get("Items.WIND_ELF_SPAWN.Name"),getList("Items.WIND_ELF_SPAWN.Lore"));
+
+    public static final SlimefunItemStack WIND_ELF_MB = new SlimefunItemStack(
+            "MAGIC_EXPANSION_WIND_ELF_MB",
+            doGlow(CustomHead.getHead("892fd59703cdfe7db5ea0b35b6792308b35fc37368760aa997726ae12e8bd696")),
+            getGradientName("风灵[召唤]"),
+            "",
+            getGradientName("右键点击中心的方块召唤风灵")
+    );
+
+
+
     public static final SlimefunItemStack BASIC_ENCHANT_STONE = themed("BASIC_ENCHANT_STONE",doGlow(Material.IRON_INGOT),
             get("Items.BASIC_ENCHANT_STONE.Name"),getList("Items.BASIC_ENCHANT_STONE.Lore"));
+
+    public static final SlimefunItemStack WIND_SPIRIT = themed("WIND_SPIRIT",doGlow(Material.STRING),
+            get("Items.WIND_SPIRIT.Name"),getList("Items.WIND_SPIRIT.Lore"));
 
     public static final SlimefunItemStack MAGIC_EXPANSION_ENCHANTING_TABLE_INFO = themed("ENCHANTING_TABLE_INFO",doGlow(Material.PAPER),
             get("Items.ENCHANTING_TABLE_INFO.Name"),getList("Items.ENCHANTING_TABLE_INFO.Lore"));
@@ -307,6 +410,20 @@ public class MagicExpansionItems {
 
     public static final SlimefunItemStack FIREZOMBIE_BODY = themed("FIREZOMBIE_BODY",Material.MOSS_BLOCK,
             get("Items.FIREZOMBIE_BODY.Name"),getList("Items.FIREZOMBIE_BODY.Lore"));
+
+    public static final SlimefunItemStack WIND_ELF_HEAD = themed("WIND_ELF_HEAD", CustomHead.getHead("892fd59703cdfe7db5ea0b35b6792308b35fc37368760aa997726ae12e8bd696"),
+            get("Items.WIND_ELF_HEAD.Name"),getList("Items.WIND_ELF_HEAD.Lore"));
+
+    public static final SlimefunItemStack WIND_ELF_BODY = themed("WIND_ELF_BODY",Material.LIGHT_BLUE_CONCRETE,
+            get("Items.WIND_ELF_BODY.Name"),getList("Items.WIND_ELF_BODY.Lore"));
+
+    public static final SlimefunItemStack WIND_ELF_SKILL = themed("WIND_ELF_SKILL",Material.PAPER,
+            get("Items.WIND_ELF_SKILL.Name"),getList("Items.WIND_ELF_SKILL.Lore"));
+    public static final SlimefunItemStack WIND_ELF_DEFENSE = themed("WIND_ELF_DEFENSE",Material.PAPER,
+            get("Items.WIND_ELF_DEFENSE.Name"),getList("Items.WIND_ELF_DEFENSE.Lore"));
+
+
+
 
     public static final SlimefunItemStack PRE_BUILDING_TREE_INFO = themed("PRE_BUILDING_TREE_INFO",Material.PAPER,
             get("Items.PRE_BUILDING_TREE_INFO.Name"),getList("Items.PRE_BUILDING_TREE_INFO.Lore"));
@@ -454,6 +571,17 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack COLOR_CONCRETE_2 = createDefaultResourceGlow("COLOR_CONCRETE_2",Material.PINK_CONCRETE);
     public static final SlimefunItemStack COLOR_GLAZED_TERRACOTTA_1 = createDefaultResourceGlow("COLOR_GLAZED_TERRACOTTA_1",Material.PINK_GLAZED_TERRACOTTA);
     public static final SlimefunItemStack COLOR_GLAZED_TERRACOTTA_2 = createDefaultResourceGlow("COLOR_GLAZED_TERRACOTTA_2",Material.PINK_GLAZED_TERRACOTTA);
+    public static final SlimefunItemStack COLOR_LEAVES_1 = createDefaultResourceGlow("COLOR_LEAVES_1",Material.CHERRY_LEAVES);
+    public static final SlimefunItemStack COLOR_LEAVES_2 = createDefaultResourceGlow("COLOR_LEAVES_2",Material.CHERRY_LEAVES);
+    public static final SlimefunItemStack COLOR_LOG_1 = createDefaultResourceGlow("COLOR_LOG_1",Material.CHERRY_LOG);
+    public static final SlimefunItemStack COLOR_LOG_2 = createDefaultResourceGlow("COLOR_LOG_2",Material.CHERRY_LOG);
+
+
+
+
+
+
+
 
     public static final SlimefunItemStack JIN_KE_LA = createDefaultResourceGlow("JIN_KE_LA",Material.BONE_MEAL);
 
@@ -468,14 +596,113 @@ public class MagicExpansionItems {
 
     public static final SlimefunItemStack PRE_BUILDING_VILLAGE_LOVE_AND_TRADE_HOUSE = createDefaultItemGlow("PRE_BUILDING_VILLAGE_LOVE_AND_TRADE_HOUSE",Material.BARREL);
     public static final SlimefunItemStack PRE_BUILDING_SHULKER_FARM = createDefaultItemGlow("PRE_BUILDING_SHULKER_FARM",Material.SHULKER_BOX);
+    public static final SlimefunItemStack PRE_BUILDING_MCDONALDS = createDefaultItemGlow("PRE_BUILDING_MCDONALDS",Material.YELLOW_WOOL);
+
+
+
+
+
+    public static final SlimefunItemStack PRE_BUILDING_HOUSE_OAK = createDefaultItemGlow("PRE_BUILDING_HOUSE_OAK",Material.OAK_LOG);
+    public static final SlimefunItemStack PRE_BUILDING_HOUSE_SPRUCE = createDefaultItemGlow("PRE_BUILDING_HOUSE_SPRUCE",Material.SPRUCE_LOG);
+    public static final SlimefunItemStack PRE_BUILDING_HOUSE_CHERRY = createDefaultItemGlow("PRE_BUILDING_HOUSE_CHERRY",Material.CHERRY_LOG);
+    public static final SlimefunItemStack PRE_BUILDING_HOUSE_MANGROVE = createDefaultItemGlow("PRE_BUILDING_HOUSE_MANGROVE",Material.MANGROVE_LOG);
+    public static final SlimefunItemStack PRE_BUILDING_HOUSE_MOSS = createDefaultItemGlow("PRE_BUILDING_HOUSE_MOSS",Material.MOSS_BLOCK);
+    public static final SlimefunItemStack PRE_BUILDING_HOUSE_WIND_CAR = createDefaultItemGlow("PRE_BUILDING_HOUSE_WIND_CAR",Material.WHITE_WOOL);
+    public static final SlimefunItemStack PRE_BUILDING_DORA_PICTURE = createDefaultItemGlow("PRE_BUILDING_DORA_PICTURE",Material.PINK_CONCRETE_POWDER);
+    public static final SlimefunItemStack PRE_BUILDING_WISH_DALE = createDefaultItemGlow("PRE_BUILDING_WISH_DALE",Material.RED_CONCRETE);
+    public static final SlimefunItemStack PRE_BUILDING_ANON = createDefaultItemGlow("PRE_BUILDING_ANON",Material.CHERRY_LEAVES);
+
+    public static final SlimefunItemStack PRE_BUILDING_WINE_BAR = createDefaultItemGlow("PRE_BUILDING_WINE_BAR",Material.BARREL);
+    public static final SlimefunItemStack PRE_BUILDING_MOON_RABBIT_SHOP = createDefaultItemGlow("PRE_BUILDING_MOON_RABBIT_SHOP",Material.PUMPKIN_PIE);
+    public static final SlimefunItemStack PRE_BUILDING_MIDDLE_HORSE_HOUSE = createDefaultItemGlow("PRE_BUILDING_MIDDLE_HORSE_HOUSE",Material.DIAMOND_HORSE_ARMOR);
+    public static final SlimefunItemStack PRE_BUILDING_FISHING_PORT = createDefaultItemGlow("PRE_BUILDING_FISHING_PORT",Material.FISHING_ROD);
+    public static final SlimefunItemStack PRE_BUILDING_SI_HE_YUAN = createDefaultItemGlow("PRE_BUILDING_SI_HE_YUAN",Material.BLUE_GLAZED_TERRACOTTA);
+    public static final SlimefunItemStack PRE_BUILDING_BAKERY = createDefaultItemGlow("PRE_BUILDING_BAKERY",Material.WHEAT);
+    public static final SlimefunItemStack PRE_BUILDING_KFC_MIDDLE = createDefaultItemGlow("PRE_BUILDING_KFC_MIDDLE",Material.COOKED_CHICKEN);
+    public static final SlimefunItemStack PRE_BUILDING_KFC_SMALL = createDefaultItemGlow("PRE_BUILDING_KFC_SMALL",Material.FEATHER);
+    public static final SlimefunItemStack PRE_BUILDING_LARGE_SNOW_KING = createDefaultItemGlow("PRE_BUILDING_LARGE_SNOW_KING",Material.SNOW);
+    public static final SlimefunItemStack PRE_BUILDING_LITTLE_MI_XUE = createDefaultItemGlow("PRE_BUILDING_LITTLE_MI_XUE",Material.SNOW_BLOCK);
+    public static final SlimefunItemStack PRE_BUILDING_MIDDLE_VILLA = createDefaultItemGlow("PRE_BUILDING_MIDDLE_VILLA",Material.OAK_WOOD);
+    public static final SlimefunItemStack PRE_BUILDING_JAPAN_HOUSE = createDefaultItemGlow("PRE_BUILDING_JAPAN_HOUSE",Material.CHERRY_PLANKS);
+    public static final SlimefunItemStack PRE_BUILDING_FARM_BARN = createDefaultItemGlow("PRE_BUILDING_FARM_BARN",Material.HAY_BLOCK);
+    public static final SlimefunItemStack PRE_BUILDING_SAKURA_SHOP = createDefaultItemGlow("PRE_BUILDING_SAKURA_SHOP",Material.CHERRY_LOG);
+    public static final SlimefunItemStack PRE_BUILDING_FRUIT_SHOP = createDefaultItemGlow("PRE_BUILDING_FRUIT_SHOP",Material.APPLE);
+    public static final SlimefunItemStack PRE_BUILDING_KRUSTY_KRAB = createDefaultItemGlow("PRE_BUILDING_KRUSTY_KRAB",Material.BREAD);
+
+
+
+
+    public static final SlimefunItemStack UI_THX = createDefaultItem("UI_THX",Material.PAPER);
+    public static final SlimefunItemStack UI_3 = createDefaultItem("UI_3",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+    public static final SlimefunItemStack UI_4 = createDefaultItem("UI_4",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+    public static final SlimefunItemStack UI_5 = createDefaultItem("UI_5",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+    public static final SlimefunItemStack UI_6 = createDefaultItem("UI_6",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+    public static final SlimefunItemStack UI_7 = createDefaultItem("UI_7",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+    public static final SlimefunItemStack UI_8 = createDefaultItem("UI_8",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+    public static final SlimefunItemStack UI_9 = createDefaultItem("UI_9",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+
+
+    public static final SlimefunItemStack NAZUKICYL_TEST = themed("NAZUKICYL_TEST",new CustomItemStack(CustomHead.getHead("8adb25ab9976d89d0bd8118d72c1c06bb907060c1e02a729b652d1e86b1ebbbc")),
+            get("Items.NAZUKICYL_TEST.Name"),getList("Items.NAZUKICYL_TEST.Lore"));
+    public static final SlimefunItemStack HAIMAN_TEST = themed("HAIMAN_TEST",new CustomItemStack(CustomHead.getHead("1421f1514da756c8c6c7c0b83a79265c26c9ece66b3bad8fbd94bd96d7040d7e")),
+            get("Items.HAIMAN_TEST.Name"),getList("Items.HAIMAN_TEST.Lore"));
+
+
+
 
 
     //更新日志
     public static final SlimefunItemStack UPDATE_LOG_2025_06_23 = createDefaultItemGlow("UPDATE_LOG_2025_06_23",Material.PAPER);
     public static final SlimefunItemStack UPDATE_LOG_2025_06_29 = createDefaultItemGlow("UPDATE_LOG_2025_06_29",Material.PAPER);
     public static final SlimefunItemStack UPDATE_LOG_2025_07_12 = createDefaultItemGlow("UPDATE_LOG_2025_07_12",Material.PAPER);
-    public static final SlimefunItemStack UPDATE_LOG_2025_07_20 = createDefaultItemGlow("UPDATE_LOG_2025_07_20",Material.PAPER);
     public static final SlimefunItemStack UPDATE_LOG_2025_07_23 = createDefaultItemGlow("UPDATE_LOG_2025_07_23",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_07_25 = createDefaultItemGlow("UPDATE_LOG_2025_07_25",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_07_26 = createDefaultItemGlow("UPDATE_LOG_2025_07_26",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_08_01 = createDefaultItemGlow("UPDATE_LOG_2025_08_01",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_08_27 = createDefaultItemGlow("UPDATE_LOG_2025_08_27",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_08_29 = createDefaultItemGlow("UPDATE_LOG_2025_08_29",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_08_30 = createDefaultItemGlow("UPDATE_LOG_2025_08_30",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_09_02 = createDefaultItemGlow("UPDATE_LOG_2025_09_02",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_09_05 = createDefaultItemGlow("UPDATE_LOG_2025_09_05",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_09_09 = createDefaultItemGlow("UPDATE_LOG_2025_09_09",Material.PAPER);
+
+
+
+    public static final SlimefunItemStack FISHING_ROD_LOG = createDefaultItem("FISHING_ROD_LOG",Material.FISHING_ROD);
+    public static final SlimefunItemStack FISHING_ROD_NEW_PLAYER = createDefaultItem("FISHING_ROD_NEW_PLAYER",Material.FISHING_ROD);
+    public static final SlimefunItemStack FISHING_STICK_STAR_IRON = createDefaultItem("FISHING_STICK_STAR_IRON",Material.STICK);
+    public static final SlimefunItemStack FISHING_ROD_WIND_SPEAKER = createDefaultItem("FISHING_ROD_WIND_SPEAKER",Material.FISHING_ROD);
+    public static final SlimefunItemStack FISHING_ROD_FINAL_STICK = createDefaultItem("FISHING_ROD_FINAL_STICK",Material.FISHING_ROD);
+    public static final SlimefunItemStack FISHING_ROD_FINAL_STRING = createDefaultItem("FISHING_ROD_FINAL_STRING",Material.STRING);
+    public static final SlimefunItemStack FISHING_ROD_FINAL_HOOK = createDefaultItem("FISHING_ROD_FINAL_HOOK",Material.DIAMOND_PICKAXE);
+
+    public static final SlimefunItemStack FISHING_ROD_FISH_ANYTHING = createDefaultItem("FISHING_ROD_FISH_ANYTHING",Material.APPLE);
+
+
+    public static final SlimefunItemStack FISHING_INFO = createDefaultItemGlow("FISHING_INFO",Material.PAPER);
+    public static final SlimefunItemStack FISH_CATEGORY_INFO = createDefaultItemGlow("FISH_CATEGORY_INFO",Material.PAPER);
+
+    public static final SlimefunItemStack RANDOM_FISH_COMMON = themed("RANDOM_FISH_COMMON",Material.COD_BUCKET,
+            get("Items.RANDOM_FISH_COMMON.Name"),getList("Items.RANDOM_FISH_COMMON.Lore"));
+    public static final SlimefunItemStack RANDOM_FISH_UNCOMMON = themed("RANDOM_FISH_UNCOMMON",Material.SALMON_BUCKET,
+            get("Items.RANDOM_FISH_UNCOMMON.Name"),getList("Items.RANDOM_FISH_UNCOMMON.Lore"));
+    public static final SlimefunItemStack RANDOM_FISH_RARE = themed("RANDOM_FISH_RARE",Material.PUFFERFISH_BUCKET,
+            get("Items.RANDOM_FISH_RARE.Name"),getList("Items.RANDOM_FISH_RARE.Lore"));
+    public static final SlimefunItemStack RANDOM_FISH_RARE_POOL_DUST = themed("RANDOM_FISH_RARE_POOL_DUST",Material.PUFFERFISH_BUCKET,
+            get("Items.RANDOM_FISH_RARE_POOL_DUST.Name"),getList("Items.RANDOM_FISH_RARE_POOL_DUST.Lore"));
+    public static final SlimefunItemStack RANDOM_FISH_RARE_POOL_ORE = themed("RANDOM_FISH_RARE_POOL_ORE",Material.PUFFERFISH_BUCKET,
+            get("Items.RANDOM_FISH_RARE_POOL_ORE.Name"),getList("Items.RANDOM_FISH_RARE_POOL_ORE.Lore"));
+    public static final SlimefunItemStack RANDOM_FISH_EPIC = themed("RANDOM_FISH_EPIC",Material.TROPICAL_FISH_BUCKET,
+            get("Items.RANDOM_FISH_EPIC.Name"),getList("Items.RANDOM_FISH_EPIC.Lore"));
+    public static final SlimefunItemStack RANDOM_FISH_LEGENDARY = themed("RANDOM_FISH_LEGENDARY",Material.AXOLOTL_BUCKET,
+            get("Items.RANDOM_FISH_LEGENDARY.Name"),getList("Items.RANDOM_FISH_LEGENDARY.Lore"));
+
+    public static final SlimefunItemStack FISH_LURE_BASIC = themed("FISH_LURE_BASIC",Material.WHITE_DYE,
+            get("Items.FISH_LURE_BASIC.Name"),getList("Items.FISH_LURE_BASIC.Lore"));
+    public static final SlimefunItemStack FISH_LURE_DUST = themed("FISH_LURE_DUST",Material.YELLOW_DYE,
+            get("Items.FISH_LURE_DUST.Name"),getList("Items.FISH_LURE_DUST.Lore"));
+    public static final SlimefunItemStack FISH_LURE_ORE = themed("FISH_LURE_ORE",Material.CYAN_DYE,
+            get("Items.FISH_LURE_ORE.Name"),getList("Items.FISH_LURE_ORE.Lore"));
 
 
 
@@ -484,9 +711,20 @@ public class MagicExpansionItems {
     //资源生成器
     public static final SlimefunItemStack RESOURCE_MACHINE_WOOD_BASIC = themed("RESOURCE_MACHINE_WOOD_BASIC",Material.BAMBOO_BLOCK,
             get("GENERATOR.RESOURCE_MACHINE_WOOD_BASIC.Name"),getList("GENERATOR.RESOURCE_MACHINE_WOOD_BASIC.Lore"));
+    public static final SlimefunItemStack RESOURCE_MACHINE_WOOD_ULTRA = themed("RESOURCE_MACHINE_WOOD_ULTRA",Material.STRIPPED_BAMBOO_BLOCK,
+            get("GENERATOR.RESOURCE_MACHINE_WOOD_ULTRA.Name"),getList("GENERATOR.RESOURCE_MACHINE_WOOD_ULTRA.Lore"));
     //光源发生器
     public static final SlimefunItemStack LIGHT_GEN_BASIC = themed("LIGHT_GEN_BASIC",Material.GLOWSTONE,
             get("GENERATOR.LIGHT_GEN_BASIC.Name"),getList("GENERATOR.LIGHT_GEN_BASIC.Lore"));
+
+    public static final SlimefunItemStack STRING_GEN_BASIC = themed("STRING_GEN_BASIC",Material.WHITE_WOOL,
+            get("GENERATOR.STRING_GEN_BASIC.Name"),getList("GENERATOR.STRING_GEN_BASIC.Lore"));
+    public static final SlimefunItemStack STRING_GEN_ULTRA = themed("STRING_GEN_ULTRA",Material.PINK_WOOL,
+            get("GENERATOR.STRING_GEN_ULTRA.Name"),getList("GENERATOR.STRING_GEN_ULTRA.Lore"));
+
+
+
+
     //电力矿工机器人-石英
     public static final SlimefunItemStack MINE_MAN_QUARTZ_BASIC = themed("MINE_MAN_QUARTZ_BASIC", CustomHead.BOT_GREEN.getItem(),
             get("GENERATOR.MINE_MAN_QUARTZ_BASIC.Name"),getList("GENERATOR.MINE_MAN_QUARTZ_BASIC.Lore"));
@@ -547,12 +785,25 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack MINE_MAN_NETHERITE_INGOT_BASIC = themed("MINE_MAN_NETHERITE_INGOT_BASIC", CustomHead.BOT_ORANGE.getItem(),
             get("GENERATOR.MINE_MAN_NETHERITE_INGOT_BASIC.Name"),getList("GENERATOR.MINE_MAN_NETHERITE_INGOT_BASIC.Lore"));
 
+    //合成，矿脉
+    public static final SlimefunItemStack MINE_MAN_MINERAL_BASIC = themed("MINE_MAN_MINERAL_BASIC", CustomHead.BOT_ORANGE.getItem(),
+            get("GENERATOR.MINE_MAN_MINERAL_BASIC.Name"),getList("GENERATOR.MINE_MAN_MINERAL_BASIC.Lore"));
+    //合成，终极矿脉
+    public static final SlimefunItemStack MINE_MAN_MINERAL_ULTRA = themed("MINE_MAN_MINERAL_ULTRA", CustomHead.BOT_PINK.getItem(),
+            get("GENERATOR.MINE_MAN_MINERAL_ULTRA.Name"),getList("GENERATOR.MINE_MAN_MINERAL_ULTRA.Lore"));
+
+    //模拟玩家右键机器人
+    public static final SlimefunItemStack RIGHT_CLICK_MAN = themed("RIGHT_CLICK_MAN", CustomHead.BOT_PURPLE.getItem(),
+            get("Items.RIGHT_CLICK_MAN.Name"),getList("Items.RIGHT_CLICK_MAN.Lore"));
+
 
 
 
     //配方机器
     public static final SlimefunItemStack WOOD_TRANSFORM_BASIC = themed("WOOD_TRANSFORM_BASIC",Material.STRIPPED_BAMBOO_BLOCK,
             get("RECIPE_MACHINE.WOOD_TRANSFORM_BASIC.Name"),getList("RECIPE_MACHINE.WOOD_TRANSFORM_BASIC.Lore"));
+    public static final SlimefunItemStack WOOD_TRANSFORM_ULTRA = themed("WOOD_TRANSFORM_ULTRA",Material.BAMBOO_BLOCK,
+            get("RECIPE_MACHINE.WOOD_TRANSFORM_ULTRA.Name"),getList("RECIPE_MACHINE.WOOD_TRANSFORM_ULTRA.Lore"));
 
     public static final SlimefunItemStack LIGHT_TRANSFORM_BASIC = themed("LIGHT_TRANSFORM_BASIC",Material.PINK_GLAZED_TERRACOTTA,
             get("RECIPE_MACHINE.LIGHT_TRANSFORM_BASIC.Name"),getList("RECIPE_MACHINE.LIGHT_TRANSFORM_BASIC.Lore"));
@@ -560,9 +811,11 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack LIGHT_EXTRACT_BASIC = themed("LIGHT_EXTRACT_BASIC",Material.TINTED_GLASS,
             get("RECIPE_MACHINE.LIGHT_EXTRACT_BASIC.Name"),getList("RECIPE_MACHINE.LIGHT_EXTRACT_BASIC.Lore"));
 
-    //光源提取器
+    //提纯硅
     public static final SlimefunItemStack QUARTZ_PURE_MACHINE_BAISC = themed("QUARTZ_PURE_MACHINE_BAISC",Material.QUARTZ_PILLAR,
             get("RECIPE_MACHINE.QUARTZ_PURE_MACHINE_BAISC.Name"),getList("RECIPE_MACHINE.QUARTZ_PURE_MACHINE_BAISC.Lore"));
+    public static final SlimefunItemStack QUARTZ_PURE_MACHINE_ULTRA = themed("QUARTZ_PURE_MACHINE_ULTRA",Material.SMOOTH_QUARTZ,
+            get("RECIPE_MACHINE.QUARTZ_PURE_MACHINE_ULTRA.Name"),getList("RECIPE_MACHINE.QUARTZ_PURE_MACHINE_ULTRA.Lore"));
 
 
     //预制建筑工坊
@@ -578,6 +831,9 @@ public class MagicExpansionItems {
     //材料工坊
     public static final SlimefunItemStack INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE = createDefaultRecipeMachine("INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE",Material.FURNACE);
     public static final SlimefunItemStack INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE_ULTRA = createDefaultRecipeMachine("INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE_ULTRA",Material.BLAST_FURNACE);
+
+
+    public static final SlimefunItemStack INGOT_PURE_MACHINE = createDefaultRecipeMachine("INGOT_PURE_MACHINE",Material.SMOKER);
 
 
 
@@ -597,6 +853,14 @@ public class MagicExpansionItems {
     //发电机列表
     //不稳定的火力发电机
     public static final SlimefunItemStack POWER_FIRE_UNSTABLE = createDefaultPowerMachine("POWER_FIRE_UNSTABLE",Material.CAMPFIRE);
+    public static final SlimefunItemStack POWER_FIRE_STABILITY = createDefaultPowerMachine("POWER_FIRE_STABILITY",Material.SOUL_CAMPFIRE);
+    public static final SlimefunItemStack POWER_COLOR_EGG_BLOCK = createDefaultPowerMachine("POWER_COLOR_EGG_BLOCK",Material.SNOW_BLOCK);
+    public static final SlimefunItemStack POWER_COLOR_EGG_KEY = createDefaultPowerMachine("POWER_COLOR_EGG_KEY",Material.TINTED_GLASS);
+
+
+
+    public static final SlimefunItemStack POWER_FISH_ELECTRIC = createDefaultPowerMachine("POWER_FISH_ELECTRIC",Material.SEA_LANTERN);
+    public static final SlimefunItemStack FISH_VIVARIUM = createDefaultPowerMachine("FISH_VIVARIUM",Material.LIGHT_BLUE_STAINED_GLASS_PANE);
 
 
 
@@ -620,6 +884,27 @@ public class MagicExpansionItems {
             get("GEO.FIVE_ELEMENT.Name"),getList("GEO.FIVE_ELEMENT.Lore"));
 
 
+
+
+    public static final SlimefunItemStack PURE_GOLD = createDefaultResourceGlow("PURE_GOLD",Material.YELLOW_GLAZED_TERRACOTTA);
+    public static final SlimefunItemStack PURE_IRON = createDefaultResourceGlow("PURE_IRON",Material.WHITE_GLAZED_TERRACOTTA);
+    public static final SlimefunItemStack PURE_COPPER = createDefaultResourceGlow("PURE_COPPER",Material.ORANGE_GLAZED_TERRACOTTA);
+    public static final SlimefunItemStack PURE_MAGNESIUM = createDefaultResourceGlow("PURE_MAGNESIUM",Material.PINK_GLAZED_TERRACOTTA);
+    public static final SlimefunItemStack PURE_TIN = createDefaultResourceGlow("PURE_TIN",Material.CYAN_GLAZED_TERRACOTTA);
+    public static final SlimefunItemStack PURE_SILVER = createDefaultResourceGlow("PURE_SILVER",Material.LIGHT_GRAY_GLAZED_TERRACOTTA);
+    public static final SlimefunItemStack PURE_LEAD = createDefaultResourceGlow("PURE_LEAD",Material.BLUE_GLAZED_TERRACOTTA);
+    public static final SlimefunItemStack PURE_ALUMINUM = createDefaultResourceGlow("PURE_ALUMINUM",Material.GRAY_GLAZED_TERRACOTTA);
+    public static final SlimefunItemStack PURE_ZINC = createDefaultResourceGlow("PURE_ZINC",Material.LIME_GLAZED_TERRACOTTA);
+    public static final SlimefunItemStack PURE_ELEMENT_INGOT = createDefaultResourceGlow("PURE_ELEMENT_INGOT",Material.NETHERITE_INGOT);
+    public static final SlimefunItemStack PURE_ELEMENT_GOLD = createDefaultResourceGlow("PURE_ELEMENT_GOLD",Material.YELLOW_DYE);
+    public static final SlimefunItemStack PURE_ELEMENT_WOOD = createDefaultResourceGlow("PURE_ELEMENT_WOOD",Material.GREEN_DYE);
+    public static final SlimefunItemStack PURE_ELEMENT_WATER = createDefaultResourceGlow("PURE_ELEMENT_WATER",Material.LIGHT_BLUE_DYE);
+    public static final SlimefunItemStack PURE_ELEMENT_FIRE = createDefaultResourceGlow("PURE_ELEMENT_FIRE",Material.RED_DYE);
+    public static final SlimefunItemStack PURE_ELEMENT_EARTH = createDefaultResourceGlow("PURE_ELEMENT_EARTH",Material.BROWN_DYE);
+    public static final SlimefunItemStack PURE_FIVE_ELEMENT = themed("PURE_FIVE_ELEMENT",new CustomItemStack(CustomHead.getHead("846472b7bd8de52a101584ea2dd7db190d417ca548bb6568379acebdd02b1799")),
+            get("Resource.PURE_FIVE_ELEMENT.Name"),getList("Resource.PURE_FIVE_ELEMENT.Lore"));
+
+    public static final SlimefunItemStack SPEED_ELEMENT_64 = createDefaultResourceGlow("SPEED_ELEMENT_64",Material.HEART_OF_THE_SEA);
 
 
     //米哈游-盲盒-崩铁
