@@ -1,5 +1,17 @@
 package io.Yomicer.magicExpansion.items.quickMachine;
 
+import static org.bukkit.inventory.EquipmentSlot.HAND;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.Color;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
+import org.bukkit.inventory.ItemStack;
+
 import io.Yomicer.magicExpansion.specialActions.EntitySpawner;
 import io.Yomicer.magicExpansion.utils.ItemPermissionUtils;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
@@ -7,21 +19,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
-import org.bukkit.Color;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
-import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nonnull;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static org.bukkit.inventory.EquipmentSlot.HAND;
 
 public class MagicExpansionRandomSummon extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
 

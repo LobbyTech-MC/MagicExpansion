@@ -1,6 +1,10 @@
 package io.Yomicer.magicExpansion.Listener.magicItemEffectManager;
 
-import io.Yomicer.magicExpansion.Listener.weaponApply.SlownessManager;
+import static io.Yomicer.magicExpansion.items.enchantMachine.EnchantingTable.ATTRIBUTE_POOL;
+import static io.Yomicer.magicExpansion.utils.ItemPermissionUtils.hasPermissionOnAttack;
+
+import java.util.Random;
+
 import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Entity;
@@ -16,11 +20,6 @@ import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
-
-import java.util.Random;
-
-import static io.Yomicer.magicExpansion.items.enchantMachine.EnchantingTable.ATTRIBUTE_POOL;
-import static io.Yomicer.magicExpansion.utils.ItemPermissionUtils.hasPermissionOnAttack;
 
 public class ItemEffectAttackListener implements Listener {
 

@@ -1,7 +1,16 @@
 package io.Yomicer.magicExpansion.items.generators;
 
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
+
 import io.Yomicer.magicExpansion.items.abstracts.MenuBlock;
 import io.Yomicer.magicExpansion.utils.machineLore.ChargeLore;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
@@ -13,15 +22,6 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
-import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nonnull;
-
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
 
 
 public class NumberEnergyGenerator extends MenuBlock implements EnergyNetProvider {

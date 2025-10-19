@@ -1,9 +1,8 @@
 package io.Yomicer.magicExpansion.specialActions.Command;
 
-import io.Yomicer.magicExpansion.MagicExpansionItemSetup;
-import io.Yomicer.magicExpansion.core.MagicExpansionItems;
-import io.Yomicer.magicExpansion.items.misc.fish.FishingBook;
-import io.Yomicer.magicExpansion.utils.FishingGuideMenu;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -11,8 +10,8 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.ArrayList;
-import java.util.List;
+import io.Yomicer.magicExpansion.core.MagicExpansionItems;
+import io.Yomicer.magicExpansion.utils.FishingGuideMenu;
 
 public class FishingGuideCommand implements CommandExecutor, TabCompleter {
 

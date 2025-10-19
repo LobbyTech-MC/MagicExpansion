@@ -1,12 +1,12 @@
 package io.Yomicer.magicExpansion.Listener.magicItemEffectManager;
 
-import io.Yomicer.magicExpansion.utils.GiveItem;
-import io.Yomicer.magicExpansion.utils.entity.EntityEgg;
-import net.guizhanss.guizhanlib.minecraft.helper.entity.EntityHelper;
+import static io.Yomicer.magicExpansion.items.enchantMachine.EnchantingTable.ATTRIBUTE_POOL;
+
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.entity.*;
+import org.bukkit.entity.Arrow;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileHitEvent;
@@ -14,10 +14,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
-
-import java.util.Random;
-
-import static io.Yomicer.magicExpansion.items.enchantMachine.EnchantingTable.ATTRIBUTE_POOL;
 
 public class ArrowHitLocationListener implements Listener {
 

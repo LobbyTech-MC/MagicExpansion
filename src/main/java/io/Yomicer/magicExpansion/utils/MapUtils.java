@@ -1,8 +1,13 @@
 package io.Yomicer.magicExpansion.utils;
 
-import com.google.common.reflect.TypeToken;
-import com.google.gson.Gson;
-import io.Yomicer.magicExpansion.Listener.worldListener.Events;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -11,13 +16,10 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.util.BlockIterator;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+
+import io.Yomicer.magicExpansion.Listener.worldListener.Events;
 
 public class MapUtils {
     private static final Gson gson = new Gson();

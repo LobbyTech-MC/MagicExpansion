@@ -1,10 +1,10 @@
 package io.Yomicer.magicExpansion.utils;
 
-import org.bukkit.Color;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import org.bukkit.Color;
 
 public class ColorGradient {
     /*覆写颜色*/

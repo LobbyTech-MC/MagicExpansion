@@ -1,9 +1,10 @@
 package io.Yomicer.magicExpansion.utils.machineLore;
 
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import java.text.DecimalFormat;
 
 import javax.annotation.Nonnull;
-import java.text.DecimalFormat;
+
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 public class ChargeLore {
 

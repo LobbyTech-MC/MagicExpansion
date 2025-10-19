@@ -1,10 +1,14 @@
 package io.Yomicer.magicExpansion.items.misc.moreLure;
 
-import io.Yomicer.magicExpansion.MagicExpansion;
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.util.Vector;
+
+import io.Yomicer.magicExpansion.MagicExpansion;
 
 public class ZKBTMPlayer {
     private final MagicExpansion plugin; // 替换为你的主类名

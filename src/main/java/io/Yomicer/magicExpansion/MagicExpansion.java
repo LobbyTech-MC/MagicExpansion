@@ -1,5 +1,12 @@
 package io.Yomicer.magicExpansion;
 
+import java.io.File;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
 import io.Yomicer.magicExpansion.Listener.RecipePreLoader;
 import io.Yomicer.magicExpansion.Listener.SlimefunRegistryFinalized;
 import io.Yomicer.magicExpansion.Listener.SlimefunRegistryGiftBox;
@@ -9,21 +16,17 @@ import io.Yomicer.magicExpansion.Listener.bossListener.BasicBossDropListener;
 import io.Yomicer.magicExpansion.Listener.fishingListener.PlayerFishingListener;
 import io.Yomicer.magicExpansion.Listener.magicItemEffectManager.ArrowHitLocationListener;
 import io.Yomicer.magicExpansion.Listener.magicItemEffectManager.ItemEffectAttackListener;
+import io.Yomicer.magicExpansion.Listener.magicItemEffectManager.ItemEffectKillListener;
 import io.Yomicer.magicExpansion.Listener.miscListener.ItemFrameListener;
 import io.Yomicer.magicExpansion.Listener.worldListener.Events;
 import io.Yomicer.magicExpansion.specialActions.Command.FishingGuideCommand;
 import io.Yomicer.magicExpansion.specialActions.Command.MagicExpansionCommand;
-import io.Yomicer.magicExpansion.Listener.magicItemEffectManager.ItemEffectKillListener;
 import io.Yomicer.magicExpansion.specialActions.Command.WorldCommand;
 import io.Yomicer.magicExpansion.utils.Language;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import lombok.SneakyThrows;
 import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
-import org.bukkit.plugin.java.JavaPlugin;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.io.File;
 
 public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
     public static boolean testmod=false;

@@ -1,13 +1,14 @@
 package io.Yomicer.magicExpansion.items.misc.fish.fishInterface;
 
-import io.Yomicer.magicExpansion.items.misc.fish.Fish;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import io.Yomicer.magicExpansion.items.misc.fish.Fish;
 
 public class BaseFish {
     private final Fish originalFish;

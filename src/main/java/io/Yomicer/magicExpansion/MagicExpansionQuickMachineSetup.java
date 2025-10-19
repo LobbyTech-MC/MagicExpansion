@@ -1,23 +1,36 @@
 package io.Yomicer.magicExpansion;
 
+import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.SPECIAL_RECIPE_TYPE;
+import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionquickmachine;
+import static io.Yomicer.magicExpansion.utils.ConvertItem.AdvancedCreateItem;
+import static io.Yomicer.magicExpansion.utils.ConvertItem.BasicCreateItem;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+
 import io.Yomicer.magicExpansion.Listener.SlimefunRegistryFinalized;
 import io.Yomicer.magicExpansion.Listener.SlimefunRegistryListener;
 import io.Yomicer.magicExpansion.core.MagicExpansionItems;
-import io.Yomicer.magicExpansion.items.quickMachine.*;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionMineralCave;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickAncientAltar;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickArmorForge;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickAutomatedPanningMachine;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickCompressor;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickEnhancedCraftingTable;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickGrindStone;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickHeatedPressureChamber;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickMagicWorkbench;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickOreCrusher;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickOreGrinder;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickPressureChamber;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionQuickSmeltery;
 import io.Yomicer.magicExpansion.items.quickMachineBlockVersion.QuickMachineBV;
 import io.Yomicer.magicExpansion.items.quickMachineBlockVersion.QuickMachineMBBV;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nonnull;
-
-import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.SPECIAL_RECIPE_TYPE;
-import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionquickmachine;
-import static io.Yomicer.magicExpansion.utils.ConvertItem.AdvancedCreateItem;
-import static io.Yomicer.magicExpansion.utils.ConvertItem.BasicCreateItem;
 
 public class MagicExpansionQuickMachineSetup {
 

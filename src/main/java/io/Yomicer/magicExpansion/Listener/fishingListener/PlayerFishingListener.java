@@ -1,18 +1,14 @@
 package io.Yomicer.magicExpansion.Listener.fishingListener;
 
-import io.Yomicer.magicExpansion.core.MagicExpansionItems;
-import io.Yomicer.magicExpansion.items.misc.Lure;
-import io.Yomicer.magicExpansion.items.misc.WeightedItem;
-import io.Yomicer.magicExpansion.items.misc.fish.FishKeys;
-import io.Yomicer.magicExpansion.items.misc.moreLure.MoreLure;
-import io.Yomicer.magicExpansion.items.tools.FishingRod;
-import io.Yomicer.magicExpansion.utils.ColorGradient;
-import io.Yomicer.magicExpansion.utils.log.Debug;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISHING_ROD_FISH_ANYTHING;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.MagicExpansionSlimefunItemCache.getRandomItemStack;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
@@ -26,14 +22,18 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.util.Vector;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
-
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISHING_ROD_FISH_ANYTHING;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.MagicExpansionSlimefunItemCache.getRandomItemStack;
+import io.Yomicer.magicExpansion.core.MagicExpansionItems;
+import io.Yomicer.magicExpansion.items.misc.Lure;
+import io.Yomicer.magicExpansion.items.misc.WeightedItem;
+import io.Yomicer.magicExpansion.items.misc.fish.FishKeys;
+import io.Yomicer.magicExpansion.items.misc.moreLure.MoreLure;
+import io.Yomicer.magicExpansion.items.tools.FishingRod;
+import io.Yomicer.magicExpansion.utils.ColorGradient;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
 
 
 public class PlayerFishingListener implements Listener {

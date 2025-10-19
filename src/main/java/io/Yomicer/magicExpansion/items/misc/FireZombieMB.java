@@ -1,13 +1,15 @@
 package io.Yomicer.magicExpansion.items.misc;
 
-import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
-import io.Yomicer.magicExpansion.MagicExpansion;
-import io.Yomicer.magicExpansion.core.MagicExpansionItems;
-import io.Yomicer.magicExpansion.utils.ColorGradient;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import static io.Yomicer.magicExpansion.items.summonBossItem.bossSkill.FireZombieSkill.fireParticleAttackSkill;
+import static io.Yomicer.magicExpansion.items.summonBossItem.bossSkill.FireZombieSkill.magicAttackSkill;
+import static io.Yomicer.magicExpansion.items.summonBossItem.bossSkill.FireZombieSkill.redstoneParticleAttackSkill;
+
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+
+import javax.annotation.Nonnull;
+
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
@@ -20,13 +22,15 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import javax.annotation.Nonnull;
-import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
+import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 
-import static io.Yomicer.magicExpansion.items.summonBossItem.bossSkill.FireZombieSkill.*;
-import static io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils.isItemSimilar;
+import io.Yomicer.magicExpansion.MagicExpansion;
+import io.Yomicer.magicExpansion.core.MagicExpansionItems;
+import io.Yomicer.magicExpansion.utils.ColorGradient;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 
 public class FireZombieMB extends MultiBlockMachine {
 

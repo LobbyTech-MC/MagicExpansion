@@ -1,12 +1,13 @@
 package io.Yomicer.magicExpansion.items.misc.moreLure;
 
-import io.Yomicer.magicExpansion.items.misc.Lure;
-import io.Yomicer.magicExpansion.items.misc.WeightedItem;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import java.util.List;
+
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.List;
+import io.Yomicer.magicExpansion.items.misc.Lure;
+import io.Yomicer.magicExpansion.items.misc.WeightedItem;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
 public class MoreLure extends Lure {
 

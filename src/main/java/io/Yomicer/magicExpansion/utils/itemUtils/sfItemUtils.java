@@ -1,7 +1,8 @@
 package io.Yomicer.magicExpansion.utils.itemUtils;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import org.bukkit.inventory.ItemStack;
+
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 
 public class sfItemUtils {
 

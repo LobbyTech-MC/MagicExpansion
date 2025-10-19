@@ -1,5 +1,21 @@
 package io.Yomicer.magicExpansion.utils.quickMachine;
 
+import static io.Yomicer.magicExpansion.utils.GiveItem.giveOrDropItem;
+import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
+import static io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils.isItemSimilar;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.ItemMeta;
+
 import io.Yomicer.magicExpansion.utils.CreateItem;
 import io.Yomicer.magicExpansion.utils.MagicExpansionSlimefunItemCache;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
@@ -9,18 +25,6 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.collections.Pair;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
-import org.bukkit.inventory.meta.ItemMeta;
-
-import java.util.*;
-
-import static io.Yomicer.magicExpansion.utils.GiveItem.giveOrDropItem;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
-import static io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils.isItemSimilar;
 
 public class QuickMachineUtils {
 

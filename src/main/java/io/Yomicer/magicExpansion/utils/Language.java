@@ -1,13 +1,13 @@
 package io.Yomicer.magicExpansion.utils;
 
-import io.Yomicer.magicExpansion.utils.itemUtils.newItem;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
+
+import io.Yomicer.magicExpansion.utils.itemUtils.newItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 
 public class Language {
 

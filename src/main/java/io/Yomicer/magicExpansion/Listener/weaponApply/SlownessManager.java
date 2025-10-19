@@ -1,16 +1,17 @@
 package io.Yomicer.magicExpansion.Listener.weaponApply;
 
-import io.Yomicer.magicExpansion.MagicExpansion;
+import java.util.Collection;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeInstance;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
+import io.Yomicer.magicExpansion.MagicExpansion;
 
 public class SlownessManager {
 

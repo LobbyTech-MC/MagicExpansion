@@ -1,12 +1,13 @@
 package io.Yomicer.magicExpansion.utils.itemUtils;
 
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import org.bukkit.Material;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
 
 import java.math.BigInteger;
 
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
+import org.bukkit.Material;
+
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 
 public class MagicStringBuilder {
 

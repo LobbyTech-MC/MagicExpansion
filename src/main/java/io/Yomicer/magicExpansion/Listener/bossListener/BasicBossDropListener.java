@@ -1,8 +1,7 @@
 package io.Yomicer.magicExpansion.Listener.bossListener;
 
-import io.Yomicer.magicExpansion.core.MagicExpansionItems;
-import io.Yomicer.magicExpansion.utils.log.Debug;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import java.util.Random;
+
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -13,7 +12,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.Random;
+import io.Yomicer.magicExpansion.core.MagicExpansionItems;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 
 public class BasicBossDropListener implements Listener {
 

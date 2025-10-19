@@ -1,15 +1,17 @@
 package io.Yomicer.magicExpansion.items.summonBossItem;
 
-import io.Yomicer.magicExpansion.MagicExpansion;
-import io.Yomicer.magicExpansion.utils.ColorGradient;
-import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
-import org.bukkit.*;
+import static io.Yomicer.magicExpansion.items.summonBossItem.bossSkill.FireZombieSkill.fireParticleAttackSkill;
+import static io.Yomicer.magicExpansion.items.summonBossItem.bossSkill.FireZombieSkill.magicAttackSkill;
+import static io.Yomicer.magicExpansion.items.summonBossItem.bossSkill.FireZombieSkill.redstoneParticleAttackSkill;
+import static org.bukkit.inventory.EquipmentSlot.HAND;
+
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.Location;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
@@ -20,13 +22,15 @@ import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.springframework.scheduling.annotation.Async;
 
-import javax.annotation.Nonnull;
-import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
-
-import static io.Yomicer.magicExpansion.items.summonBossItem.bossSkill.FireZombieSkill.*;
-import static org.bukkit.inventory.EquipmentSlot.HAND;
+import io.Yomicer.magicExpansion.MagicExpansion;
+import io.Yomicer.magicExpansion.utils.ColorGradient;
+import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
+import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
+import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
 
 public class FireZombie extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
 

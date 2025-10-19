@@ -1,5 +1,14 @@
 package io.Yomicer.magicExpansion;
 
+import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionpower;
+import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionresourcegenerator;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.Material;
+import org.bukkit.block.BlockFace;
+import org.bukkit.inventory.ItemStack;
+
 import io.Yomicer.magicExpansion.core.MagicExpansionItems;
 import io.Yomicer.magicExpansion.items.generators.FishEnergyGenerator;
 import io.Yomicer.magicExpansion.items.generators.FishOutputMachine;
@@ -7,15 +16,6 @@ import io.Yomicer.magicExpansion.items.generators.NumberEnergyGenerator;
 import io.Yomicer.magicExpansion.items.generators.TypeEnergyGenerator;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import org.bukkit.Material;
-import org.bukkit.block.BlockFace;
-import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nonnull;
-
-import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionpower;
-import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionresourcegenerator;
-import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
 
 public class MagicExpansionPowerMachineSetup {
 

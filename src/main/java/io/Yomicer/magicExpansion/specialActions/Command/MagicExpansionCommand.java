@@ -1,9 +1,10 @@
 package io.Yomicer.magicExpansion.specialActions.Command;
 
-import io.Yomicer.magicExpansion.utils.MagicExpansionSlimefunItemCache;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+
+import io.Yomicer.magicExpansion.utils.MagicExpansionSlimefunItemCache;
 
 public class MagicExpansionCommand implements CommandExecutor {
 

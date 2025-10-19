@@ -1,17 +1,19 @@
 package io.Yomicer.magicExpansion;
 
-import com.google.common.base.Charsets;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.util.logging.Logger;
+
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.Plugin;
+
+import com.google.common.base.Charsets;
+
+import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 
 public class ConfigLoader {
 

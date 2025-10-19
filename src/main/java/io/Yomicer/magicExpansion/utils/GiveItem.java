@@ -1,11 +1,11 @@
 package io.Yomicer.magicExpansion.utils;
 
+import java.util.Map;
+
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
-
-import java.util.Map;
 
 public class GiveItem {
     public static void giveOrDropItem(Player player, ItemStack item) {

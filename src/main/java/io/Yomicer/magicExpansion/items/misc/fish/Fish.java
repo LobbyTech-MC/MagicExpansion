@@ -1,8 +1,8 @@
 package io.Yomicer.magicExpansion.items.misc.fish;
 
-import io.Yomicer.magicExpansion.utils.ColorGradient;
-
 import java.util.Random;
+
+import io.Yomicer.magicExpansion.utils.ColorGradient;
 
 public enum Fish {
     SanWenFish(Rarity.COMMON.colorCode+"三文鱼", 5.0, 31.0, Rarity.COMMON,

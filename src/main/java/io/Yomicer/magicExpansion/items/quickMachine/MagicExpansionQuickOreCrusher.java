@@ -1,5 +1,14 @@
 package io.Yomicer.magicExpansion.items.quickMachine;
 
+import static io.Yomicer.magicExpansion.Listener.SlimefunRegistryFinalized.ORE_CRUSHER_RECIPES;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
+import org.bukkit.inventory.ItemStack;
+
 import io.Yomicer.magicExpansion.utils.quickMachine.QuickMachineMBUtile;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
@@ -8,14 +17,6 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
-import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nonnull;
-
-import static io.Yomicer.magicExpansion.Listener.SlimefunRegistryFinalized.ORE_CRUSHER_RECIPES;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
 
 public class MagicExpansionQuickOreCrusher extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
 

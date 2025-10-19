@@ -1,7 +1,23 @@
 package io.Yomicer.magicExpansion.utils;
 
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.CreateItem.createItem;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+
+import org.bukkit.Material;
+import org.bukkit.Sound;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
+
 import io.Yomicer.magicExpansion.core.MagicExpansionItems;
-import io.Yomicer.magicExpansion.items.misc.WeightedItem;
 import io.Yomicer.magicExpansion.items.misc.fish.fishInterface.BaseFish;
 import io.Yomicer.magicExpansion.items.misc.fish.fishInterface.FishManager;
 import io.Yomicer.magicExpansion.utils.CustomHeadUtils.CustomHead;
@@ -10,18 +26,6 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
-import org.bukkit.Material;
-import org.bukkit.Sound;
-import org.bukkit.entity.AreaEffectCloud;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.*;
-
-import static io.Yomicer.magicExpansion.utils.CreateItem.createItem;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
 
 public class FishingGuideMenu {
 

@@ -1,11 +1,12 @@
 package io.Yomicer.magicExpansion.utils;
 
-import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
 
 public class ItemPermissionUtils {
 
