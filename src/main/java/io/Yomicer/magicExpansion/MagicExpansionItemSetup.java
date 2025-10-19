@@ -1,83 +1,5 @@
 package io.Yomicer.magicExpansion;
 
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.AMETHYST_SHARD;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.BONE_MEAL;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.EARTH_ELEMENT;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.ELEMENT_INGOT;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FIRE_ELEMENT;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISHING_INFO;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISHING_ROD_FINAL_HOOK;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISHING_ROD_FINAL_STRING;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISHING_ROD_FISH_ANYTHING;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISHING_ROD_NEW_PLAYER;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISHING_STICK_STAR_IRON;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISH_CATEGORY_INFO;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISH_LURE_BASIC;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISH_LURE_DUST;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISH_LURE_ORE;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_1;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_10;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_11;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_12;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_13;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_14;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_15;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_16;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_17;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_18;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_19;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_2;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_20;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_21;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_3;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_4;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_5;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_6;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_7;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_8;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_FINAL_STRING_9;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_1;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_21;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_37;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_CANE;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.RANDOM_FISH_COMMON;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.RANDOM_FISH_EPIC;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.RANDOM_FISH_EPIC_POOL_INDUSTRY;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.RANDOM_FISH_LEGENDARY;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.RANDOM_FISH_RARE;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.RANDOM_FISH_RARE_POOL_DUST;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.RANDOM_FISH_RARE_POOL_INDUSTRY;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.RANDOM_FISH_RARE_POOL_ORE;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.RANDOM_FISH_UNCOMMON;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.REDSTONE;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.STICK;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.WATER_ELEMENT;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.WIND_SPIRIT;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.WOOD_ELEMENT;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getRandomGradientName;
-import static io.Yomicer.magicExpansion.utils.ConvertItem.AdvancedCreateItem;
-import static io.Yomicer.magicExpansion.utils.ConvertItem.BasicCreateItem;
-import static io.Yomicer.magicExpansion.utils.ConvertItem.IfItemXist;
-import static io.Yomicer.magicExpansion.utils.Language.get;
-import static io.Yomicer.magicExpansion.utils.Language.getList;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
-import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Nonnull;
-
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.EntityType;
-import org.bukkit.inventory.ItemStack;
-
-import io.Yomicer.magicExpansion.core.MagicExpansionItems;
 import io.Yomicer.magicExpansion.items.electric.entitykillMachinee.EntityKillMachine;
 import io.Yomicer.magicExpansion.items.electric.geoMachine.FiveElementsMiner;
 import io.Yomicer.magicExpansion.items.electric.geoMachine.RSCMagicMiner;
@@ -88,26 +10,18 @@ import io.Yomicer.magicExpansion.items.electric.recipeMachine.RecipeRandomMachin
 import io.Yomicer.magicExpansion.items.electric.resourceGenerator.ResourceMachine;
 import io.Yomicer.magicExpansion.items.electric.resourceGenerator.ResourceRandomOneMachine;
 import io.Yomicer.magicExpansion.items.enchantMachine.EnchantingTable;
-import io.Yomicer.magicExpansion.items.misc.FireZombieMB;
-import io.Yomicer.magicExpansion.items.misc.HonkaiStarRailBox;
-import io.Yomicer.magicExpansion.items.misc.MagicGeoResourceDefault;
-import io.Yomicer.magicExpansion.items.misc.RightClickMan;
-import io.Yomicer.magicExpansion.items.misc.WeightedItem;
-import io.Yomicer.magicExpansion.items.misc.WindElfMB;
+import io.Yomicer.magicExpansion.items.misc.*;
 import io.Yomicer.magicExpansion.items.misc.fish.CommonFish;
 import io.Yomicer.magicExpansion.items.misc.fish.CommonFishHidden;
 import io.Yomicer.magicExpansion.items.misc.fish.FishingBook;
 import io.Yomicer.magicExpansion.items.preBuildings.PreBuildingTree;
-import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionRandomSummon;
+import io.Yomicer.magicExpansion.items.quickMachine.*;
 import io.Yomicer.magicExpansion.items.skyBlock.SingleCubeOre;
 import io.Yomicer.magicExpansion.items.skyBlock.SingleCubeOrigin;
 import io.Yomicer.magicExpansion.items.summonBossItem.FireZombie;
 import io.Yomicer.magicExpansion.items.summonBossItem.WindElf;
-import io.Yomicer.magicExpansion.items.tools.FishingRod;
-import io.Yomicer.magicExpansion.items.tools.FiveElementTouch;
-import io.Yomicer.magicExpansion.items.tools.InfiniteTool;
-import io.Yomicer.magicExpansion.items.tools.Scythe;
-import io.Yomicer.magicExpansion.items.tools.VoidTouch;
+import io.Yomicer.magicExpansion.items.tools.*;
+import io.Yomicer.magicExpansion.core.MagicExpansionItems;
 import io.Yomicer.magicExpansion.utils.ColorGradient;
 import io.Yomicer.magicExpansion.utils.CustomHeadUtils.CustomHead;
 import io.Yomicer.magicExpansion.utils.itemUtils.NamedTagBuilder;
@@ -125,6 +39,27 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.electric.Capacito
 import io.github.thebusybiscuit.slimefun4.implementation.items.geo.GEOMiner;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.EntityType;
+import org.bukkit.inventory.ItemStack;
+
+import javax.annotation.Nonnull;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.*;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getRandomGradientName;
+import static io.Yomicer.magicExpansion.utils.ConvertItem.*;
+import static io.Yomicer.magicExpansion.utils.Language.get;
+import static io.Yomicer.magicExpansion.utils.Language.getList;
+import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
+import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
 
 
 public final class MagicExpansionItemSetup {

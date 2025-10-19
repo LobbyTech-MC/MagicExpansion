@@ -1799,7 +1799,7 @@ public class CargoCore extends SlimefunItem implements EnergyNetComponent{
             deductStoredItemFromMainStorage(data, template, actuallyTransferred);
 
             // 显示传输效果
-            showTransferParticles(sourceBlock.getLocation(), targetLocation, Particle.VILLAGER_HAPPY);
+            showTransferParticles(sourceBlock.getLocation(), targetLocation, Particle.HAPPY_VILLAGER);
         }
     }
 
