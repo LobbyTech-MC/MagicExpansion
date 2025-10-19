@@ -1,5 +1,6 @@
 package io.Yomicer.magicExpansion;
 
+import io.Yomicer.magicExpansion.Listener.RecipePreLoader;
 import io.Yomicer.magicExpansion.Listener.SlimefunRegistryFinalized;
 import io.Yomicer.magicExpansion.Listener.SlimefunRegistryGiftBox;
 import io.Yomicer.magicExpansion.Listener.SlimefunRegistryListener;
@@ -8,7 +9,9 @@ import io.Yomicer.magicExpansion.Listener.bossListener.BasicBossDropListener;
 import io.Yomicer.magicExpansion.Listener.fishingListener.PlayerFishingListener;
 import io.Yomicer.magicExpansion.Listener.magicItemEffectManager.ArrowHitLocationListener;
 import io.Yomicer.magicExpansion.Listener.magicItemEffectManager.ItemEffectAttackListener;
+import io.Yomicer.magicExpansion.Listener.miscListener.ItemFrameListener;
 import io.Yomicer.magicExpansion.Listener.worldListener.Events;
+import io.Yomicer.magicExpansion.specialActions.Command.FishingGuideCommand;
 import io.Yomicer.magicExpansion.specialActions.Command.MagicExpansionCommand;
 import io.Yomicer.magicExpansion.Listener.magicItemEffectManager.ItemEffectKillListener;
 import io.Yomicer.magicExpansion.specialActions.Command.WorldCommand;
@@ -48,7 +51,7 @@ public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
             GuizhanUpdater.start(this, getFile(), "Yomicer", "MagicExpansion", "master");
             getLogger().info("§b更新完毕！");
         }else{
-            getLogger().info("§b已是最新版！");
+            getLogger().info("§b未启用自动更新！");
         }
         ConfigLoader.load(this);
         Language.loadConfig(ConfigLoader.LANGUAGE);
@@ -66,7 +69,9 @@ public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
 
         // Registering Command
         this.getCommand("magicexpansion").setExecutor(new MagicExpansionCommand());
-        this.getCommand("mx").setExecutor(new WorldCommand(this));
+        this.getCommand("mxw").setExecutor(new WorldCommand(this));
+        this.getCommand("mxf").setExecutor(new FishingGuideCommand());
+        this.getCommand("mxf").setTabCompleter(new FishingGuideCommand());
 
         // 创建地图保存目录
         File mapsDir = new File(getDataFolder(), "maps");
@@ -77,6 +82,7 @@ public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
         // 注册事件监听器
         getServer().getPluginManager().registerEvents(new SlimefunRegistryFinalized(), this);
         getServer().getPluginManager().registerEvents(new SlimefunRegistryListener(), this);
+        getServer().getPluginManager().registerEvents(new RecipePreLoader(), this);
         getServer().getPluginManager().registerEvents(new SlimefunRegistryGiftBox(), this);
         getServer().getPluginManager().registerEvents(new ItemEffectAttackListener(), this);
         getServer().getPluginManager().registerEvents(new ItemEffectKillListener(), this);
@@ -85,6 +91,7 @@ public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
         getServer().getPluginManager().registerEvents(new BasicBossDropListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerFishingListener(), this);
         getServer().getPluginManager().registerEvents(new Events(), this);
+        getServer().getPluginManager().registerEvents(new ItemFrameListener(), this);
         getLogger().info("§b监听注册完毕！");
 
 

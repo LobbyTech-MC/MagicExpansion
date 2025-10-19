@@ -27,7 +27,7 @@ public class MagicExpansionItems {
             Material.PAPER,
             getGradientName("信息"),
             "",
-            getGradientName("Version: Build 19"),
+            getGradientName("Version: Build 31"),
             getGradientName("您在提issues的时候需要展示这个")
     );
     //AUTHOR
@@ -632,8 +632,27 @@ public class MagicExpansionItems {
 
 
 
+
+    public static final SlimefunItemStack SF_TIMINGS_HOLOGRAM = createDefaultItemGlow("SF_TIMINGS_HOLOGRAM",Material.QUARTZ_SLAB);
+    public static final SlimefunItemStack MUSIC_TEST = createDefaultItemGlow("MUSIC_TEST",Material.RABBIT);
+    public static final SlimefunItemStack CARGO_TERMINAL = createDefaultItemGlow("CARGO_TERMINAL",Material.NOTE_BLOCK);
+    public static final SlimefunItemStack CARGO_TERMINAL_RENEW = createDefaultItemGlow("CARGO_TERMINAL_RENEW",Material.NOTE_BLOCK);
+    public static final SlimefunItemStack CARGO_FRAGMENT = createDefaultItemGlow("CARGO_FRAGMENT",Material.PRISMARINE_CRYSTALS);
+
+
+
+
     public static final SlimefunItemStack UI_THX = createDefaultItem("UI_THX",Material.PAPER);
-    public static final SlimefunItemStack UI_3 = createDefaultItem("UI_3",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+//    public static final SlimefunItemStack UI_3 = createDefaultItem("UI_3",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
+
+    //AUTHOR
+    public static final SlimefunItemStack UI_WIKI = new SlimefunItemStack(
+            "MAGIC_EXPANSION_UI_WIKI",
+            Material.CALIBRATED_SCULK_SENSOR,
+            getGradientName("wiki 网址"),
+            "",
+            getGradientName("https://github.com/Yomicer/MagicExpansion/wiki")
+    );
     public static final SlimefunItemStack UI_4 = createDefaultItem("UI_4",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
     public static final SlimefunItemStack UI_5 = createDefaultItem("UI_5",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
     public static final SlimefunItemStack UI_6 = createDefaultItem("UI_6",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
@@ -641,11 +660,28 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack UI_8 = createDefaultItem("UI_8",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
     public static final SlimefunItemStack UI_9 = createDefaultItem("UI_9",Material.LIGHT_GRAY_STAINED_GLASS_PANE);
 
+    public static final SlimefunItemStack UI_NOT_LATEST_BUILD = new SlimefunItemStack(
+            "MAGIC_EXPANSION_UI_NOT_LATEST_BUILD",
+            Material.CALIBRATED_SCULK_SENSOR,
+            getGradientName("当前魔法2.0未开启自动更新/非正式版"),
+            "",
+            getGradientName("请及时关注最新版更新内容")
+    );
+    public static final SlimefunItemStack UI_IS_LATEST_BUILD = new SlimefunItemStack(
+            "MAGIC_EXPANSION_UI_IS_LATEST_BUILD",
+            Material.NETHER_STAR,
+            getGradientName("当前魔法2.0为最新版本"),
+            "",
+            getGradientName("期待明天会更好")
+    );
+
 
     public static final SlimefunItemStack NAZUKICYL_TEST = themed("NAZUKICYL_TEST",new CustomItemStack(CustomHead.getHead("8adb25ab9976d89d0bd8118d72c1c06bb907060c1e02a729b652d1e86b1ebbbc")),
             get("Items.NAZUKICYL_TEST.Name"),getList("Items.NAZUKICYL_TEST.Lore"));
     public static final SlimefunItemStack HAIMAN_TEST = themed("HAIMAN_TEST",new CustomItemStack(CustomHead.getHead("1421f1514da756c8c6c7c0b83a79265c26c9ece66b3bad8fbd94bd96d7040d7e")),
             get("Items.HAIMAN_TEST.Name"),getList("Items.HAIMAN_TEST.Lore"));
+    public static final SlimefunItemStack QIZHIYI_TEST = themed("QIZHIYI_TEST",new CustomItemStack(CustomHead.getHead("f92cbe88217460b5b5edad02d6b9a547ac0a194e75c061fba754a815d8f08f9")),
+            get("Items.QIZHIYI_TEST.Name"),getList("Items.QIZHIYI_TEST.Lore"));
 
 
 
@@ -666,6 +702,14 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack UPDATE_LOG_2025_09_05 = createDefaultItemGlow("UPDATE_LOG_2025_09_05",Material.PAPER);
     public static final SlimefunItemStack UPDATE_LOG_2025_09_09 = createDefaultItemGlow("UPDATE_LOG_2025_09_09",Material.PAPER);
     public static final SlimefunItemStack UPDATE_LOG_2025_09_13 = createDefaultItemGlow("UPDATE_LOG_2025_09_13",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_09_14 = createDefaultItemGlow("UPDATE_LOG_2025_09_14",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_09_18 = createDefaultItemGlow("UPDATE_LOG_2025_09_18",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_09_20 = createDefaultItemGlow("UPDATE_LOG_2025_09_20",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_09_27 = createDefaultItemGlow("UPDATE_LOG_2025_09_27",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_09_29 = createDefaultItemGlow("UPDATE_LOG_2025_09_29",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_10_06 = createDefaultItemGlow("UPDATE_LOG_2025_10_06",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_10_07 = createDefaultItemGlow("UPDATE_LOG_2025_10_07",Material.PAPER);
+    public static final SlimefunItemStack UPDATE_LOG_2025_10_14 = createDefaultItemGlow("UPDATE_LOG_2025_10_14",Material.PAPER);
 
 
 
@@ -680,8 +724,17 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack FISHING_ROD_FISH_ANYTHING = createDefaultItem("FISHING_ROD_FISH_ANYTHING",Material.APPLE);
 
 
+    // 双面胶
+    public static final SlimefunItemStack DOUBLE_SIDED_TAPE = createDefaultItem("DOUBLE_SIDED_TAPE",Material.PAPER);
+    public static final SlimefunItemStack SCHRODINGER_FRAME_ONE = createDefaultItem("SCHRODINGER_FRAME_ONE",Material.ITEM_FRAME);
+    public static final SlimefunItemStack SCHRODINGER_FRAME_INFINITE = createDefaultItem("SCHRODINGER_FRAME_INFINITE",Material.GLOW_ITEM_FRAME);
+
+
     public static final SlimefunItemStack FISHING_INFO = createDefaultItemGlow("FISHING_INFO",Material.PAPER);
     public static final SlimefunItemStack FISH_CATEGORY_INFO = createDefaultItemGlow("FISH_CATEGORY_INFO",Material.PAPER);
+
+
+    public static final SlimefunItemStack FISHING_BOOK = createDefaultItemGlow("FISHING_BOOK",Material.KNOWLEDGE_BOOK);
 
     public static final SlimefunItemStack RANDOM_FISH_COMMON = themed("RANDOM_FISH_COMMON",Material.COD_BUCKET,
             get("Items.RANDOM_FISH_COMMON.Name"),getList("Items.RANDOM_FISH_COMMON.Lore"));
@@ -699,6 +752,8 @@ public class MagicExpansionItems {
             get("Items.RANDOM_FISH_EPIC.Name"),getList("Items.RANDOM_FISH_EPIC.Lore"));
     public static final SlimefunItemStack RANDOM_FISH_EPIC_POOL_INDUSTRY = themed("RANDOM_FISH_EPIC_POOL_INDUSTRY",Material.TROPICAL_FISH_BUCKET,
             get("Items.RANDOM_FISH_EPIC_POOL_INDUSTRY.Name"),getList("Items.RANDOM_FISH_EPIC_POOL_INDUSTRY.Lore"));
+    public static final SlimefunItemStack RANDOM_FISH_EPIC_POOL_ALLOY_INGOT = themed("RANDOM_FISH_EPIC_POOL_ALLOY_INGOT",Material.TROPICAL_FISH_BUCKET,
+            get("Items.RANDOM_FISH_EPIC_POOL_ALLOY_INGOT.Name"),getList("Items.RANDOM_FISH_EPIC_POOL_ALLOY_INGOT.Lore"));
     public static final SlimefunItemStack RANDOM_FISH_LEGENDARY = themed("RANDOM_FISH_LEGENDARY",Material.AXOLOTL_BUCKET,
             get("Items.RANDOM_FISH_LEGENDARY.Name"),getList("Items.RANDOM_FISH_LEGENDARY.Lore"));
 
@@ -708,6 +763,8 @@ public class MagicExpansionItems {
             get("Items.FISH_LURE_DUST.Name"),getList("Items.FISH_LURE_DUST.Lore"));
     public static final SlimefunItemStack FISH_LURE_ORE = themed("FISH_LURE_ORE",Material.CYAN_DYE,
             get("Items.FISH_LURE_ORE.Name"),getList("Items.FISH_LURE_ORE.Lore"));
+    public static final SlimefunItemStack FISH_LURE_ALLOY_INGOT = themed("FISH_LURE_ALLOY_INGOT",Material.BROWN_DYE,
+            get("Items.FISH_LURE_ALLOY_INGOT.Name"),getList("Items.FISH_LURE_ALLOY_INGOT.Lore"));
 
 
 
@@ -832,13 +889,19 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack PRE_BUILDINGS_MACHINE_ADVANCED = createDefaultRecipeMachine("PRE_BUILDINGS_MACHINE_ADVANCED",Material.CARTOGRAPHY_TABLE);
     //材料工坊
     public static final SlimefunItemStack PRE_BUILDINGS_MACHINE_RESOURCE_ADVANCED = createDefaultRecipeMachine("PRE_BUILDINGS_MACHINE_RESOURCE_ADVANCED",Material.SEA_LANTERN);
+    public static final SlimefunItemStack PRE_BUILDINGS_MACHINE_RESOURCE_ADVANCED_REVERSE = createDefaultRecipeMachine("PRE_BUILDINGS_MACHINE_RESOURCE_ADVANCED_REVERSE",Material.PRISMARINE);
 
     //材料工坊
     public static final SlimefunItemStack INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE = createDefaultRecipeMachine("INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE",Material.FURNACE);
+    public static final SlimefunItemStack INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE_DEFAULT = createDefaultRecipeMachine("INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE_DEFAULT",Material.FURNACE);
     public static final SlimefunItemStack INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE_ULTRA = createDefaultRecipeMachine("INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE_ULTRA",Material.BLAST_FURNACE);
+    public static final SlimefunItemStack INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE_ULTRA_DEFAULT = createDefaultRecipeMachine("INTEGRATION_ORIGIN_SLIME_MINERAL_POWDER_LINE_ULTRA_DEFAULT",Material.BLAST_FURNACE);
 
 
     public static final SlimefunItemStack INGOT_PURE_MACHINE = createDefaultRecipeMachine("INGOT_PURE_MACHINE",Material.SMOKER);
+
+
+    public static final SlimefunItemStack TWO_TO_MAGIC_GEO_MACHINE = createDefaultRecipeMachine("TWO_TO_MAGIC_GEO_MACHINE",Material.AMETHYST_BLOCK);
 
 
 
@@ -884,6 +947,9 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack WATER_ELEMENT = createDefaultGeoResource("WATER_ELEMENT",Material.LIGHT_BLUE_DYE);
     public static final SlimefunItemStack EARTH_ELEMENT = createDefaultGeoResource("EARTH_ELEMENT",Material.BROWN_DYE);
     public static final SlimefunItemStack FIRE_ELEMENT = createDefaultGeoResource("FIRE_ELEMENT",Material.RED_DYE);
+    public static final SlimefunItemStack RSC_MAGIC_REDSTONE = createDefaultGeoResource("RSC_MAGIC_REDSTONE",Material.REDSTONE);
+    public static final SlimefunItemStack RSC_MAGIC_COSMIC_DUST = createDefaultGeoResource("RSC_MAGIC_COSMIC_DUST",Material.GLOWSTONE_DUST);
+    public static final SlimefunItemStack RSC_MAGIC_SOUL = createDefaultGeoResource("RSC_MAGIC_SOUL",Material.SOUL_LANTERN);
 
     public static final SlimefunItemStack FIVE_ELEMENT = themed("FIVE_ELEMENT",new CustomItemStack(CustomHead.getHead("92b4278edb2672c6b32138a0e61e446420caa7fc1508b88e36eaffb14a69206a")),
             get("GEO.FIVE_ELEMENT.Name"),getList("GEO.FIVE_ELEMENT.Lore"));

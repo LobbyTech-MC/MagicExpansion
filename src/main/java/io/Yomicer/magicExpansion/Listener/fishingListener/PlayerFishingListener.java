@@ -18,6 +18,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerFishEvent;
@@ -44,6 +45,7 @@ public class PlayerFishingListener implements Listener {
             new MoreLure(MagicExpansionItems.FISH_LURE_BASIC,"fishLureBasic"),
             new MoreLure(MagicExpansionItems.FISH_LURE_DUST,"fishLureDust"),
             new MoreLure(MagicExpansionItems.FISH_LURE_ORE,"fishLureOre"),
+            new MoreLure(MagicExpansionItems.FISH_LURE_ALLOY_INGOT,"fishLureAlloyIngot"),
             new MoreLure(new CustomItemStack(new ItemStack(Material.PRISMARINE_SHARD),getGradientName("鱼饵·记忆碎片"),
                     getGradientName("这个鱼饵可以钓到任何物品"),
                     getGradientName("他存在于过去或者是未来"),
@@ -59,7 +61,10 @@ public class PlayerFishingListener implements Listener {
         RANDOM_FISH_TYPES.add(MagicExpansionItems.RANDOM_FISH_RARE);
         RANDOM_FISH_TYPES.add(MagicExpansionItems.RANDOM_FISH_RARE_POOL_DUST);
         RANDOM_FISH_TYPES.add(MagicExpansionItems.RANDOM_FISH_RARE_POOL_ORE);
+        RANDOM_FISH_TYPES.add(MagicExpansionItems.RANDOM_FISH_RARE_POOL_INDUSTRY);
         RANDOM_FISH_TYPES.add(MagicExpansionItems.RANDOM_FISH_EPIC);
+        RANDOM_FISH_TYPES.add(MagicExpansionItems.RANDOM_FISH_EPIC_POOL_INDUSTRY);
+        RANDOM_FISH_TYPES.add(MagicExpansionItems.RANDOM_FISH_EPIC_POOL_ALLOY_INGOT);
         RANDOM_FISH_TYPES.add(MagicExpansionItems.RANDOM_FISH_LEGENDARY);
 
     }
@@ -125,6 +130,26 @@ public class PlayerFishingListener implements Listener {
         }
 
 
+        if (isTNTItem(drop)){
+            TNTPrimed tnt = player.getWorld().spawn(hookLocation.add(0,2,0), TNTPrimed.class);
+            tnt.setFuseTicks(600);
+            tnt.setCustomName(getGradientName("这是一颗威力非常大的TNT"));
+            tnt.setCustomNameVisible(true);
+            tnt.setFireTicks(400);
+            Vector direction = player.getLocation().add(0,2,0).toVector()
+                    .subtract(hookLocation.toVector())
+                    .normalize()
+                    .multiply(1);
+            tnt.setVelocity(direction);
+            tnt.setGlowing(true);
+            String itemName = ItemStackHelper.getDisplayName(drop);
+            String message = phrases.get(new Random().nextInt(phrases.size()));
+            player.sendMessage((ColorGradient.getRandomGradientName(message))+" §r"+itemName+ColorGradient.getRandomGradientName(" ！！"));
+            return;
+        }
+
+
+
         if (drop != null) {
             Item rewardItem = player.getWorld().dropItem(hookLocation, drop);
             rewardItem.setPickupDelay(0);
@@ -167,6 +192,11 @@ public class PlayerFishingListener implements Listener {
     private boolean isAnythingItem(ItemStack item) {
         if (item == null || item.getType().isAir()) return false;
         return SlimefunUtils.isItemSimilar(item, FISHING_ROD_FISH_ANYTHING, true);
+    }
+
+    private boolean isTNTItem(ItemStack item) {
+        if (item == null || item.getType().isAir()) return false;
+        return SlimefunUtils.isItemSimilar(item, new CustomItemStack(new ItemStack(Material.COCOA_BEANS),getGradientName("一个TNT")), true);
     }
 
 
