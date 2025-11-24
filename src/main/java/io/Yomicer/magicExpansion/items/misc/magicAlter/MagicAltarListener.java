@@ -1,6 +1,5 @@
 package io.Yomicer.magicExpansion.items.misc.magicAlter;
 
-import io.Yomicer.magicExpansion.MagicExpansion;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -14,6 +13,8 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
+
+import io.Yomicer.magicExpansion.MagicExpansion;
 
 public class MagicAltarListener implements Listener {
 

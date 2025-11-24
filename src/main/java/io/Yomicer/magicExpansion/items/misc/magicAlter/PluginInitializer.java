@@ -1,8 +1,9 @@
 package io.Yomicer.magicExpansion.items.misc.magicAlter;
 
-import io.Yomicer.magicExpansion.MagicExpansion;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
+
+import io.Yomicer.magicExpansion.MagicExpansion;
 
 public class PluginInitializer {
 

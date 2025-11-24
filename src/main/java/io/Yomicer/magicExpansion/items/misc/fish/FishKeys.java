@@ -1,12 +1,38 @@
 package io.Yomicer.magicExpansion.items.misc.fish;
 
-import io.Yomicer.magicExpansion.MagicExpansion;
-import io.Yomicer.magicExpansion.core.MagicExpansionItems;
-import io.Yomicer.magicExpansion.utils.ColorGradient;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.AluminumBrassFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.AluminumBronzeFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.BrassResonanceFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.BronzeAncientFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.CarbonSoulFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.CobaltFlameFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.CorinthianBronzeFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.DamascusSoulFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.GildedIronFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.HardenedMetalFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.HardlightAluFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.LegendaryEelFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.NeptuniumShadowFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.NickelSpiritFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.PlutoniumCoreFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.RedstoneAlloyFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.ReinforcedAlloyFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.SiliconIronFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.SilverCopperFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.SolderFlowFish;
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.SteelSoulFish;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -15,9 +41,11 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.*;
-
-import static io.Yomicer.magicExpansion.items.misc.fish.Fish.*;
+import io.Yomicer.magicExpansion.MagicExpansion;
+import io.Yomicer.magicExpansion.core.MagicExpansionItems;
+import io.Yomicer.magicExpansion.items.misc.fish.Fish.WeightRarity;
+import io.Yomicer.magicExpansion.utils.ColorGradient;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
 public class FishKeys {
 

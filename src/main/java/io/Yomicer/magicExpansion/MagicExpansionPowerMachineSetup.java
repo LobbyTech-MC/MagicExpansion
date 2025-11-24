@@ -10,7 +10,12 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.inventory.ItemStack;
 
 import io.Yomicer.magicExpansion.core.MagicExpansionItems;
-import io.Yomicer.magicExpansion.items.generators.*;
+import io.Yomicer.magicExpansion.items.generators.EnergyInputGenerator;
+import io.Yomicer.magicExpansion.items.generators.EnergyOutputGenerator;
+import io.Yomicer.magicExpansion.items.generators.FishEnergyGenerator;
+import io.Yomicer.magicExpansion.items.generators.FishOutputMachine;
+import io.Yomicer.magicExpansion.items.generators.NumberEnergyGenerator;
+import io.Yomicer.magicExpansion.items.generators.TypeEnergyGenerator;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 

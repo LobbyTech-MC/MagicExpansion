@@ -1,12 +1,31 @@
 package io.Yomicer.magicExpansion.items.generators;
 
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
+
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.block.Block;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.util.Vector;
+
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
+
 import io.Yomicer.magicExpansion.MagicExpansion;
 import io.Yomicer.magicExpansion.core.MagicExpansionItems;
 import io.Yomicer.magicExpansion.items.abstracts.MenuBlock;
-import io.Yomicer.magicExpansion.items.enchantMachine.EnchantingTable;
-import io.Yomicer.magicExpansion.items.misc.SfTimingsMachine;
 import io.Yomicer.magicExpansion.utils.ColorGradient;
 import io.Yomicer.magicExpansion.utils.machineLore.ChargeLore;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
@@ -21,27 +40,6 @@ import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.block.Block;
-import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.persistence.PersistentDataContainer;
-import org.bukkit.persistence.PersistentDataType;
-import org.bukkit.util.Vector;
-
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
 
 
 public class EnergyInputGenerator extends MenuBlock implements EnergyNetProvider {

@@ -1,5 +1,13 @@
 package io.Yomicer.magicExpansion;
 
+import java.io.File;
+import java.util.logging.Level;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
 import io.Yomicer.magicExpansion.Listener.RecipePreLoader;
 import io.Yomicer.magicExpansion.Listener.SlimefunRegistryFinalized;
 import io.Yomicer.magicExpansion.Listener.SlimefunRegistryGiftBox;
@@ -25,11 +33,6 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import lombok.SneakyThrows;
 import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
-import org.bukkit.plugin.java.JavaPlugin;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.io.File;
-import java.util.logging.Level;
 
 public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
     public static boolean testmod=false;

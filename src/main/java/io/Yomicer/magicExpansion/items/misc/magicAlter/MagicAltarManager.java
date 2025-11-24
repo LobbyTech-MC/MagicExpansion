@@ -1,10 +1,18 @@
 package io.Yomicer.magicExpansion.items.misc.magicAlter;
 
-import io.Yomicer.magicExpansion.MagicExpansion;
-import io.Yomicer.magicExpansion.utils.log.Debug;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
-import org.bukkit.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Set;
+
+import org.bukkit.Color;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.Sound;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Dispenser;
@@ -16,7 +24,9 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 import org.bukkit.util.Vector;
 
-import java.util.*;
+import io.Yomicer.magicExpansion.MagicExpansion;
+import io.Yomicer.magicExpansion.utils.log.Debug;
+import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
 
 public class MagicAltarManager {
 

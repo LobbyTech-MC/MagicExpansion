@@ -1,9 +1,9 @@
 package io.Yomicer.magicExpansion.items.misc.magicAlter;
 
-import org.bukkit.Material;
-
 import java.util.List;
 import java.util.Map;
+
+import org.bukkit.Material;
 
 public interface RecipeProvider {
     void registerRecipes(Map<String, MagicAltarRecipe> recipes);

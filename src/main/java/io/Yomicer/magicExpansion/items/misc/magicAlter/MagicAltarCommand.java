@@ -1,7 +1,11 @@
 package io.Yomicer.magicExpansion.items.misc.magicAlter;
 
-import io.Yomicer.magicExpansion.MagicExpansion;
-import org.bukkit.command.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -9,8 +13,7 @@ import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
+import io.Yomicer.magicExpansion.MagicExpansion;
 
 public class MagicAltarCommand implements TabExecutor {
 

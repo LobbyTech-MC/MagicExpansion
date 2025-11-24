@@ -1,8 +1,15 @@
 package io.Yomicer.magicExpansion.items.misc.magicAlter;
 
-import io.Yomicer.magicExpansion.MagicExpansion;
-import io.Yomicer.magicExpansion.utils.ColorGradient;
-import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.UUID;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -11,13 +18,13 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.profile.PlayerProfile;
 import org.bukkit.profile.PlayerTextures;
-import org.bukkit.persistence.PersistentDataType;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.*;
+import io.Yomicer.magicExpansion.MagicExpansion;
+import io.Yomicer.magicExpansion.utils.ColorGradient;
+import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
 
 public class RecipeBookManager {
 

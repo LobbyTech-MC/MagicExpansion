@@ -1,18 +1,19 @@
 package io.Yomicer.magicExpansion.items.misc.magicAlter;
 
-import io.Yomicer.magicExpansion.core.MagicExpansionItems;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
+
+import java.util.List;
+import java.util.Map;
+
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.List;
-import java.util.Map;
-
-import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
+import io.Yomicer.magicExpansion.core.MagicExpansionItems;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
 public class DefaultRecipes implements RecipeProvider{
 
