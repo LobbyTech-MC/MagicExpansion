@@ -60,7 +60,7 @@ public class SfTimingsMachine extends SlimefunItem implements EnergyNetComponent
 
             @Override
             public boolean isSynchronized() {
-                return true;
+                return false;
             }
         });
     }

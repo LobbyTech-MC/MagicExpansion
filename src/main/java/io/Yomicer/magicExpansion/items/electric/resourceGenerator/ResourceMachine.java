@@ -119,7 +119,7 @@ public class ResourceMachine extends AbstractElectricResourceMachine {
     
     @Override
     public boolean isSynchronized() {
-        return true;
+        return false;
     }
 
     private static void updateInfoStack(BlockMenu menu) {

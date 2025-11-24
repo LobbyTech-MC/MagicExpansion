@@ -12,6 +12,9 @@ import io.Yomicer.magicExpansion.Listener.magicItemEffectManager.ItemEffectAttac
 import io.Yomicer.magicExpansion.Listener.magicItemEffectManager.ItemEffectKillListener;
 import io.Yomicer.magicExpansion.Listener.miscListener.ItemFrameListener;
 import io.Yomicer.magicExpansion.Listener.worldListener.Events;
+import io.Yomicer.magicExpansion.items.misc.CargoFragmentDistributor;
+import io.Yomicer.magicExpansion.items.misc.DrawMachine;
+import io.Yomicer.magicExpansion.items.misc.magicAlter.PluginInitializer;
 import io.Yomicer.magicExpansion.specialActions.Command.AIChat;
 import io.Yomicer.magicExpansion.specialActions.Command.FishingGuideCommand;
 import io.Yomicer.magicExpansion.specialActions.Command.MagicExpansionCommand;
@@ -22,11 +25,11 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import lombok.SneakyThrows;
 import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.io.File;
+import java.util.logging.Level;
 
 public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
     public static boolean testmod=false;
@@ -35,6 +38,7 @@ public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
         return testmod;
     }
     private static MagicExpansion instance;
+    private PluginInitializer pluginInitializer;
 
 
 
@@ -50,6 +54,13 @@ public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
 
         getLogger().info("§b魔法拓展加载中！");
 
+        if (!getServer().getPluginManager().isPluginEnabled("GuizhanLibPlugin")) {
+            getLogger().log(Level.SEVERE, "本插件需要 鬼斩前置库插件(GuizhanLibPlugin) 才能运行!");
+            getLogger().log(Level.SEVERE, "从此处下载: https://50l.cc/gzlib");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
         if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Build ")) {
             getLogger().info("§b正在加载更新！");
             GuizhanUpdater.start(this, getFile(), "Yomicer", "MagicExpansion", "master");
@@ -60,6 +71,11 @@ public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
         ConfigLoader.load(this);
         Language.loadConfig(ConfigLoader.LANGUAGE);
         getLogger().info("§b语言包加载完毕！");
+
+        // 魔法祭坛
+        pluginInitializer = new PluginInitializer(this);
+        pluginInitializer.initialize();
+        getLogger().info("魔法2.0-魔法祭坛 已启用!");
 
         // Registering Items
         MagicExpansionItemSetup.setup(this);
@@ -132,8 +148,25 @@ public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public void onDisable() {
+        if (pluginInitializer != null) {
+            pluginInitializer.getAltarManager().cancelAllTasks();
+        }
+        getLogger().info("魔法2.0-魔法祭坛 已禁用!");
+        DrawMachine.cleanupAllHolograms();
+        getLogger().info("已清理所有抽奖机悬浮物！");
+
+        if (CargoFragmentDistributor.globalTickTask != null) {
+            CargoFragmentDistributor.globalTickTask.cancel();
+            CargoFragmentDistributor.globalTickTask = null;
+        }
+        CargoFragmentDistributor.machineStates.clear();
+        getLogger().info("已结束所有以太秘匣传输器进程！");
+
         // Plugin shutdown logic
         getLogger().info("§b魔法拓展已成功卸载！");
+    }
+    public PluginInitializer getPluginInitializer() {
+        return pluginInitializer;
     }
     @Nonnull
     @Override

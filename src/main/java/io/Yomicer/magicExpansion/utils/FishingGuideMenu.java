@@ -142,8 +142,8 @@ public class FishingGuideMenu {
                             (player1, slot, item, action) -> {
                                 ItemStack drop = new ItemStack(Material.BREAD);
                                 player1.getWorld().dropItemNaturally(player1.getLocation(), drop);
-                                menu.replaceExistingItem(slot,
-                                        new ItemStack(Material.AIR)
+                                menu.addItem(slot,
+                                        new ItemStack(Material.AIR), (player2, slot2, item2, action2) -> false
                                 );
                                 return false;
                             });
@@ -157,8 +157,8 @@ public class FishingGuideMenu {
                                 SlimefunItem sfItem = SlimefunItem.getByItem(SlimefunItems.MAGIC_SUGAR);
                                 ItemStack drop = sfItem.getItem().clone();
                                 player1.getWorld().dropItemNaturally(player1.getLocation(), drop);
-                                menu.replaceExistingItem(slot,
-                                        new ItemStack(Material.AIR)
+                                menu.addItem(slot,
+                                        new ItemStack(Material.AIR), (player2, slot2, item2, action2) -> false
                                 );
                                 return false;
                             });
@@ -172,8 +172,8 @@ public class FishingGuideMenu {
                                 SlimefunItem sfItem = SlimefunItem.getByItem(MagicExpansionItems.FISH_LURE_BASIC);
                                 ItemStack drop = sfItem.getItem().clone();
                                 player1.getWorld().dropItemNaturally(player1.getLocation(), drop);
-                                menu.replaceExistingItem(slot,
-                                        new ItemStack(Material.AIR)
+                                menu.addItem(slot,
+                                        new ItemStack(Material.AIR), (player2, slot2, item2, action2) -> false
                                 );
                                 return false;
                             });

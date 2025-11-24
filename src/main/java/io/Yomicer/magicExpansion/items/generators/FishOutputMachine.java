@@ -8,16 +8,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Nonnull;
-
-import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.persistence.PersistentDataContainer;
-import org.bukkit.persistence.PersistentDataType;
-import org.jetbrains.annotations.NotNull;
-
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
 
@@ -29,19 +19,39 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetProvider;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
+import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
+import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Item;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
+import org.jetbrains.annotations.NotNull;
 
-public class FishOutputMachine extends MenuBlock implements EnergyNetProvider, RecipeDisplayItem {
+import javax.annotation.Nonnull;
+import java.util.*;
+
+import static io.Yomicer.magicExpansion.items.misc.fish.Fish.*;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getRandomGradientName;
+import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
+
+public class FishOutputMachine extends MenuBlock implements EnergyNetComponent, RecipeDisplayItem {
 
     private final int Capacity;
-    public static final int ENERGY_CONSUMPTION = 500;
+    public static final int ENERGY_CONSUMPTION = 260;
+    private static final int FishSlot = 49;
 
     // 1. 定义所有鱼类型与输出物品的映射（集中管理，易扩展）
     private final Map<String, ItemStack> FISH_OUTPUT_MAP = new LinkedHashMap<>() {{
@@ -178,7 +188,7 @@ public class FishOutputMachine extends MenuBlock implements EnergyNetProvider, R
 
             @Override
             public boolean isSynchronized() {
-                return true;
+                return false;
             }
         });
     }
@@ -197,7 +207,7 @@ public class FishOutputMachine extends MenuBlock implements EnergyNetProvider, R
         ItemStack fish = null;
         ItemMeta meta = null;
         if (inv != null) {
-            fish = inv.getItemInSlot(49);
+            fish = inv.getItemInSlot(FishSlot);
             if (fish != null && !fish.getType().isAir()) {
                 fish = fish.clone();
             }
@@ -239,7 +249,9 @@ public class FishOutputMachine extends MenuBlock implements EnergyNetProvider, R
         if (outItems != null && inv != null) {
             removeCharge(block.getLocation(), getEnergyConsumption());
             inv.addItem(40, new CustomItemStack(doGlow(Material.SOUL_LANTERN), getGradientName("⚡机器正在运行⚡"),
-                            getGradientName("请时刻注意电力供给及输出槽是否充裕")),
+                            getGradientName("本机器会源源不断地生产，即使输出槽已经填满了"),
+                            getRandomGradientName("当前产出: ")+ ItemStackHelper.getDisplayName(outItems),
+                            getRandomGradientName("当前效率: "+ calculateRealAmount(outItems) + "个/tick")),
                     (player1, slot, item, action) -> false);
             pushAllItems(inv,outItems, getOutputSlots());
             return;
@@ -250,6 +262,21 @@ public class FishOutputMachine extends MenuBlock implements EnergyNetProvider, R
                     (player1, slot, item, action) -> false);
         }
 
+    }
+
+    private int calculateRealAmount(ItemStack item) {
+        int totalAmount = item.getAmount(); // 这就是原始总数量
+        int maxStackSize = 64;
+        int realAmount = 0;
+
+        // 模拟 dropItemInBatches 的分批逻辑，累加每一批的数量
+        while (totalAmount > 0) {
+            int batchSize = Math.min(totalAmount, maxStackSize);
+            realAmount += batchSize;      // 累加这一批
+            totalAmount -= batchSize;     // 减去已处理的
+        }
+
+        return realAmount;
     }
 
     protected void pushAllItems(BlockMenu menu, ItemStack item, int[] outputSlots) {
@@ -278,15 +305,13 @@ public class FishOutputMachine extends MenuBlock implements EnergyNetProvider, R
 
     @Override
     protected void setup(BlockMenuPreset var1) {
-        var1.drawBackground(new CustomItemStack(Material.PINK_STAINED_GLASS_PANE," "),new int[] {
+        var1.drawBackground(new CustomItemStack(Material.PINK_STAINED_GLASS_PANE,"§b请将鱼放入到该槽位中"),new int[] {
 
-                36,37,38,42,43,44,
-                45,46,47,  51,52,53,
+                48,  50
         });
-        var1.drawBackground(new CustomItemStack(Material.LIME_STAINED_GLASS_PANE,"§b请将鱼放入到该槽位中"),new int[] {
+        var1.drawBackground(new CustomItemStack(Material.LIME_STAINED_GLASS_PANE,"§b机器工作状态"),new int[] {
 
-                39,40,41,
-                48,   50
+                39, 40, 41
         });
 
     }
@@ -310,7 +335,14 @@ public class FishOutputMachine extends MenuBlock implements EnergyNetProvider, R
                 9,10,11,12,13,14,15,16,17,
                 18,19,20,21,22,23,24,25,26,
                 27,28,29,30,31,32,33,34,35,
+                36,37,38, 42,43,44,
+                45,46,47, 51,52,53
         };
+    }
+
+    @Override
+    public @NotNull EnergyNetComponentType getEnergyComponentType() {
+        return EnergyNetComponentType.CONSUMER;
     }
 
     @Override
@@ -329,7 +361,7 @@ public class FishOutputMachine extends MenuBlock implements EnergyNetProvider, R
         display.add(new CustomItemStack(Material.KNOWLEDGE_BOOK, getGradientName("使用说明⇩"),getGradientName("请务必仔细阅读")));
         display.add(new CustomItemStack(Material.BOOK, getGradientName("产出量算法："),getGradientName("每个机器只能放置一条魔法鱼")
                 ,getGradientName("产出量 = 重量(向下取整) * 魔法鱼稀有程度")
-                ,getGradientName("普通/稀有/超级稀有 : 1/4/11")));
+                ,getGradientName("普通/稀有/超级稀有/鱼皇 : 1/4/11/999")));
         display.add(new CustomItemStack(CustomHead.getHead("26314d31b095e4d421760497be6a156f459d8c9957b7e6b1c12deb4e47860d71"),getGradientName("支持的鱼类 ⇨")));
         display.add(new CustomItemStack(CustomHead.getHead("26314d31b095e4d421760497be6a156f459d8c9957b7e6b1c12deb4e47860d71"),getGradientName("产出的产物 ⇨")));
 
@@ -351,7 +383,7 @@ public class FishOutputMachine extends MenuBlock implements EnergyNetProvider, R
                 case RARE -> Material.PUFFERFISH_BUCKET;  // 稀有 - 河豚
                 case EPIC -> Material.TROPICAL_FISH_BUCKET;     // 史诗 - 热带鱼
                 case LEGENDARY -> Material.AXOLOTL_BUCKET;   // 传说 - 用美西螈
-                case MYTHICAL -> Material.NETHER_STAR;       // 神话 - 下界之星（最稀有）
+                case MYTHICAL -> Material.NAUTILUS_SHELL;       // 神话 - 下界之星（最稀有）
                 default -> Material.COD_BUCKET;
             };
 

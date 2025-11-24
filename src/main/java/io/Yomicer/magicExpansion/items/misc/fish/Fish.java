@@ -495,7 +495,7 @@ public enum Fish {
             ColorGradient.getGradientName("据说能带来好运。"),
             ColorGradient.getGradientName("传奇鲈鱼体重大多都在 2 - 31 kg之间。")
     ),
-    LegendaryEelFish(Rarity.LEGENDARY.colorCode+"以太·虚灵电鳗", 888.888, 888.888, Rarity.LEGENDARY,
+    LegendaryEelFish(Rarity.LEGENDARY.colorCode+"以太·虚灵电鳗", 666.666, 888.888, Rarity.LEGENDARY,
             ColorGradient.getGradientName("可以被用作工业电力传输的载体！"),
             ColorGradient.getGradientName("由于特殊原因，魔法师们找到了这种传说鱼的唯一钓饵。"),
             ColorGradient.getGradientName("使得这种传说鱼极易被捕获，但也只是相对于不了解这种鱼的习性之前"),
@@ -504,7 +504,7 @@ public enum Fish {
             ColorGradient.getGradientName("但是由于其逆天特性，还是应该被列为传说鱼。"),
             ColorGradient.getGradientName("最多能存储 "+ Long.MAX_VALUE +" J电量"),
             ColorGradient.getGradientName("需用魔法钓竿垂钓，该鱼对魔法糖比较感兴趣。"),
-            ColorGradient.getGradientName("以太·虚灵电鳗体重恒定为 888.888 kg。"),
+            ColorGradient.getGradientName("以太·虚灵电鳗体重在 666.666 ~ 888.888 kg 之间。"),
             " ",
             ColorGradient.getGradientName("shift + 右键 设置储电上限"),
             ColorGradient.getGradientName("当前储电量: 未初始化")
@@ -558,14 +558,14 @@ public enum Fish {
      */
     public double rollWeight() {
         Random random = new Random();
-        double unit = random.nextDouble();
+        double unit = 1 - random.nextDouble();
         double skewed = Math.pow(unit, 3.9);
         return minWeight + (skewed * (maxWeight - minWeight));
     }
 
     public double rollWeightNew() {
         Random random = new Random();
-        double unit = random.nextDouble();
+        double unit = 1 - random.nextDouble();
         double skewed = Math.pow(unit, 4.5);
         double rand = random.nextDouble();
         double multiplier;
@@ -584,7 +584,7 @@ public enum Fish {
     }
     public double rollWeightAdvanced() {
         Random random = new Random();
-        double unit = random.nextDouble();
+        double unit = 1 - random.nextDouble();
         double skewed = Math.pow(unit, 3.1);
         double rand = random.nextDouble();
         double multiplier;
@@ -604,7 +604,7 @@ public enum Fish {
 
     public double rollWeightUltra() {
         Random random = new Random();
-        double unit = random.nextDouble();
+        double unit = 1 - random.nextDouble();
         double skewed = Math.pow(unit, 2.1);
         double rand = random.nextDouble();
         double multiplier;
@@ -646,7 +646,8 @@ public enum Fish {
     public enum WeightRarity {
         COMMON_FISH("§f普通鱼", "§f",1),
         RARE_FISH("§e稀有鱼", "§e",4),
-        SUPER_RARE_FISH("§b超级稀有鱼", "§b",11);
+        SUPER_RARE_FISH("§b超级稀有鱼", "§b",11),
+        MAX_WEIGHT_FISH("§c§l鱼皇", "§c§l", 999);
 
         private final String displayName;
         private final String colorCode;
@@ -681,12 +682,15 @@ public enum Fish {
          * 注意：越轻越稀有 → 百分比越小越稀有
          */
         public static WeightRarity fromPercent(double percent) {
-            if (percent > 0.95) {
-                return SUPER_RARE_FISH;  // 最轻的 5% → 超级稀有
-            } else if (percent > 0.9) {
-                return RARE_FISH;        // 中间的 5% → 稀有鱼
+            if (percent == 1){
+                return MAX_WEIGHT_FISH;  //满重量
+            }
+            else if (percent > 0.93) {
+                return SUPER_RARE_FISH;  // 最重的 7% → 超级稀有
+            } else if (percent > 0.85) {
+                return RARE_FISH;        // 中间的 8% → 稀有鱼
             } else {
-                return COMMON_FISH;      // 最重的 90% → 普通鱼
+                return COMMON_FISH;      // 最轻的 85% → 普通鱼
             }
         }
     }

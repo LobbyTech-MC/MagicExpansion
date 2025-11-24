@@ -15,6 +15,7 @@ import io.Yomicer.magicExpansion.items.misc.fish.CommonFish;
 import io.Yomicer.magicExpansion.items.misc.fish.CommonFishHidden;
 import io.Yomicer.magicExpansion.items.misc.fish.FishingBook;
 import io.Yomicer.magicExpansion.items.misc.fish.PowerEel;
+import io.Yomicer.magicExpansion.items.misc.magicAlter.MagicWand;
 import io.Yomicer.magicExpansion.items.preBuildings.PreBuildingTree;
 import io.Yomicer.magicExpansion.items.quickMachine.*;
 import io.Yomicer.magicExpansion.items.skyBlock.SingleCubeOre;
@@ -37,6 +38,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.HiddenItem;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.Capacitor;
+import io.github.thebusybiscuit.slimefun4.implementation.items.electric.EnergyConnector;
 import io.github.thebusybiscuit.slimefun4.implementation.items.geo.GEOMiner;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
@@ -449,7 +451,47 @@ public final class MagicExpansionItemSetup {
                 null, null, null,
                 null, null, null
         }).register(plugin);
-        */
+        new UnplaceableBlock(magicexpansionupdateinfo, UPDATE_LOG_2025_11_02, SPECIAL_RECIPE_TYPE, new ItemStack[] {
+                null, null, null,
+                null, null, null,
+                null, null, null
+        }).register(plugin);
+        new UnplaceableBlock(magicexpansionupdateinfo, UPDATE_LOG_2025_11_05, SPECIAL_RECIPE_TYPE, new ItemStack[] {
+                null, null, null,
+                null, null, null,
+                null, null, null
+        }).register(plugin);
+        new UnplaceableBlock(magicexpansionupdateinfo, UPDATE_LOG_2025_11_07, SPECIAL_RECIPE_TYPE, new ItemStack[] {
+                null, null, null,
+                null, null, null,
+                null, null, null
+        }).register(plugin);
+        new UnplaceableBlock(magicexpansionupdateinfo, UPDATE_LOG_2025_11_08, SPECIAL_RECIPE_TYPE, new ItemStack[] {
+                null, null, null,
+                null, null, null,
+                null, null, null
+        }).register(plugin);
+        new UnplaceableBlock(magicexpansionupdateinfo, UPDATE_LOG_2025_11_12, SPECIAL_RECIPE_TYPE, new ItemStack[] {
+                null, null, null,
+                null, null, null,
+                null, null, null
+        }).register(plugin);
+        new UnplaceableBlock(magicexpansionupdateinfo, UPDATE_LOG_2025_11_21, SPECIAL_RECIPE_TYPE, new ItemStack[] {
+                null, null, null,
+                null, null, null,
+                null, null, null
+        }).register(plugin);
+        new UnplaceableBlock(magicexpansionupdateinfo, UPDATE_LOG_2025_11_22, SPECIAL_RECIPE_TYPE, new ItemStack[] {
+                null, null, null,
+                null, null, null,
+                null, null, null
+        }).register(plugin);
+        new UnplaceableBlock(magicexpansionupdateinfo, UPDATE_LOG_2025_11_23, SPECIAL_RECIPE_TYPE, new ItemStack[] {
+                null, null, null,
+                null, null, null,
+                null, null, null
+        }).register(plugin);
+
 
 
 
@@ -517,6 +559,21 @@ public final class MagicExpansionItemSetup {
                 MagicExpansionItems.PURE_ELEMENT_INGOT, MagicExpansionItems.PURE_ELEMENT_INGOT, MagicExpansionItems.PURE_ELEMENT_INGOT,
                 MagicExpansionItems.VOID_TOUCH, MagicExpansionItems.PURE_FIVE_ELEMENT, MagicExpansionItems.VOID_TOUCH,
                 MagicExpansionItems.PURE_ELEMENT_INGOT, MagicExpansionItems.PURE_ELEMENT_INGOT, MagicExpansionItems.PURE_ELEMENT_INGOT
+        }).register(plugin);
+        //五行之触-逆
+        new FiveElementTouchLeftClick(magicexpansionspecialitem, MagicExpansionItems.FIVE_ELEMENT_TOUCH_RIGHT_CLICK, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_1, MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_1, MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_1,
+                MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_1, MagicExpansionItems.FIVE_ELEMENT_TOUCH, MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_1,
+                MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_1, MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_1, MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_1
+        }).register(plugin);
+
+
+
+        //生死簿
+        new DeathLifeBook(magicexpansionspecialitem, MagicExpansionItems.DEATH_LIFE_BOOK, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                PURE_ELEMENT_FIRE, PURE_FIVE_ELEMENT, COAL,
+                FIVE_ELEMENT_TOUCH_RIGHT_CLICK, MAGIC_EXPANSION_MAGIC_SUGAR_10, FIVE_ELEMENT_TOUCH,
+                COAL, PURE_FIVE_ELEMENT, PURE_ELEMENT_FIRE
         }).register(plugin);
 
 
@@ -815,7 +872,7 @@ public final class MagicExpansionItemSetup {
                                 new WeightedItem(RANDOM_FISH_RARE_POOL_ORE, 1),
                                 new WeightedItem(RANDOM_FISH_EPIC_POOL_INDUSTRY, 1),
                                 new WeightedItem(RANDOM_FISH_EPIC, 1),
-                                new WeightedItem(FISH_LEGENDARY_EEL_POWER, 13),
+                                new WeightedItem(FISH_LEGENDARY_EEL_POWER, 1),
                                 new WeightedItem(new CustomItemStack(new ItemStack(Material.PRISMARINE_SHARD,1),getGradientName("鱼饵·记忆碎片"),getGradientName("这个鱼饵可以钓到任何物品"),getGradientName("他存在于过去或者是未来"),getGradientName("你现在看到的他并非真正的他")
                                 ), 18)
                         ),
@@ -955,43 +1012,79 @@ public final class MagicExpansionItemSetup {
         }}, false,
                 Map.of(
                         "magic_sugar", List.of(
-                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_1, 10),
-                                new WeightedItem(SlimefunItems.MAGIC_LUMP_1, 1),
-                                new WeightedItem(SlimefunItems.MAGIC_LUMP_2, 1),
-                                new WeightedItem(SlimefunItems.MAGIC_LUMP_3, 8),
-                                new WeightedItem(SlimefunItems.ENDER_LUMP_1, 1),
-                                new WeightedItem(SlimefunItems.ENDER_LUMP_2, 1),
-                                new WeightedItem(SlimefunItems.ENDER_LUMP_3, 8),
-                                new WeightedItem(SlimefunItems.MAGICAL_GLASS, 2),
-                                new WeightedItem(SlimefunItems.MAGICAL_BOOK_COVER, 2),
-                                new WeightedItem(SlimefunItems.LAVA_CRYSTAL, 1),
-                                new WeightedItem(SlimefunItems.COMMON_TALISMAN, 3),
-                                new WeightedItem(SlimefunItems.NECROTIC_SKULL, 1),
-                                new WeightedItem(SlimefunItems.ESSENCE_OF_AFTERLIFE, 1),
-                                new WeightedItem(SlimefunItems.SYNTHETIC_SHULKER_SHELL, 1),
-                                new WeightedItem(SlimefunItems.BLANK_RUNE, 1),
-                                new WeightedItem(SlimefunItems.AIR_RUNE, 1),
-                                new WeightedItem(SlimefunItems.EARTH_RUNE, 1),
-                                new WeightedItem(SlimefunItems.FIRE_RUNE, 1),
-                                new WeightedItem(SlimefunItems.WATER_RUNE, 1),
-                                new WeightedItem(SlimefunItems.ENDER_RUNE, 1),
-                                new WeightedItem(SlimefunItems.LIGHTNING_RUNE, 2),
-                                new WeightedItem(SlimefunItems.RAINBOW_RUNE, 2),
-                                new WeightedItem(SlimefunItems.SOULBOUND_RUNE, 2),
-                                new WeightedItem(SlimefunItems.ENCHANTMENT_RUNE, 2),
-                                new WeightedItem(SlimefunItems.VILLAGER_RUNE, 2),
-                                new WeightedItem(SlimefunItems.STRANGE_NETHER_GOO, 2),
-                                new WeightedItem(SlimefunItems.RAINBOW_LEATHER, 2),
-                                new WeightedItem(RANDOM_FISH_COMMON, 15),
-                                new WeightedItem(RANDOM_FISH_UNCOMMON, 10),
-                                new WeightedItem(RANDOM_FISH_RARE_POOL_DUST, 13),
-                                new WeightedItem(RANDOM_FISH_RARE_POOL_ORE, 13),
-                                new WeightedItem(RANDOM_FISH_RARE_POOL_INDUSTRY, 12),
-                                new WeightedItem(RANDOM_FISH_EPIC_POOL_INDUSTRY, 3),
-                                new WeightedItem(RANDOM_FISH_EPIC, 3),
-                                new WeightedItem(FISH_LEGENDARY_EEL_POWER, 16),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_1, 100),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_2, 100),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_3, 15),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_4, 15),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_5, 15),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_6, 12),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_7, 12),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_8, 12),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_9, 7),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_10, 7),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_11, 7),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_12, 7),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_13, 7),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_14, 7),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_15, 7),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_16, 7),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_17, 7),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_18, 7),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_19, 7),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_20, 3),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_21, 3),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_22, 3),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_23, 3),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_24, 3),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_25, 2),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_26, 2),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_27, 2),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_28, 2),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_29, 1),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_30, 1),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_31, 1),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_32, 1),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_33, 1),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_34, 1),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_35, 1),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_36, 1),
+                                new WeightedItem(MAGIC_EXPANSION_MAGIC_SUGAR_37, 1),
+                                new WeightedItem(SlimefunItems.MAGIC_LUMP_1, 100),
+                                new WeightedItem(SlimefunItems.MAGIC_LUMP_2, 100),
+                                new WeightedItem(SlimefunItems.MAGIC_LUMP_3, 800),
+                                new WeightedItem(SlimefunItems.ENDER_LUMP_1, 100),
+                                new WeightedItem(SlimefunItems.ENDER_LUMP_2, 100),
+                                new WeightedItem(SlimefunItems.ENDER_LUMP_3, 800),
+                                new WeightedItem(SlimefunItems.MAGICAL_GLASS, 200),
+                                new WeightedItem(SlimefunItems.MAGICAL_BOOK_COVER, 200),
+                                new WeightedItem(SlimefunItems.LAVA_CRYSTAL, 100),
+                                new WeightedItem(SlimefunItems.COMMON_TALISMAN, 300),
+                                new WeightedItem(SlimefunItems.NECROTIC_SKULL, 100),
+                                new WeightedItem(SlimefunItems.ESSENCE_OF_AFTERLIFE, 100),
+                                new WeightedItem(SlimefunItems.SYNTHETIC_SHULKER_SHELL, 100),
+                                new WeightedItem(SlimefunItems.BLANK_RUNE, 100),
+                                new WeightedItem(SlimefunItems.AIR_RUNE, 100),
+                                new WeightedItem(SlimefunItems.EARTH_RUNE, 100),
+                                new WeightedItem(SlimefunItems.FIRE_RUNE, 100),
+                                new WeightedItem(SlimefunItems.WATER_RUNE, 100),
+                                new WeightedItem(SlimefunItems.ENDER_RUNE, 100),
+                                new WeightedItem(SlimefunItems.LIGHTNING_RUNE, 200),
+                                new WeightedItem(SlimefunItems.RAINBOW_RUNE, 200),
+                                new WeightedItem(SlimefunItems.SOULBOUND_RUNE, 200),
+                                new WeightedItem(SlimefunItems.ENCHANTMENT_RUNE, 200),
+                                new WeightedItem(SlimefunItems.VILLAGER_RUNE, 200),
+                                new WeightedItem(SlimefunItems.STRANGE_NETHER_GOO, 200),
+                                new WeightedItem(SlimefunItems.RAINBOW_LEATHER, 200),
+                                new WeightedItem(RANDOM_FISH_COMMON, 1500),
+                                new WeightedItem(RANDOM_FISH_UNCOMMON, 1000),
+                                new WeightedItem(RANDOM_FISH_RARE_POOL_DUST, 1300),
+                                new WeightedItem(RANDOM_FISH_RARE_POOL_ORE, 1300),
+                                new WeightedItem(RANDOM_FISH_RARE_POOL_INDUSTRY, 1200),
+                                new WeightedItem(RANDOM_FISH_EPIC_POOL_INDUSTRY, 300),
+                                new WeightedItem(RANDOM_FISH_EPIC, 300),
+                                new WeightedItem(FISH_LEGENDARY_EEL_POWER, 300),
                                 new WeightedItem(new CustomItemStack(new ItemStack(Material.PRISMARINE_SHARD,1),getGradientName("鱼饵·记忆碎片"),getGradientName("这个鱼饵可以钓到任何物品"),getGradientName("他存在于过去或者是未来"),getGradientName("你现在看到的他并非真正的他")
-                                ), 18)
+                                ), 1800)
                         ),
                         "bread", List.of(
                                 new WeightedItem(new CustomItemStack(new ItemStack(Material.COD,3),"§b迷路的生鳕鱼",getGradientName("这是谁家的鳕鱼？")
@@ -1313,7 +1406,62 @@ public final class MagicExpansionItemSetup {
         },sfItemAmount(FISH_LURE_ALLOY_INGOT,8)).register(plugin);
 
 
+        //新增35种能源连接器（玻璃相关形态）
+        new EnergyConnectorHidden(magicexpansionpower, ENERGY_CONNECTOR_GLASS, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                new ItemStack(Material.GLASS),new ItemStack(Material.GLASS),new ItemStack(Material.GLASS),
+                new ItemStack(Material.GLASS),sfItemAmount(SlimefunItems.ENERGY_CONNECTOR,1),new ItemStack(Material.GLASS),
+                new ItemStack(Material.GLASS),new ItemStack(Material.GLASS),new ItemStack(Material.GLASS)
+        },sfItemAmount(ENERGY_CONNECTOR_GLASS,8)).register(plugin);
 
+        new EnergyConnector(magicexpansionpower, ENERGY_CONNECTOR_GLASS_INFO, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                SlimefunItems.RAINBOW_GLASS,SlimefunItems.RAINBOW_GLASS,SlimefunItems.RAINBOW_GLASS,
+                SlimefunItems.RAINBOW_GLASS,sfItemAmount(SlimefunItems.ENERGY_CONNECTOR,1),SlimefunItems.RAINBOW_GLASS,
+                SlimefunItems.RAINBOW_GLASS,SlimefunItems.RAINBOW_GLASS,SlimefunItems.RAINBOW_GLASS
+        },sfItemAmount(ENERGY_CONNECTOR_GLASS,8)).register(plugin);
+        /*
+        new EnergyConnectorHidden(magicexpansionpower, ENERGY_CONNECTOR_TINTED_GLASS, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                new ItemStack(Material.TINTED_GLASS),new ItemStack(Material.TINTED_GLASS),new ItemStack(Material.TINTED_GLASS),
+                new ItemStack(Material.TINTED_GLASS),sfItemAmount(SlimefunItems.ENERGY_CONNECTOR,64),new ItemStack(Material.TINTED_GLASS),
+                new ItemStack(Material.TINTED_GLASS),new ItemStack(Material.TINTED_GLASS),new ItemStack(Material.TINTED_GLASS)
+        },sfItemAmount(ENERGY_CONNECTOR_TINTED_GLASS,64)).register(plugin);
+        */
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_TINTED_GLASS);
+        // 染色玻璃
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_WHITE_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_ORANGE_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_MAGENTA_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_LIGHT_BLUE_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_YELLOW_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_LIME_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_PINK_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_GRAY_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_LIGHT_GRAY_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_CYAN_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_PURPLE_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_BLUE_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_BROWN_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_GREEN_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_RED_STAINED_GLASS);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_BLACK_STAINED_GLASS);
+
+        // 染色玻璃板
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_WHITE_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_ORANGE_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_MAGENTA_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_LIGHT_BLUE_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_YELLOW_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_LIME_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_PINK_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_GRAY_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_LIGHT_GRAY_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_CYAN_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_PURPLE_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_BLUE_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_BROWN_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_GREEN_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_RED_STAINED_GLASS_PANE);
+        registerHiddenRecipe(plugin, magicexpansionpower, ENERGY_CONNECTOR_BLACK_STAINED_GLASS_PANE);
 
 
 
@@ -1343,6 +1491,25 @@ public final class MagicExpansionItemSetup {
                 SCHRODINGER_FRAME_ONE,MAGIC_EXPANSION_MAGIC_SUGAR_1,SCHRODINGER_FRAME_ONE,
                 SCHRODINGER_FRAME_ONE,SCHRODINGER_FRAME_ONE,SCHRODINGER_FRAME_ONE
         },false, "schrodinger_frame_infinite").register(plugin);
+        // 以太秘匣传输器
+        new CargoFragmentDistributor(magicexpansionenergy, MagicExpansionItems.SEND_ITEMS_TO_PLAYER_MACHINE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                new ItemStack(Material.HOPPER),CARGO_TERMINAL,new ItemStack(Material.HOPPER),
+                new ItemStack(Material.HOPPER),FIVE_ELEMENT_TOUCH,new ItemStack(Material.HOPPER),
+                new ItemStack(Material.HOPPER),new ItemStack(Material.HOPPER),new ItemStack(Material.HOPPER)
+        }).register(plugin);
+        // 以太秘匣传输器
+        new SfCargoFragmentDistributor(magicexpansionenergy, MagicExpansionItems.SEND_ITEMS_TO_PLAYER_MACHINE_SF, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                new ItemStack(Material.HOPPER),CARGO_TERMINAL,new ItemStack(Material.HOPPER),
+                new ItemStack(Material.HOPPER),FIVE_ELEMENT_TOUCH,new ItemStack(Material.HOPPER),
+                new ItemStack(Material.HOPPER),new ItemStack(Material.SLIME_BALL),new ItemStack(Material.HOPPER)
+        }).register(plugin);
+
+        // 脚本序列化工具
+        new CustomSequenceTool(magicexpansionspecialitem, MagicExpansionItems.CUSTOM_SEQUENCE_TOOL, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                SlimefunItems.PROGRAMMABLE_ANDROID_3,SlimefunItems.GPS_TRANSMITTER_4,SlimefunItems.PROGRAMMABLE_ANDROID_3,
+                MAGIC_EXPANSION_MAGIC_SUGAR_3,SlimefunItems.PROGRAMMABLE_ANDROID_3,MAGIC_EXPANSION_MAGIC_SUGAR_3,
+                SlimefunItems.PROGRAMMABLE_ANDROID_3,MAGIC_EXPANSION_MAGIC_SUGAR_3,SlimefunItems.PROGRAMMABLE_ANDROID_3
+        }).register(plugin);
 
 
 
@@ -1586,13 +1753,45 @@ public final class MagicExpansionItemSetup {
                 MagicExpansionItems.ELEMENT_INGOT,MagicExpansionItems.AMETHYST_SHARD,MagicExpansionItems.ELEMENT_INGOT,
         }).register(plugin);
 
-        //纯净锭电容
+        //幸运电容
         new LuckCapacitor(magicexpansionpower,2147483647, MagicExpansionItems.PURE_INGOT_POWER_CORE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 MagicExpansionItems.PURE_ELEMENT_INGOT, PURE_FIVE_ELEMENT, MagicExpansionItems.PURE_ELEMENT_INGOT,
                 MagicExpansionItems.PURE_ELEMENT_INGOT,SlimefunItems.ENERGIZED_CAPACITOR,MagicExpansionItems.PURE_ELEMENT_INGOT,
                 MagicExpansionItems.PURE_ELEMENT_INGOT,MagicExpansionItems.PURE_ELEMENT_INGOT,MagicExpansionItems.PURE_ELEMENT_INGOT,
-        }).register(plugin);
-        //纯净锭电容
+        },1,1314521,1).register(plugin);
+        //厄运电容
+        new LuckCapacitor(magicexpansionpower,2147483647, BAD_LUCK_CAPACITY, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                PURE_LEAD, PURE_ELEMENT_EARTH, PURE_LEAD,
+                PURE_LEAD,PURE_INGOT_POWER_CORE,PURE_LEAD,
+                PURE_LEAD,PURE_LEAD,PURE_LEAD,
+        },1,1314521,-1).register(plugin);
+        //潘多拉电容
+        new LuckCapacitor(magicexpansionpower,2147483647, PANDORA_CAPACITY, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                PURE_ELEMENT_INGOT, PURE_ELEMENT_INGOT, PURE_ELEMENT_INGOT,
+                PURE_INGOT_POWER_CORE,PURE_FIVE_ELEMENT,BAD_LUCK_CAPACITY,
+                PURE_ELEMENT_INGOT,PURE_ELEMENT_INGOT,PURE_ELEMENT_INGOT,
+        },1,1314521,2).register(plugin);
+        //基础魔法电容
+        new LuckCapacitor(magicexpansionpower,2147483647, MAGIC_CAPACITY_BASIC, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                MAGIC_EXPANSION_MAGIC_SUGAR_9, PURE_FIVE_ELEMENT, MAGIC_EXPANSION_MAGIC_SUGAR_9,
+                BAD_LUCK_CAPACITY,PANDORA_CAPACITY,PURE_INGOT_POWER_CORE,
+                MAGIC_EXPANSION_MAGIC_SUGAR_9,PURE_FIVE_ELEMENT,MAGIC_EXPANSION_MAGIC_SUGAR_9,
+        },1145141919,Integer.MAX_VALUE,1).register(plugin);
+        //终极魔法电容
+        new LuckCapacitor(magicexpansionpower,2147483647, MAGIC_CAPACITY_ULTRA, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                MAGIC_EXPANSION_MAGIC_SUGAR_11, PURE_FIVE_ELEMENT, MAGIC_EXPANSION_MAGIC_SUGAR_11,
+                POWER_CARD,SlimefunItems.SMALL_CAPACITOR,POWER_CARD,
+                MAGIC_EXPANSION_MAGIC_SUGAR_11,PURE_FIVE_ELEMENT,MAGIC_EXPANSION_MAGIC_SUGAR_11,
+        },Integer.MAX_VALUE,Integer.MAX_VALUE,1).register(plugin);
+
+
+
+
+
+
+
+
+        //电卡
         new PowerCard(magicexpansionspecialitem,MagicExpansionItems.POWER_CARD, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 MagicExpansionItems.PURE_ELEMENT_INGOT, PURE_FIVE_ELEMENT, MagicExpansionItems.PURE_ELEMENT_INGOT,
                 MagicExpansionItems.PURE_INGOT_POWER_CORE,new ItemStack(Material.PAPER),MagicExpansionItems.PURE_INGOT_POWER_CORE,
@@ -2822,7 +3021,7 @@ public final class MagicExpansionItemSetup {
         },"kfc_middle",60).register(plugin);
         // 预制建筑-大雪王
         new PreBuildingTree(magicexpansionprebuilding, MagicExpansionItems.PRE_BUILDING_LARGE_SNOW_KING, PRE_BUILDINGS_MACHINE_ADVANCED, new ItemStack[] {
-                sfItemAmount(MagicExpansionItems.COLOR_CONCRETE_1,25),sfItemAmount(MagicExpansionItems.STONE_BRICKS_1,21),sfItemAmount(MagicExpansionItems.COLOR_CONCRETE_1,18),
+                sfItemAmount(MagicExpansionItems.COLOR_CONCRETE_1,25),sfItemAmount(MagicExpansionItems.STONE_BRICKS_1,21),sfItemAmount(COLOR_LEAVES_1,18),
                 sfItemAmount(MagicExpansionItems.COLOR_LOG_1,3),sfItemAmount(MagicExpansionItems.COLOR_WOOL_1,2),sfItemAmount(MagicExpansionItems.COBBLESTONE_1,2),
                 NamedTagBuilder.nameTag("LargeSnowKing"),MagicExpansionItems.SPACE_INFINITY_MAGIC,new CustomItemStack(CustomHead.getHead("a92974681687689da7dda3f19b7e4a53fe0dd09befd7fa8838744384c9d1ac71"),getGradientName("此配方为无序配方"))
         },"large_snow_king",60).register(plugin);
@@ -3009,6 +3208,21 @@ public final class MagicExpansionItemSetup {
                 null,null,null,
                 null,new CustomItemStack(new ItemStack(Material.NOTE_BLOCK,1), getGradientName("魔法存储终端"), getGradientName("通过破坏存储终端掉落 ")),null,
                 null,null,null
+        }).register(plugin);
+
+
+
+        //抽奖机
+        new DrawMachine(magicexpansionenergy, MagicExpansionItems.DRAW_MACHINE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                ELEMENT_INGOT, new ItemStack(Material.DISPENSER), ELEMENT_INGOT,
+                REDSTONE, new ItemStack(Material.CAULDRON), REDSTONE,
+                ELEMENT_INGOT, REDSTONE, ELEMENT_INGOT
+        }).register(plugin);
+        //抽奖机
+        new MagicWand(magicexpansionspecialitem, MAGIC_WAND, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                MAGIC_EXPANSION_MAGIC_SUGAR_2, new ItemStack(Material.BLAZE_ROD), MAGIC_EXPANSION_MAGIC_SUGAR_2,
+                MAGIC_EXPANSION_MAGIC_SUGAR_2, new ItemStack(Material.BLAZE_ROD), MAGIC_EXPANSION_MAGIC_SUGAR_2,
+                MAGIC_EXPANSION_MAGIC_SUGAR_2, new ItemStack(Material.BLAZE_ROD), MAGIC_EXPANSION_MAGIC_SUGAR_2
         }).register(plugin);
 
 
@@ -3308,6 +3522,21 @@ public final class MagicExpansionItemSetup {
                         null, null, null
                 }
         ).register(plugin);
+    }
+
+
+
+    private static void registerHiddenRecipe(MagicExpansion plugin, ItemGroup itemGroup, SlimefunItemStack item) {
+        Material type = item.getType();
+
+        ItemStack[] recipe = {
+                new ItemStack(type), new ItemStack(type), new ItemStack(type),
+                new ItemStack(type), sfItemAmount(SlimefunItems.ENERGY_CONNECTOR, 1), new ItemStack(type),
+                new ItemStack(type), new ItemStack(type), new ItemStack(type)
+        };
+
+        new EnergyConnectorHidden(itemGroup, item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe, sfItemAmount(item, 8))
+                .register(plugin);
     }
 
 

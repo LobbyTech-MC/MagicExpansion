@@ -155,7 +155,7 @@ public class EnchantingTable extends SimpleSlimefunItem<ItemUseHandler> implemen
 
             @Override
             public boolean isSynchronized() {
-                return true;
+                return false;
             }
         });
     }
