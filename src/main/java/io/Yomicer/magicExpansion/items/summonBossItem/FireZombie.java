@@ -77,6 +77,9 @@ public class FireZombie extends SimpleSlimefunItem<ItemUseHandler> implements No
 
         // 设置怪物名称
         String zombieName = "§c§l烈焰僵尸";
+        if (mob == null) {
+        	return;
+        }
         mob.setCustomName(zombieName);
         mob.setCustomNameVisible(true);
         // 设置自定义元数据：用于标识这是烈火僵尸
@@ -183,7 +186,6 @@ public class FireZombie extends SimpleSlimefunItem<ItemUseHandler> implements No
         location.getWorld().strikeLightningEffect(location); // 只有视觉效果，不会造成伤害
     }
 
-    @Async
     private static List<Player> getNearbyPlayers(LivingEntity mob) {
         return mob.getWorld().getNearbyEntities(mob.getLocation(), 10, 8, 10).stream()
                 .filter(entity -> entity instanceof Player)
