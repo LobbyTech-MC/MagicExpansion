@@ -97,7 +97,7 @@ public final class MagicExpansionItemSetup {
     // ItemGroups
     public static final NestedItemGroup magicexpansion = new NestedItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "magicexpansion"),
-            new CustomItemStack(doGlow(Material.LIGHT),"§x§F§D§B§7§D§4§kll§x§F§D§B§7§D§4魔§x§F§A§7§E§B§3法§x§F§F§6§9§B§4拓§x§F§F§6§9§B§4展§x§F§D§B§7§D§4§kll"),0
+            new CustomItemStack(doGlow(Material.LIGHT),"§x§F§D§B§7§D§4§kll§x§F§D§B§7§D§4魔§x§F§A§7§E§B§3法§x§F§D§B§7§D§4§kll"),0
     );
 
     
@@ -121,56 +121,56 @@ public final class MagicExpansionItemSetup {
 
     private static final ItemGroup magicexpansionspecialitem = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "specialitem"), magicexpansion,
-            new CustomItemStack(doGlow(Material.SHEARS), getGradientName("特殊道具")), 3
+            new CustomItemStack(doGlow(Material.SHEARS), getGradientName("魔法-特殊道具")), 3
     );
 
     public static final ItemGroup magicexpansionquickmachine = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "quickmachine"), magicexpansion,
-            new CustomItemStack(doGlow(Material.MAGENTA_GLAZED_TERRACOTTA), getGradientName("快捷机器")), 4
+            new CustomItemStack(doGlow(Material.MAGENTA_GLAZED_TERRACOTTA), getGradientName("魔法-快捷机器")), 4
     );
 
     public static final ItemGroup magicexpansionresourcegenerator = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "resourcegenerator"), magicexpansion,
-            new CustomItemStack(doGlow(Material.LANTERN), ColorGradient.getGradientName("资源生成器")), 5
+            new CustomItemStack(doGlow(Material.LANTERN), ColorGradient.getGradientName("魔法-资源生成器")), 5
     );
     public static final ItemGroup magicexpansionrecipemachine = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "recipemachine"), magicexpansion,
-            new CustomItemStack(doGlow(Material.SOUL_CAMPFIRE), ColorGradient.getGradientName("消耗型生产机器")), 5
+            new CustomItemStack(doGlow(Material.SOUL_CAMPFIRE), ColorGradient.getGradientName("魔法-消耗型生产机器")), 5
     );
 
     public static final ItemGroup magicexpansionenergy = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "energy"), magicexpansion,
-            new CustomItemStack(doGlow(Material.SOUL_LANTERN), ColorGradient.getGradientName("特殊机器")), 6
+            new CustomItemStack(doGlow(Material.SOUL_LANTERN), ColorGradient.getGradientName("魔法-特殊机器")), 6
     );
 
     public static final ItemGroup magicexpansionpower = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "power"), magicexpansion,
-            new CustomItemStack(CustomHead.getHead("24378b986e358555ee73f09b210d49ec13719de5ea88d75523770d31163f3aef"), ColorGradient.getGradientName("发电机")), 6
+            new CustomItemStack(CustomHead.getHead("24378b986e358555ee73f09b210d49ec13719de5ea88d75523770d31163f3aef"), ColorGradient.getGradientName("魔法-发电机")), 6
     );
 
     private static final ItemGroup magicexpansionelectricbot = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "electric_bot"), magicexpansion,
-            new CustomItemStack(CustomHead.BOT_PINK.getItem(), ColorGradient.getGradientName("电力机器人")), 6
+            new CustomItemStack(CustomHead.BOT_PINK.getItem(), ColorGradient.getGradientName("魔法-电力机器人")), 6
     );
 
     private static final ItemGroup magicexpansionboss = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "boss"), magicexpansion,
-            new CustomItemStack(doGlow(Material.ENDER_DRAGON_SPAWN_EGG), ColorGradient.getGradientName("魔法怪物")), 7
+            new CustomItemStack(doGlow(Material.ENDER_DRAGON_SPAWN_EGG), ColorGradient.getGradientName("魔法-怪物")), 7
     );
 
     private static final ItemGroup magicexpansionforge = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "forge"), magicexpansion,
-            new CustomItemStack(doGlow(Material.ANVIL), ColorGradient.getGradientName("魔法锻造")), 8
+            new CustomItemStack(doGlow(Material.ANVIL), ColorGradient.getGradientName("魔法-锻造")), 8
     );
 
     private static final ItemGroup magicexpansionprebuildingresource = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "prebuildingresource"), magicexpansion,
-            new CustomItemStack(doGlow(Material.PRISMARINE_CRYSTALS), ColorGradient.getGradientName("建筑材料")), 9
+            new CustomItemStack(doGlow(Material.PRISMARINE_CRYSTALS), ColorGradient.getGradientName("魔法-建材")), 9
     );
 
     private static final ItemGroup magicexpansionprebuilding = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "prebuilding"), magicexpansion,
-            new CustomItemStack(doGlow(Material.BRICKS), ColorGradient.getGradientName("预制菜（建筑）")), 10
+            new CustomItemStack(doGlow(Material.BRICKS), ColorGradient.getGradientName("魔法-预制菜（建筑）")), 10
     );
 
     public static final ItemGroup magicexpansionhonkai = new SubItemGroup(
@@ -190,7 +190,7 @@ public final class MagicExpansionItemSetup {
 
     public static final ItemGroup magicexpansionfishing = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "fishing"), magicexpansion,
-            new CustomItemStack(doGlow(Material.FISHING_ROD), ColorGradient.getGradientName("钓鱼佬")), 10
+            new CustomItemStack(doGlow(Material.FISHING_ROD), ColorGradient.getGradientName("魔法-钓鱼佬")), 10
     );
 
     public static final ItemGroup magicexpansionnonsensical = new SubItemGroup(
