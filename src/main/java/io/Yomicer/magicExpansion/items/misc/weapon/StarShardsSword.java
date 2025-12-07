@@ -187,7 +187,7 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
         player.getWorld().playSound(hitLoc, Sound.ENTITY_GENERIC_EXPLODE, 1.0f, 1.3f);
 
         player.getWorld().spawnParticle(Particle.FLAME, hitLoc, 30, 0.5, 0.5, 0.5, 0.1);
-        player.getWorld().spawnParticle(Particle.EXPLOSION_LARGE, hitLoc, 8, 0.1, 0.1, 0.1, 0);
+        player.getWorld().spawnParticle(Particle.EXPLOSION, hitLoc, 8, 0.1, 0.1, 0.1, 0);
 
         hitLoc.getWorld().createExplosion(hitLoc, 0.3f, false, false);
 
@@ -253,7 +253,7 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
         for (int i = 1; i <= 20; i++) {
             Location p = origin.clone().add(playerForward.clone().multiply(i * 0.4));
             player.getWorld().spawnParticle(Particle.END_ROD, p, 1, 0.05, 0.05, 0.05, 0);
-            player.getWorld().spawnParticle(Particle.SPELL_WITCH, p, 1, 0.05, 0.05, 0.05, 0);
+            player.getWorld().spawnParticle(Particle.WITCH, p, 1, 0.05, 0.05, 0.05, 0);
         }
 
         // 💥 对每个目标：伤害 + 击退 + 弱化 + 缓慢
@@ -267,11 +267,11 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
 
             // 状态效果
             target.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 80, 0)); // 4秒
-            target.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 80, 1));     // 4秒
+            target.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 80, 1));     // 4秒
 
             // 命中闪光
-            target.getWorld().spawnParticle(Particle.EXPLOSION_HUGE, target.getLocation(), 5, 0.1, 0.1, 0.1, 0);
-            target.getWorld().spawnParticle(Particle.FIREWORKS_SPARK, target.getLocation(), 10, 0.2, 0.2, 0.2, 0.05);
+            target.getWorld().spawnParticle(Particle.EXPLOSION, target.getLocation(), 5, 0.1, 0.1, 0.1, 0);
+            target.getWorld().spawnParticle(Particle.FIREWORK, target.getLocation(), 10, 0.2, 0.2, 0.2, 0.05);
         }
 
         if (targets.isEmpty()) {
@@ -284,7 +284,7 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
         if (!checkCooldown(player, "astral_shield", 5)) return;
         player.sendMessage("§b✨ 星界護盾已激活！");
         player.getWorld().playSound(player.getLocation(), Sound.BLOCK_ENCHANTMENT_TABLE_USE, 1.0f, 1.5f);
-        player.getWorld().spawnParticle(Particle.ENCHANTMENT_TABLE, player.getLocation().add(0, 1, 0), 30, 0.5, 0.5, 0.5, 0.1);
+        player.getWorld().spawnParticle(Particle.ENCHANT, player.getLocation().add(0, 1, 0), 30, 0.5, 0.5, 0.5, 0.1);
         player.setInvulnerable(true);
         Bukkit.getScheduler().runTaskLater(getAddon().getJavaPlugin(), () -> {
             if (player.isOnline()) player.setInvulnerable(false);
@@ -312,7 +312,7 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
         player.getWorld().spawnParticle(Particle.PORTAL, target, 50, 0.5, 0.5, 0.5, 0.1);
         for (Entity e : target.getWorld().getNearbyEntities(target, 1.5, 1.5, 1.5)) {
             if (e instanceof LivingEntity le && e != player) {
-                le.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 20, 0));
+                le.addPotionEffect(new PotionEffect(PotionEffectType.NAUSEA, 20, 0));
             }
         }
     }
