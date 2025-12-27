@@ -480,7 +480,7 @@ public class CargoCoreMore extends SlimefunItem implements EnergyNetComponent{
                                 // 存入 CargoCore
                                 ItemStack toStore = originalItem.clone();
                                 toStore.setAmount(amountToStore);
-                                storeItem(data, toStore);
+                                storeItemCargoCoreMore(data, toStore);
 
                                 // 消费这个 CargoFragment
                                 menu.consumeItem(slot, 1);
@@ -514,7 +514,7 @@ public class CargoCoreMore extends SlimefunItem implements EnergyNetComponent{
                     // 创建要存储的物品副本
                     ItemStack toStore = item.clone();
                     toStore.setAmount(amountToStore);
-                    storeItem(data, toStore);
+                    storeItemCargoCoreMore(data, toStore);
 
                     // 消耗相应数量的物品
                     if (amountToStore == item.getAmount()) {
@@ -640,7 +640,7 @@ public class CargoCoreMore extends SlimefunItem implements EnergyNetComponent{
      * 存储物品（修复版）
      * 确保不会覆盖正在输出的槽位
      */
-    private void storeItem(SlimefunBlockData data, ItemStack item) {
+    public void storeItemCargoCoreMore(SlimefunBlockData data, ItemStack item) {
         cleanupInvalidSlots(data);
 
         // 检查可以存储多少数量
@@ -2292,17 +2292,22 @@ public class CargoCoreMore extends SlimefunItem implements EnergyNetComponent{
             if (templateItem != null && !templateItem.getType().isAir()) {
                 transferTemplateItem(b, pairIndex, data);
             }
-            if (templateItem != null && !templateItem.getType().isAir()) {
-//                transferToVanillaContainer(b, pairIndex, data);
-                if (Bukkit.isPrimaryThread()) {
-                    transferToVanillaContainer(b, pairIndex, data);
-                } else {
-                    int finalPairIndex = pairIndex;
-                    Bukkit.getScheduler().runTask(MagicExpansion.getInstance(), () -> {
-                        transferToVanillaContainer(b, finalPairIndex, data);
-                    });
-                }
-            }
+
+            /*此部分代码单独作用于原版容器*/
+//            if (templateItem != null && !templateItem.getType().isAir()) {
+////                transferToVanillaContainer(b, pairIndex, data);
+//                if (Bukkit.isPrimaryThread()) {
+//                    transferToVanillaContainer(b, pairIndex, data);
+//                } else {
+//                    int finalPairIndex = pairIndex;
+//                    Bukkit.getScheduler().runTask(MagicExpansion.getInstance(), () -> {
+//                        transferToVanillaContainer(b, finalPairIndex, data);
+//                    });
+//                }
+//            }
+            /*此部分代码单独作用于原版容器*/
+
+
         }
     }
 
@@ -2586,7 +2591,7 @@ public class CargoCoreMore extends SlimefunItem implements EnergyNetComponent{
         // 直接调用现有的storeItem方法
         ItemStack refundStack = template.clone();
         refundStack.setAmount((int) Math.min(amount, Integer.MAX_VALUE));
-        storeItem(data, refundStack);
+        storeItemCargoCoreMore(data, refundStack);
     }
 
     /**
@@ -2921,7 +2926,7 @@ public class CargoCoreMore extends SlimefunItem implements EnergyNetComponent{
         toExtract.setAmount(maxExtract);
 
         // 直接存储到目标存储系统
-        storeItem(destData, toExtract);
+        storeItemCargoCoreMore(destData, toExtract);
 //        Debug.logInfo("物品已存储到目标存储");
 
         // 更新源槽位：减少数量或清空

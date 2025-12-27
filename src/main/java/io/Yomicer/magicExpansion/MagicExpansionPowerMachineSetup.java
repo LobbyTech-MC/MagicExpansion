@@ -65,12 +65,29 @@ public class MagicExpansionPowerMachineSetup {
         },25000000)
                 .setPowerType("生物发电机")
                 .register(plugin);
-        new FishOutputMachine(magicexpansionresourcegenerator, MagicExpansionItems.FISH_VIVARIUM, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
-                MagicExpansionItems.ELEMENT_INGOT, MagicExpansionItems.AMETHYST_SHARD,MagicExpansionItems.ELEMENT_INGOT,
+
+
+
+        new FishOutputMachineEasy(magicexpansionresourcegenerator, MagicExpansionItems.FISH_VIVARIUM_EASY, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                MagicExpansionItems.PURE_ELEMENT_WATER, MagicExpansionItems.AMETHYST_SHARD,MagicExpansionItems.ELEMENT_INGOT,
                 new ItemStack(Material.WATER_BUCKET), MagicExpansionItems.POWER_FISH_ELECTRIC,new ItemStack(Material.WATER_BUCKET),
-                MagicExpansionItems.ELEMENT_INGOT,new ItemStack(Material.BUCKET),MagicExpansionItems.ELEMENT_INGOT
+                MagicExpansionItems.ELEMENT_INGOT,new ItemStack(Material.BUCKET),MagicExpansionItems.WATER_ELEMENT
+        },131452)
+                .setPowerType("简易生态缸")
+                .register(plugin);
+        new FishOutputMachine(magicexpansionresourcegenerator, MagicExpansionItems.FISH_VIVARIUM, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                MagicExpansionItems.PURE_FIVE_ELEMENT, MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_9,MagicExpansionItems.LIGHT_GEN_BASIC,
+                SlimefunItems.BOOSTED_URANIUM,MagicExpansionItems.FISH_VIVARIUM_EASY,SlimefunItems.BOOSTED_URANIUM,
+                MagicExpansionItems.LIGHT_GEN_BASIC,MagicExpansionItems.FISH_LEGENDARY_EEL_POWER,MagicExpansionItems.PURE_FIVE_ELEMENT
         },131452)
                 .setPowerType("生态缸")
+                .register(plugin);
+        new FishOutputMachineStack(magicexpansionresourcegenerator, MagicExpansionItems.FISH_VIVARIUM_STACK, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                MagicExpansionItems.FISH_VIVARIUM_EASY, MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_3,MagicExpansionItems.FISH_VIVARIUM_EASY,
+                MagicExpansionItems.AMETHYST_SHARD,MagicExpansionItems.SPACE_INFINITY_MAGIC,MagicExpansionItems.AMETHYST_SHARD,
+                MagicExpansionItems.FISH_VIVARIUM_EASY,MagicExpansionItems.PURE_ELEMENT_WATER,MagicExpansionItems.FISH_VIVARIUM_EASY
+        },1314520)
+                .setPowerType("以太生态阵列")
                 .register(plugin);
 
 

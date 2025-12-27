@@ -1,14 +1,13 @@
 package io.Yomicer.magicExpansion.items.tools;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.Sound;
-import org.bukkit.World;
+import io.Yomicer.magicExpansion.MagicExpansion;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
+import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
+import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
@@ -23,19 +22,14 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
-import io.Yomicer.magicExpansion.MagicExpansion;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
+import java.util.ArrayList;
+import java.util.List;
 
 import static io.Yomicer.magicExpansion.utils.ItemPermissionUtils.hasPermissionRe;
 
-public class VoidTouch extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
+public class VoidTouchScript extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
 
-    public VoidTouch(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public VoidTouchScript(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
     }
 
@@ -54,7 +48,6 @@ public class VoidTouch extends SimpleSlimefunItem<ItemUseHandler> implements Not
             if (e.getHand() != EquipmentSlot.HAND) {
                 return;
             }
-            if (!hasPermissionRe(player)) return;
 
             ItemStack item = e.getItem();
             ItemMeta meta = item.getItemMeta();
@@ -162,6 +155,5 @@ public class VoidTouch extends SimpleSlimefunItem<ItemUseHandler> implements Not
                 loc.getBlockX(), loc.getBlockY(), loc.getBlockZ(),
                 loc.getWorld().getName());
     }
-
 
 }

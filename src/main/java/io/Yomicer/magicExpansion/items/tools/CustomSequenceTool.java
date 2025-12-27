@@ -640,7 +640,7 @@ public class CustomSequenceTool extends SimpleSlimefunItem<ItemUseHandler> imple
         }
 
         SlimefunItem sfItem = SlimefunItem.getByItem(item);
-        return sfItem != null && sfItem instanceof VoidTouch;
+        return sfItem != null && sfItem instanceof VoidTouchScript;
     }
 
     private Location getVoidTouchLocation(ItemStack voidTouchItem) {

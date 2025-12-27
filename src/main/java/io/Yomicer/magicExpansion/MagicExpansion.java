@@ -34,6 +34,8 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import lombok.SneakyThrows;
 import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 
+import static io.Yomicer.magicExpansion.items.misc.PortableCargoTransporter.onPluginDisable;
+
 public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
     public static boolean testmod=false;
     public static boolean clearConfig=false;
@@ -164,6 +166,10 @@ public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
         }
         CargoFragmentDistributor.machineStates.clear();
         getLogger().info("已结束所有以太秘匣传输器进程！");
+
+        //便携式以太秘匣传输器
+        onPluginDisable();
+
 
         // Plugin shutdown logic
         getLogger().info("§b魔法拓展已成功卸载！");
