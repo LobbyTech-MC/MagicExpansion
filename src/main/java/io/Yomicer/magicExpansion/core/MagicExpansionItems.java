@@ -1,20 +1,20 @@
 package io.Yomicer.magicExpansion.core;
 
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.Language.get;
+import static io.Yomicer.magicExpansion.utils.Language.getList;
+import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
+import static io.Yomicer.magicExpansion.utils.Utils.doGlowDisplayEnchant;
+import static io.Yomicer.magicExpansion.utils.itemUtils.newItem.themed;
+import static io.Yomicer.magicExpansion.utils.itemUtils.newItem.themedOrigin;
+
+import org.bukkit.Material;
+
 import io.Yomicer.magicExpansion.utils.CustomHeadUtils.CustomHead;
 import io.Yomicer.magicExpansion.utils.itemUtils.MagicStringBuilder;
 import io.Yomicer.magicExpansion.utils.itemUtils.MagicSugarBuilder;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
-
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlowDisplayEnchant;
-import static io.Yomicer.magicExpansion.utils.itemUtils.newItem.themed;
-import static io.Yomicer.magicExpansion.utils.Language.get;
-import static io.Yomicer.magicExpansion.utils.Language.getList;
-import static io.Yomicer.magicExpansion.utils.itemUtils.newItem.themedOrigin;
 
 
 public class MagicExpansionItems {
