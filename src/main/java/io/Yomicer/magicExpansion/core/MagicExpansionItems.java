@@ -706,14 +706,14 @@ public class MagicExpansionItems {
     public static final SlimefunItemStack UI_NOT_LATEST_BUILD = new SlimefunItemStack(
             "MAGIC_EXPANSION_UI_NOT_LATEST_BUILD",
             Material.CALIBRATED_SCULK_SENSOR,
-            getGradientName("当前魔法2.0未开启自动更新/非正式版"),
+            getGradientName("当前魔法拓展未开启自动更新/非正式版"),
             "",
             getGradientName("请及时关注最新版更新内容")
     );
     public static final SlimefunItemStack UI_IS_LATEST_BUILD = new SlimefunItemStack(
             "MAGIC_EXPANSION_UI_IS_LATEST_BUILD",
             Material.NETHER_STAR,
-            getGradientName("当前魔法2.0为最新版本"),
+            getGradientName("当前魔法拓展为最新版本"),
             "",
             getGradientName("期待明天会更好")
     );
