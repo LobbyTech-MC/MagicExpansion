@@ -1,11 +1,12 @@
 package io.Yomicer.magicExpansion.utils.networksUtils;
 
-import com.jeff_media.morepersistentdatatypes.DataType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataAdapterContext;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
+
+import com.jeff_media.morepersistentdatatypes.DataType;
 
 /**
  * A {@link PersistentDataType} for {@link }

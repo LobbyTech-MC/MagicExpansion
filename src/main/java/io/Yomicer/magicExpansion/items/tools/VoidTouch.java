@@ -1,5 +1,7 @@
 package io.Yomicer.magicExpansion.items.tools;
 
+import static io.Yomicer.magicExpansion.utils.ItemPermissionUtils.hasPermissionRe;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,8 +32,6 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
-
-import static io.Yomicer.magicExpansion.utils.ItemPermissionUtils.hasPermissionRe;
 
 public class VoidTouch extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
 

@@ -1,10 +1,11 @@
 package io.Yomicer.magicExpansion.utils.networksUtils;
 
-import lombok.ToString;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.Nullable;
+
+import lombok.ToString;
 
 @ToString
 public class ItemStackCache {

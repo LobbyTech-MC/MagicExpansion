@@ -1,5 +1,29 @@
 package io.Yomicer.magicExpansion;
 
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.*;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getRandomGradientName;
+import static io.Yomicer.magicExpansion.utils.ConvertItem.AdvancedCreateItem;
+import static io.Yomicer.magicExpansion.utils.ConvertItem.BasicCreateItem;
+import static io.Yomicer.magicExpansion.utils.Language.get;
+import static io.Yomicer.magicExpansion.utils.Language.getList;
+import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
+import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.EntityType;
+import org.bukkit.inventory.ItemStack;
+
+import io.Yomicer.magicExpansion.core.MagicExpansionItems;
 import io.Yomicer.magicExpansion.items.electric.entitykillMachinee.EntityKillMachine;
 import io.Yomicer.magicExpansion.items.electric.geoMachine.FiveElementsMiner;
 import io.Yomicer.magicExpansion.items.electric.geoMachine.RSCMagicMiner;
@@ -10,7 +34,31 @@ import io.Yomicer.magicExpansion.items.electric.recipeMachine.RecipeRandomMachin
 import io.Yomicer.magicExpansion.items.electric.resourceGenerator.ResourceMachine;
 import io.Yomicer.magicExpansion.items.electric.resourceGenerator.ResourceRandomOneMachine;
 import io.Yomicer.magicExpansion.items.enchantMachine.EnchantingTable;
-import io.Yomicer.magicExpansion.items.misc.*;
+import io.Yomicer.magicExpansion.items.misc.BigFireworksYuanDan;
+import io.Yomicer.magicExpansion.items.misc.CHEST_BLOCK;
+import io.Yomicer.magicExpansion.items.misc.CargoCore;
+import io.Yomicer.magicExpansion.items.misc.CargoCoreMore;
+import io.Yomicer.magicExpansion.items.misc.CargoFragment;
+import io.Yomicer.magicExpansion.items.misc.CargoFragmentDistributor;
+import io.Yomicer.magicExpansion.items.misc.CargoFragmentExtract;
+import io.Yomicer.magicExpansion.items.misc.DeathLifeBook;
+import io.Yomicer.magicExpansion.items.misc.DoubleSidedTape;
+import io.Yomicer.magicExpansion.items.misc.DrawMachine;
+import io.Yomicer.magicExpansion.items.misc.EnergyConnectorHidden;
+import io.Yomicer.magicExpansion.items.misc.FireZombieMB;
+import io.Yomicer.magicExpansion.items.misc.HonkaiStarRailBox;
+import io.Yomicer.magicExpansion.items.misc.LuckCapacitor;
+import io.Yomicer.magicExpansion.items.misc.MagicGeoResourceDefault;
+import io.Yomicer.magicExpansion.items.misc.NewYearsDayFireworkYuanDan;
+import io.Yomicer.magicExpansion.items.misc.PortableCargoTransporter;
+import io.Yomicer.magicExpansion.items.misc.PowerCard;
+import io.Yomicer.magicExpansion.items.misc.RightClickMan;
+import io.Yomicer.magicExpansion.items.misc.SchrodingerFrame;
+import io.Yomicer.magicExpansion.items.misc.SfCargoFragmentDistributor;
+import io.Yomicer.magicExpansion.items.misc.SfTimingsMachine;
+import io.Yomicer.magicExpansion.items.misc.TestMusicRightClick;
+import io.Yomicer.magicExpansion.items.misc.WeightedItem;
+import io.Yomicer.magicExpansion.items.misc.WindElfMB;
 import io.Yomicer.magicExpansion.items.misc.fish.CommonFish;
 import io.Yomicer.magicExpansion.items.misc.fish.CommonFishHidden;
 import io.Yomicer.magicExpansion.items.misc.fish.FishingBook;
@@ -18,13 +66,19 @@ import io.Yomicer.magicExpansion.items.misc.fish.PowerEel;
 import io.Yomicer.magicExpansion.items.misc.magicAlter.MagicWand;
 import io.Yomicer.magicExpansion.items.misc.weapon.StarShardsSword;
 import io.Yomicer.magicExpansion.items.preBuildings.PreBuildingTree;
-import io.Yomicer.magicExpansion.items.quickMachine.*;
+import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionRandomSummon;
 import io.Yomicer.magicExpansion.items.skyBlock.SingleCubeOre;
 import io.Yomicer.magicExpansion.items.skyBlock.SingleCubeOrigin;
 import io.Yomicer.magicExpansion.items.summonBossItem.FireZombie;
 import io.Yomicer.magicExpansion.items.summonBossItem.WindElf;
-import io.Yomicer.magicExpansion.items.tools.*;
-import io.Yomicer.magicExpansion.core.MagicExpansionItems;
+import io.Yomicer.magicExpansion.items.tools.CustomSequenceTool;
+import io.Yomicer.magicExpansion.items.tools.FishingRod;
+import io.Yomicer.magicExpansion.items.tools.FiveElementTouch;
+import io.Yomicer.magicExpansion.items.tools.FiveElementTouchLeftClick;
+import io.Yomicer.magicExpansion.items.tools.InfiniteTool;
+import io.Yomicer.magicExpansion.items.tools.Scythe;
+import io.Yomicer.magicExpansion.items.tools.VoidTouch;
+import io.Yomicer.magicExpansion.items.tools.VoidTouchScript;
 import io.Yomicer.magicExpansion.utils.ColorGradient;
 import io.Yomicer.magicExpansion.utils.CustomHeadUtils.CustomHead;
 import io.Yomicer.magicExpansion.utils.itemUtils.NamedTagBuilder;
@@ -43,27 +97,6 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.electric.EnergyCo
 import io.github.thebusybiscuit.slimefun4.implementation.items.geo.GEOMiner;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.EntityType;
-import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nonnull;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.*;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getRandomGradientName;
-import static io.Yomicer.magicExpansion.utils.ConvertItem.*;
-import static io.Yomicer.magicExpansion.utils.Language.get;
-import static io.Yomicer.magicExpansion.utils.Language.getList;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
-import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
 
 public final class MagicExpansionItemSetup {
 

@@ -1,5 +1,7 @@
 package io.Yomicer.magicExpansion;
 
+import static io.Yomicer.magicExpansion.items.misc.PortableCargoTransporter.onPluginDisable;
+
 import java.io.File;
 import java.util.logging.Level;
 
@@ -33,8 +35,6 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import lombok.SneakyThrows;
 import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
-
-import static io.Yomicer.magicExpansion.items.misc.PortableCargoTransporter.onPluginDisable;
 
 public class MagicExpansion extends JavaPlugin implements SlimefunAddon {
     public static boolean testmod=false;

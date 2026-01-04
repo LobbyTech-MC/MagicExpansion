@@ -14,7 +14,6 @@ import org.bukkit.util.io.BukkitObjectOutputStream;
 import org.yaml.snakeyaml.external.biz.base64Coder.Base64Coder;
 
 import io.Yomicer.magicExpansion.utils.log.Debug;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 
 public class SameItemJudge {
 

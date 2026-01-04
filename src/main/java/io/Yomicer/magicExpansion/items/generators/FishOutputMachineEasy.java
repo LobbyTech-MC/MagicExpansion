@@ -1,12 +1,37 @@
 package io.Yomicer.magicExpansion.items.generators;
 
+import static io.Yomicer.magicExpansion.items.generators.FishOutputMachine.FISH_OUTPUT_MAP;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getRandomGradientName;
+import static io.Yomicer.magicExpansion.utils.SameItemJudge.itemFromBase64;
+import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.World;
+import org.bukkit.block.Block;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
+import org.jetbrains.annotations.NotNull;
+
 import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
 import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
+
 import io.Yomicer.magicExpansion.MagicExpansion;
 import io.Yomicer.magicExpansion.items.abstracts.MenuBlock;
-import io.Yomicer.magicExpansion.items.misc.CargoCore;
 import io.Yomicer.magicExpansion.items.misc.CargoCoreMore;
 import io.Yomicer.magicExpansion.items.misc.fish.Fish;
+import io.Yomicer.magicExpansion.items.misc.fish.Fish.WeightRarity;
 import io.Yomicer.magicExpansion.items.misc.fish.FishKeys;
 import io.Yomicer.magicExpansion.items.tools.VoidTouch;
 import io.Yomicer.magicExpansion.utils.CustomHeadUtils.CustomHead;
@@ -17,7 +42,6 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.attributes.EnergyNetComponent;
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.core.networks.energy.EnergyNetComponentType;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
@@ -25,24 +49,6 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
 import me.mrCookieSlime.Slimefun.api.inventory.DirtyChestMenu;
 import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
-import org.bukkit.*;
-import org.bukkit.block.Block;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.persistence.PersistentDataContainer;
-import org.bukkit.persistence.PersistentDataType;
-import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nonnull;
-import java.util.*;
-
-import static io.Yomicer.magicExpansion.items.generators.FishOutputMachine.FISH_OUTPUT_MAP;
-import static io.Yomicer.magicExpansion.items.misc.fish.Fish.WeightRarity;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getRandomGradientName;
-import static io.Yomicer.magicExpansion.utils.SameItemJudge.itemFromBase64;
-import static io.Yomicer.magicExpansion.utils.SameItemJudge.itemToBase64;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
 
 public class FishOutputMachineEasy extends MenuBlock implements EnergyNetComponent, RecipeDisplayItem {
 
