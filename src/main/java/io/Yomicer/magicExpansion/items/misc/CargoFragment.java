@@ -6,6 +6,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import io.Yomicer.magicExpansion.MagicExpansion;
+import io.Yomicer.magicExpansion.utils.SameItemJudge;
+import io.Yomicer.magicExpansion.utils.networksUtils.DataTypeMethods;
+import io.Yomicer.magicExpansion.utils.networksUtils.NetworksKeys;
+import io.Yomicer.magicExpansion.utils.networksUtils.PersistentQuantumStorageType;
+import io.Yomicer.magicExpansion.utils.networksUtils.QuantumCache;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.attributes.DistinctiveItem;
+import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
+import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
+import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.NamespacedKey;
@@ -39,7 +54,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunIte
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
 
-public class CargoFragment extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable {
+public class CargoFragment extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable, DistinctiveItem {
 
     // 等待输入的玩家列表
     private static final Map<UUID, FragmentTransfer> pendingTransfers = new HashMap<>();
@@ -620,6 +635,11 @@ public class CargoFragment extends SimpleSlimefunItem<ItemUseHandler> implements
      */
     private void playSound(Player player, Sound sound, float pitch) {
         player.playSound(player.getLocation(), sound, 0.8f, pitch);
+    }
+
+    @Override
+    public boolean canStack(@NotNull ItemMeta itemMeta, @NotNull ItemMeta itemMeta1) {
+        return false;
     }
 
     /**
