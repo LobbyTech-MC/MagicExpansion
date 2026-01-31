@@ -1,6 +1,7 @@
 package io.Yomicer.magicExpansion.utils.itemUtils;
 
 import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientNameVer2;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,12 +12,6 @@ import org.bukkit.inventory.ItemStack;
 import io.Yomicer.magicExpansion.utils.ColorGradient;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
-
-
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientNameVer2;
 
 public class newItem {
 

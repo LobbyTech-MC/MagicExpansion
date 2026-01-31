@@ -1,7 +1,8 @@
 package io.Yomicer.magicExpansion.utils.playerMessage;
 
-import io.Yomicer.magicExpansion.utils.ColorGradient;
 import org.bukkit.entity.Player;
+
+import io.Yomicer.magicExpansion.utils.ColorGradient;
 
 public class MainHandMessage {
     public static void sendMainHandMessage(Player p){

@@ -1,18 +1,19 @@
 package io.Yomicer.magicExpansion;
 
+import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionfood;
+import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionfoodresource;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.HARVEST_WHEAT;
+
+import javax.annotation.Nonnull;
+
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+
 import io.Yomicer.magicExpansion.core.MagicExpansionItems;
 import io.Yomicer.magicExpansion.utils.ColorGradient;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nonnull;
-
-import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionfood;
-import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionfoodresource;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.HARVEST_WHEAT;
 
 public class MagicExpansionFoodSetup {
 
