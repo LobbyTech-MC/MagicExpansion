@@ -72,6 +72,7 @@ import io.Yomicer.magicExpansion.items.skyBlock.SingleCubeOrigin;
 import io.Yomicer.magicExpansion.items.summonBossItem.FireZombie;
 import io.Yomicer.magicExpansion.items.summonBossItem.WindElf;
 import io.Yomicer.magicExpansion.items.tools.CustomSequenceTool;
+import io.Yomicer.magicExpansion.items.tools.EnchantmentEraser;
 import io.Yomicer.magicExpansion.items.tools.FishingRod;
 import io.Yomicer.magicExpansion.items.tools.FiveElementTouch;
 import io.Yomicer.magicExpansion.items.tools.FiveElementTouchLeftClick;
