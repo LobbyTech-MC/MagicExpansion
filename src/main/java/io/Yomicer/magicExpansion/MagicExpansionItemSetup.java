@@ -1,28 +1,5 @@
 package io.Yomicer.magicExpansion;
 
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.*;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.ConvertItem.AdvancedCreateItem;
-import static io.Yomicer.magicExpansion.utils.ConvertItem.BasicCreateItem;
-import static io.Yomicer.magicExpansion.utils.Language.get;
-import static io.Yomicer.magicExpansion.utils.Language.getList;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
-import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Nonnull;
-
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.EntityType;
-import org.bukkit.inventory.ItemStack;
-
-import io.Yomicer.magicExpansion.core.MagicExpansionItems;
 import io.Yomicer.magicExpansion.items.electric.entitykillMachinee.EntityKillMachine;
 import io.Yomicer.magicExpansion.items.electric.geoMachine.FiveElementsMiner;
 import io.Yomicer.magicExpansion.items.electric.geoMachine.RSCMagicMiner;
@@ -33,32 +10,7 @@ import io.Yomicer.magicExpansion.items.electric.recipeMachine.RecipeRandomMachin
 import io.Yomicer.magicExpansion.items.electric.resourceGenerator.ResourceMachine;
 import io.Yomicer.magicExpansion.items.electric.resourceGenerator.ResourceRandomOneMachine;
 import io.Yomicer.magicExpansion.items.enchantMachine.EnchantingTable;
-import io.Yomicer.magicExpansion.items.misc.BigFireworksYuanDan;
-import io.Yomicer.magicExpansion.items.misc.CHEST_BLOCK;
-import io.Yomicer.magicExpansion.items.misc.CargoCore;
-import io.Yomicer.magicExpansion.items.misc.CargoCoreMore;
-import io.Yomicer.magicExpansion.items.misc.CargoFragment;
-import io.Yomicer.magicExpansion.items.misc.CargoFragmentDistributor;
-import io.Yomicer.magicExpansion.items.misc.CargoFragmentExtract;
-import io.Yomicer.magicExpansion.items.misc.DeathLifeBook;
-import io.Yomicer.magicExpansion.items.misc.DoubleSidedTape;
-import io.Yomicer.magicExpansion.items.misc.DrawMachine;
-import io.Yomicer.magicExpansion.items.misc.EnergyConnectorHidden;
-import io.Yomicer.magicExpansion.items.misc.FireZombieMB;
-import io.Yomicer.magicExpansion.items.misc.ForceTwoToRsc;
-import io.Yomicer.magicExpansion.items.misc.HonkaiStarRailBox;
-import io.Yomicer.magicExpansion.items.misc.LuckCapacitor;
-import io.Yomicer.magicExpansion.items.misc.MagicGeoResourceDefault;
-import io.Yomicer.magicExpansion.items.misc.NewYearsDayFireworkYuanDan;
-import io.Yomicer.magicExpansion.items.misc.PortableCargoTransporter;
-import io.Yomicer.magicExpansion.items.misc.PowerCard;
-import io.Yomicer.magicExpansion.items.misc.RightClickMan;
-import io.Yomicer.magicExpansion.items.misc.SchrodingerFrame;
-import io.Yomicer.magicExpansion.items.misc.SfCargoFragmentDistributor;
-import io.Yomicer.magicExpansion.items.misc.SfTimingsMachine;
-import io.Yomicer.magicExpansion.items.misc.TestMusicRightClick;
-import io.Yomicer.magicExpansion.items.misc.WeightedItem;
-import io.Yomicer.magicExpansion.items.misc.WindElfMB;
+import io.Yomicer.magicExpansion.items.misc.*;
 import io.Yomicer.magicExpansion.items.misc.fish.CommonFish;
 import io.Yomicer.magicExpansion.items.misc.fish.CommonFishHidden;
 import io.Yomicer.magicExpansion.items.misc.fish.FishingBook;
@@ -66,21 +18,13 @@ import io.Yomicer.magicExpansion.items.misc.fish.PowerEel;
 import io.Yomicer.magicExpansion.items.misc.magicAlter.MagicWand;
 import io.Yomicer.magicExpansion.items.misc.weapon.StarShardsSword;
 import io.Yomicer.magicExpansion.items.preBuildings.PreBuildingTree;
-import io.Yomicer.magicExpansion.items.quickMachine.MagicExpansionRandomSummon;
+import io.Yomicer.magicExpansion.items.quickMachine.*;
 import io.Yomicer.magicExpansion.items.skyBlock.SingleCubeOre;
 import io.Yomicer.magicExpansion.items.skyBlock.SingleCubeOrigin;
 import io.Yomicer.magicExpansion.items.summonBossItem.FireZombie;
 import io.Yomicer.magicExpansion.items.summonBossItem.WindElf;
-import io.Yomicer.magicExpansion.items.tools.CustomSequenceTool;
-import io.Yomicer.magicExpansion.items.tools.EnchantmentEraser;
-import io.Yomicer.magicExpansion.items.tools.FishingRod;
-import io.Yomicer.magicExpansion.items.tools.FiveElementTouch;
-import io.Yomicer.magicExpansion.items.tools.FiveElementTouchLeftClick;
-import io.Yomicer.magicExpansion.items.tools.InfiniteTool;
-import io.Yomicer.magicExpansion.items.tools.ItemNameTag;
-import io.Yomicer.magicExpansion.items.tools.Scythe;
-import io.Yomicer.magicExpansion.items.tools.VoidTouch;
-import io.Yomicer.magicExpansion.items.tools.VoidTouchScript;
+import io.Yomicer.magicExpansion.items.tools.*;
+import io.Yomicer.magicExpansion.core.MagicExpansionItems;
 import io.Yomicer.magicExpansion.utils.ColorGradient;
 import io.Yomicer.magicExpansion.utils.CustomHeadUtils.CustomHead;
 import io.Yomicer.magicExpansion.utils.itemUtils.NamedTagBuilder;
@@ -101,7 +45,6 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.electric.EnergyCo
 import io.github.thebusybiscuit.slimefun4.implementation.items.geo.GEOMiner;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import io.github.thebusybiscuit.slimefun4.utils.itemstack.SlimefunGuideItem;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
@@ -117,7 +60,6 @@ import java.util.Map;
 
 import static io.Yomicer.magicExpansion.core.MagicExpansionItems.*;
 import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getRandomGradientName;
 import static io.Yomicer.magicExpansion.utils.ConvertItem.*;
 import static io.Yomicer.magicExpansion.utils.Language.get;
 import static io.Yomicer.magicExpansion.utils.Language.getList;
@@ -134,24 +76,20 @@ public final class MagicExpansionItemSetup {
             new CustomItemStack(doGlow(Material.LIGHT),"§x§F§D§B§7§D§4§kll§x§F§D§B§7§D§4魔§x§F§A§7§E§B§3法§x§F§F§6§9§B§4拓§x§F§F§6§9§B§4展§x§F§D§B§7§D§4§kll"),0
     );
 
-    
     private static final ItemGroup magicexpansioncontribution = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "contribution"), magicexpansion,
-            new CustomItemStack(doGlow(Material.COMMAND_BLOCK), ColorGradient.getGradientNameVer2("贡献")), 0
+            new CustomItemStack(doGlow(Material.COMMAND_BLOCK), ColorGradient.getGradientNameVer2("魔法-贡献者")), 0
     );
-    
 
     private static final ItemGroup magicexpansionresource = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "resource"), magicexpansion,
-            new CustomItemStack(doGlow(Material.SNOWBALL), ColorGradient.getGradientName("资源")), 1
+            new CustomItemStack(doGlow(Material.SNOWBALL), ColorGradient.getGradientName("魔法-资源")), 1
     );
 
-    /*
     private static final ItemGroup magicexpansionresourcedlc = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "resourcedlc"), magicexpansion,
-            new CustomItemStack(doGlow(Material.TOTEM_OF_UNDYING), getGradientName("补丁材料")), 2
+            new CustomItemStack(doGlow(Material.TOTEM_OF_UNDYING), getGradientName("魔法-补丁材料")), 2
     );
-    */
 
     private static final ItemGroup magicexpansionspecialitem = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "specialitem"), magicexpansion,
@@ -199,7 +137,7 @@ public final class MagicExpansionItemSetup {
 
     private static final ItemGroup magicexpansionprebuildingresource = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "prebuildingresource"), magicexpansion,
-            new CustomItemStack(doGlow(Material.PRISMARINE_CRYSTALS), ColorGradient.getGradientName("魔法-建材")), 9
+            new CustomItemStack(doGlow(Material.PRISMARINE_CRYSTALS), ColorGradient.getGradientName("魔法-建筑材料")), 9
     );
 
     private static final ItemGroup magicexpansionprebuilding = new SubItemGroup(
@@ -229,32 +167,30 @@ public final class MagicExpansionItemSetup {
 
     public static final ItemGroup magicexpansionnonsensical = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "nonsensical"), magicexpansion,
-            new CustomItemStack(doGlow(Material.DRAGON_EGG), ColorGradient.getRandomGradientName("无厘头-打发时间")), 10
+            new CustomItemStack(doGlow(Material.DRAGON_EGG), ColorGradient.getRandomGradientName("魔法-无厘头-打发时间")), 10
     );
     public static final ItemGroup magicexpansioncommemorate = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "commemorate"), magicexpansion,
-            new CustomItemStack(doGlow(Material.FIREWORK_ROCKET), ColorGradient.getRandomGradientName("纪念品")), 10
+            new CustomItemStack(doGlow(Material.FIREWORK_ROCKET), ColorGradient.getRandomGradientName("魔法-纪念品")), 10
     );
     public static final ItemGroup magicexpansionfood = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "food"), magicexpansion,
-            new CustomItemStack(doGlow(Material.CAKE), ColorGradient.getGradientNameVer2("美食")), 10
+            new CustomItemStack(doGlow(Material.CAKE), ColorGradient.getGradientNameVer2("魔法-美食")), 10
     );
     public static final ItemGroup magicexpansionfoodresource = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "foodresource"), magicexpansion,
-            new CustomItemStack(doGlow(Material.WHEAT), ColorGradient.getGradientNameVer2("食材原料")), 10
+            new CustomItemStack(doGlow(Material.WHEAT), ColorGradient.getGradientNameVer2("魔法-食材原料")), 10
     );
 
     public static final ItemGroup magicexpansioncooperatecreate = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "cooperatecreate"), magicexpansion,
-            new CustomItemStack(CustomHead.getHead("7971e55df39a58faad05742d882e9a05ffa511a0c58e4f687777bb74614006eb"), ColorGradient.getGradientNameVer2("魔法2.0-共创")), 10
+            new CustomItemStack(CustomHead.getHead("7971e55df39a58faad05742d882e9a05ffa511a0c58e4f687777bb74614006eb"), ColorGradient.getGradientNameVer2("魔法-共创")), 10
     );
 
-    /*
     private static final ItemGroup magicexpansionupdateinfo = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "updateinfo"), magicexpansion,
             new CustomItemStack(doGlow(Material.PAPER), ColorGradient.getRandomGradientName("魔法-更新日志")), 11
     );
-    */
 
 
     // 定义一个新的配方类型
@@ -395,7 +331,6 @@ public final class MagicExpansionItemSetup {
 
 
 
-        /*
         //更新日志
         new UnplaceableBlock(magicexpansionupdateinfo, MagicExpansionItems.UPDATE_LOG_2025_06_23, SPECIAL_RECIPE_TYPE, new ItemStack[] {
                 null, null, null,
@@ -650,7 +585,6 @@ public final class MagicExpansionItemSetup {
                 null, null, null
         }).register(plugin);
 
-        /*
         //初级万能魔法合成材料
         new UnplaceableBlock(magicexpansionresourcedlc, MAGIC_EXPANSION_TO_MAGIC_ITEM_BASIC, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
                 SlimefunItems.RAINBOW_WOOL, AMETHYST_SHARD, SlimefunItems.RAINBOW_WOOL,
@@ -664,7 +598,6 @@ public final class MagicExpansionItemSetup {
                 MAGIC_EXPANSION_TO_MAGIC_ITEM_BASIC, MagicExpansionItems.ELEMENT_INGOT, MAGIC_EXPANSION_TO_MAGIC_ITEM_BASIC,
                 MagicExpansionItems.NETHERITE_INGOT, MAGIC_EXPANSION_TO_MAGIC_ITEM_BASIC, MagicExpansionItems.EMERALD
         }).register(plugin);
-        */
 
 
         //魔法交互核心
