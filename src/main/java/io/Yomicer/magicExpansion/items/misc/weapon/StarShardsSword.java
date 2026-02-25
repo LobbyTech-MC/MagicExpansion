@@ -10,6 +10,17 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
+import io.Yomicer.magicExpansion.MagicExpansion;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
+import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
+import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.entity.Entity;
@@ -43,6 +54,17 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
     private final Map<UUID, Map<String, Long>> cooldowns = new HashMap<>();
     private final Map<UUID, Long> lastMessageTime = new HashMap<>();
 
+    Config cfg = new Config(MagicExpansion.getInstance());
+    Double StarShards_Atk_Add = cfg.getDouble("StarShardsSword.StarShards_Atk_Add");
+    Double StarShards_Atk_Mult = cfg.getDouble("StarShardsSword.StarShards_Atk_Mult");
+    Double StarShards_Atk_Speed = cfg.getDouble("StarShardsSword.StarShards_Atk_Speed");
+    Double StarShards_Health_Add = cfg.getDouble("StarShardsSword.StarShards_Health_Add");
+    Double StarShards_Health_Mult = cfg.getDouble("StarShardsSword.StarShards_Health_Mult");
+    Double StarShards_MoveSpeed = cfg.getDouble("StarShardsSword.StarShards_MoveSpeed");
+    Double StarShards_Armor = cfg.getDouble("StarShardsSword.StarShards_Armor");
+    Double StarShards_Toughness = cfg.getDouble("StarShardsSword.StarShards_Toughness");
+    Double StarShards_FlySpeed = cfg.getDouble("StarShardsSword.StarShards_FlySpeed");
+
     public StarShardsSword(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
         ItemMeta meta = getItem().getItemMeta();
@@ -55,63 +77,63 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
             UUID atk1Id = UUID.nameUUIDFromBytes((namespace + "_atk_add").getBytes());
             meta.addAttributeModifier(
                     Attribute.GENERIC_ATTACK_DAMAGE,
-                    new AttributeModifier(atk1Id, "StarShards_Atk_Add", 1314.0, AttributeModifier.Operation.ADD_NUMBER)
+                    new AttributeModifier(atk1Id, "StarShards_Atk_Add", StarShards_Atk_Add, AttributeModifier.Operation.ADD_NUMBER)
             );
 
             // 💥 攻击力 +618%（乘法）
             UUID atk2Id = UUID.nameUUIDFromBytes((namespace + "_atk_mult").getBytes());
             meta.addAttributeModifier(
                     Attribute.GENERIC_ATTACK_DAMAGE,
-                    new AttributeModifier(atk2Id, "StarShards_Atk_Mult", 6.18, AttributeModifier.Operation.MULTIPLY_SCALAR_1)
+                    new AttributeModifier(atk2Id, "StarShards_Atk_Mult", StarShards_Atk_Mult, AttributeModifier.Operation.MULTIPLY_SCALAR_1)
             );
 
             // ⚡ 攻击速度 +2000% → 最终速度 = 原速 × (1 + 20.0) = 21倍！
             UUID atkSpeedId = UUID.nameUUIDFromBytes((namespace + "_atk_speed").getBytes());
             meta.addAttributeModifier(
                     Attribute.GENERIC_ATTACK_SPEED,
-                    new AttributeModifier(atkSpeedId, "StarShards_AtkSpeed", 20.0, AttributeModifier.Operation.MULTIPLY_SCALAR_1)
+                    new AttributeModifier(atkSpeedId, "StarShards_AtkSpeed", StarShards_Atk_Speed, AttributeModifier.Operation.MULTIPLY_SCALAR_1)
             );
 
             // ❤️ 生命值 +1314（固定值，单位是“半心”，所以 +1314 = +657 颗心！）
             UUID health1Id = UUID.nameUUIDFromBytes((namespace + "_health_add").getBytes());
             meta.addAttributeModifier(
                     Attribute.GENERIC_MAX_HEALTH,
-                    new AttributeModifier(health1Id, "StarShards_Health_Add", 1314.0, AttributeModifier.Operation.ADD_NUMBER)
+                    new AttributeModifier(health1Id, "StarShards_Health_Add", StarShards_Health_Add, AttributeModifier.Operation.ADD_NUMBER)
             );
 
             // ❤️ 生命值 +618%（乘法）
             UUID health2Id = UUID.nameUUIDFromBytes((namespace + "_health_mult").getBytes());
             meta.addAttributeModifier(
                     Attribute.GENERIC_MAX_HEALTH,
-                    new AttributeModifier(health2Id, "StarShards_Health_Mult", 6.18, AttributeModifier.Operation.MULTIPLY_SCALAR_1)
+                    new AttributeModifier(health2Id, "StarShards_Health_Mult", StarShards_Health_Mult, AttributeModifier.Operation.MULTIPLY_SCALAR_1)
             );
 
             // 🏃 移动速度 +1314% → 最终速度 = 原速 × (1 + 13.14) = 14.14倍！
             UUID moveSpeedId = UUID.nameUUIDFromBytes((namespace + "_move_speed").getBytes());
             meta.addAttributeModifier(
                     Attribute.GENERIC_MOVEMENT_SPEED,
-                    new AttributeModifier(moveSpeedId, "StarShards_MoveSpeed", 1.314, AttributeModifier.Operation.MULTIPLY_SCALAR_1)
+                    new AttributeModifier(moveSpeedId, "StarShards_MoveSpeed", StarShards_MoveSpeed, AttributeModifier.Operation.MULTIPLY_SCALAR_1)
             );
 
             // 🛡️ 护甲值 +200（固定值）
             UUID armorId = UUID.nameUUIDFromBytes((namespace + "_armor").getBytes());
             meta.addAttributeModifier(
                     Attribute.GENERIC_ARMOR,
-                    new AttributeModifier(armorId, "StarShards_Armor", 200.0, AttributeModifier.Operation.ADD_NUMBER)
+                    new AttributeModifier(armorId, "StarShards_Armor", StarShards_Armor, AttributeModifier.Operation.ADD_NUMBER)
             );
 
             // 🧱 护甲韧性 +200（固定值）
             UUID toughnessId = UUID.nameUUIDFromBytes((namespace + "_toughness").getBytes());
             meta.addAttributeModifier(
                     Attribute.GENERIC_ARMOR_TOUGHNESS,
-                    new AttributeModifier(toughnessId, "StarShards_Toughness", 200.0, AttributeModifier.Operation.ADD_NUMBER)
+                    new AttributeModifier(toughnessId, "StarShards_Toughness", StarShards_Toughness, AttributeModifier.Operation.ADD_NUMBER)
             );
 
             // ✈️ 飞行速度 +1314%
             UUID flySpeedId = UUID.nameUUIDFromBytes((namespace + "_fly_speed").getBytes());
             meta.addAttributeModifier(
                     Attribute.GENERIC_FLYING_SPEED,
-                    new AttributeModifier(flySpeedId, "StarShards_FlySpeed", 13.14, AttributeModifier.Operation.MULTIPLY_SCALAR_1)
+                    new AttributeModifier(flySpeedId, "StarShards_FlySpeed", StarShards_FlySpeed, AttributeModifier.Operation.MULTIPLY_SCALAR_1)
             );
 
 
