@@ -40,7 +40,7 @@ public class getRandomItemFromGroup {
 
         if (gift != null) {
             SlimefunUtils.spawnItem(location, gift, ItemSpawnReason.CHRISTMAS_PRESENT_OPENED, true, player);
-            player.sendMessage("§a恭喜你，从打开 Honkai: Star Rail 盲盒中开出了" + gift.getItemMeta().getDisplayName() + "！");
+            player.sendMessage("§a恭喜你，从崩铁盲盒中开出了" + gift.getItemMeta().getDisplayName() + "！");
         } else {
             Debug.logWarn("❌ 无法生成物品：物品为 null");
         }

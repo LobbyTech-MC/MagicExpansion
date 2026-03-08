@@ -184,7 +184,7 @@ public final class MagicExpansionItemSetup {
 
     public static final ItemGroup magicexpansionhonkai = new SubItemGroup(
             new NamespacedKey(MagicExpansion.getInstance(), "honkai"), magicexpansion,
-            new CustomItemStack(CustomHead.SILVER_WOLF.getItem(), ColorGradient.getRandomGradientName("魔法-盲盒")), 10
+            new CustomItemStack(CustomHead.SILVER_WOLF.getItem(), ColorGradient.getRandomGradientName("魔法-崩铁盲盒")), 10
     );
 
     public static final ItemGroup magicexpansionskyblock = new SubItemGroup(

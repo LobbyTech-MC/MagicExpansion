@@ -54,7 +54,7 @@ public class HonkaiStarRailBox extends SimpleSlimefunItem<ItemUseHandler> implem
 
         if (gift != null) {
             SlimefunUtils.spawnItem(location, gift, ItemSpawnReason.CHRISTMAS_PRESENT_OPENED, true, player);
-            player.sendMessage("§a恭喜你，从打开 Honkai: Star Rail 盲盒中开出了" + gift.getItemMeta().getDisplayName() + "！");
+            player.sendMessage("§a恭喜你，从崩铁盲盒中开出了" + gift.getItemMeta().getDisplayName() + "！");
         }
     }
 
