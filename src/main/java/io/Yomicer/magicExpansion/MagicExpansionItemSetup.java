@@ -48,6 +48,7 @@ import io.Yomicer.magicExpansion.items.misc.FireZombieMB;
 import io.Yomicer.magicExpansion.items.misc.ForceTwoToRsc;
 import io.Yomicer.magicExpansion.items.misc.HonkaiStarRailBox;
 import io.Yomicer.magicExpansion.items.misc.LuckCapacitor;
+import io.Yomicer.magicExpansion.items.misc.MagicCrop;
 import io.Yomicer.magicExpansion.items.misc.MagicGeoResourceDefault;
 import io.Yomicer.magicExpansion.items.misc.NewYearsDayFireworkYuanDan;
 import io.Yomicer.magicExpansion.items.misc.PortableCargoTransporter;
@@ -102,29 +103,6 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.electric.EnergyCo
 import io.github.thebusybiscuit.slimefun4.implementation.items.geo.GEOMiner;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import io.github.thebusybiscuit.slimefun4.utils.itemstack.SlimefunGuideItem;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.block.BlockFace;
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.EntityType;
-import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nonnull;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.*;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getRandomGradientName;
-import static io.Yomicer.magicExpansion.utils.ConvertItem.*;
-import static io.Yomicer.magicExpansion.utils.Language.get;
-import static io.Yomicer.magicExpansion.utils.Language.getList;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
-import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
 
 
 public final class MagicExpansionItemSetup {
