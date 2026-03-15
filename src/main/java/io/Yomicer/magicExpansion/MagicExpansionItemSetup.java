@@ -102,6 +102,29 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.electric.EnergyCo
 import io.github.thebusybiscuit.slimefun4.implementation.items.geo.GEOMiner;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun4.utils.itemstack.SlimefunGuideItem;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.block.BlockFace;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.EntityType;
+import org.bukkit.inventory.ItemStack;
+
+import javax.annotation.Nonnull;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.*;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getRandomGradientName;
+import static io.Yomicer.magicExpansion.utils.ConvertItem.*;
+import static io.Yomicer.magicExpansion.utils.Language.get;
+import static io.Yomicer.magicExpansion.utils.Language.getList;
+import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
+import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
 
 
 public final class MagicExpansionItemSetup {
@@ -610,8 +633,12 @@ public final class MagicExpansionItemSetup {
                 null, null, null,
                 null, null, null
         }).register(plugin);
-
         new UnplaceableBlock(magicexpansionupdateinfo, UPDATE_LOG_2026_03_10, SPECIAL_RECIPE_TYPE, new ItemStack[] {
+                null, null, null,
+                null, null, null,
+                null, null, null
+        }).register(plugin);
+        new UnplaceableBlock(magicexpansionupdateinfo, UPDATE_LOG_2026_03_13, SPECIAL_RECIPE_TYPE, new ItemStack[] {
                 null, null, null,
                 null, null, null,
                 null, null, null
@@ -1770,6 +1797,19 @@ public final class MagicExpansionItemSetup {
                 null,new CustomItemStack(new ItemStack(Material.ENCHANTING_TABLE), "§x§E§8§4§2§3§D终极魔法祭坛","§a多方块结构","§b/mxalter guide获取相关配方书") ,null,
                 null, null,null
         }).register(plugin);
+
+
+        new MagicCrop(magicexpansionfoodresource, MagicExpansionItems.WHEAT_SEEDS, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                AMETHYST_SHARD, MAGIC_EXPANSION_MAGIC_SUGAR_1,AMETHYST_SHARD,
+                MAGIC_EXPANSION_MAGIC_SUGAR_1, new ItemStack(Material.WHEAT_SEEDS),MAGIC_EXPANSION_MAGIC_SUGAR_1,
+                AMETHYST_SHARD, MAGIC_EXPANSION_MAGIC_SUGAR_1,AMETHYST_SHARD
+        }, new ItemStack[]{new ItemStack(Material.WHEAT), WHEAT_SEEDS, MAGIC_EXPANSION_MAGIC_SUGAR_1, HARVEST_WHEAT},3,10).register(plugin);
+
+        new MagicCrop(magicexpansionfoodresource, POTATO, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                AMETHYST_SHARD, MAGIC_EXPANSION_FINAL_STRING_1,AMETHYST_SHARD,
+                MAGIC_EXPANSION_FINAL_STRING_1, new ItemStack(Material.POTATO),MAGIC_EXPANSION_FINAL_STRING_1,
+                AMETHYST_SHARD, MAGIC_EXPANSION_FINAL_STRING_1,AMETHYST_SHARD
+        }, new ItemStack[]{new ItemStack(Material.POTATO), POTATO, MAGIC_EXPANSION_FINAL_STRING_1},4,12).register(plugin);
 
 
 
