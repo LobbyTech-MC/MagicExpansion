@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Particle;
 import org.bukkit.Sound;
@@ -207,7 +208,7 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
                 Long lastMsg = lastMessageTime.getOrDefault(id, 0L);
                 if (now - lastMsg > 500) {
                     long remain = ((last + seconds * 1000L - now) + 999) / 1000;
-                    player.sendMessage("§c技能冷卻中，還需 " + remain + " 秒");
+                    player.sendMessage("§c技能冷却中，还需 " + remain + " 秒");
                     lastMessageTime.put(id, now);
                 }
                 return false;
@@ -312,13 +313,13 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
 
         if (targets.isEmpty()) {
             // 即使没打中也播放尾音
-            player.sendMessage("§7奧爆衝擊釋放，但未命中目標。");
+            player.sendMessage("§7奥爆冲击释放，但未命中目标。");
         }
     }
 
     private void useAstralShield(Player player) {
         if (!checkCooldown(player, "astral_shield", 5)) return;
-        player.sendMessage("§b✨ 星界護盾已激活！");
+        player.sendMessage("§b✨ 星界护盾已激活！");
         player.getWorld().playSound(player.getLocation(), Sound.BLOCK_ENCHANTMENT_TABLE_USE, 1.0f, 1.5f);
         player.getWorld().spawnParticle(Particle.ENCHANT, player.getLocation().add(0, 1, 0), 30, 0.5, 0.5, 0.5, 0.1);
         player.setInvulnerable(true);
@@ -332,7 +333,7 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
             public void run() {
                 holyProtectedPlayers.remove(player.getUniqueId());
                 if (player.isOnline()) {
-                    player.sendMessage(ChatColor.GRAY + "§7星界護盾已消散...");
+                    player.sendMessage(ChatColor.GRAY + "§7星界护盾已消散...");
                 }
             }
         }.runTaskLater(MagicExpansion.getInstance(), 100L);
@@ -352,7 +353,7 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
             }
         }
         if (target == null) {
-            player.sendMessage("§c前方無障礙物，無法傳送！");
+            player.sendMessage("§c前方无障碍物，无法传送！");
             return;
         }
         player.teleport(target);

@@ -30,7 +30,7 @@ public class CloudBread extends SimpleSlimefunItem<ItemConsumptionHandler> {
 
             // --- 2. 核心效果：轻盈之身 (15 秒) ---
             // 跳跃提升 III: 跳得非常高
-            p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 300, 2));
+            p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, 300, 2));
             // 缓降: 落得非常慢，且免疫跌落伤害
             p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, 300, 0));
 
@@ -65,7 +65,7 @@ public class CloudBread extends SimpleSlimefunItem<ItemConsumptionHandler> {
 
         // 粒子：大量的云团 (CLOUD) 和 烟雾 (SMOKE_NORMAL)
         world.spawnParticle(Particle.CLOUD, loc, 30, 0.5, 0.2, 0.5, 0.05);
-        world.spawnParticle(Particle.SMOKE_NORMAL, loc, 15, 0.4, 0.1, 0.4, 0.02);
+        world.spawnParticle(Particle.SMOKE, loc, 15, 0.4, 0.1, 0.4, 0.02);
 
         // 额外彩蛋：如果在空中食用，生成一圈白色的光环
         if (!p.isOnGround()) {
