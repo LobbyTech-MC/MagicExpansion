@@ -34,6 +34,15 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.FISHING_ROD_FISH_ANYTHING;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientNameVer2;
+import static io.Yomicer.magicExpansion.utils.MagicExpansionSlimefunItemCache.getRandomItemStack;
 
 
 public class PlayerFishingListener implements Listener {
@@ -46,10 +55,10 @@ public class PlayerFishingListener implements Listener {
             new MoreLure(MagicExpansionItems.FISH_LURE_DUST,"fishLureDust"),
             new MoreLure(MagicExpansionItems.FISH_LURE_ORE,"fishLureOre"),
             new MoreLure(MagicExpansionItems.FISH_LURE_ALLOY_INGOT,"fishLureAlloyIngot"),
-            new MoreLure(new CustomItemStack(new ItemStack(Material.PRISMARINE_SHARD),getGradientName("鱼饵·记忆碎片"),
-                    getGradientName("这个鱼饵可以钓到任何物品"),
-                    getGradientName("他存在于过去或者是未来"),
-                    getGradientName("你现在看到的他并非真正的他")),
+            new MoreLure(new CustomItemStack(new ItemStack(Material.PRISMARINE_SHARD),getGradientNameVer2("鱼饵·记忆碎片"),
+                    ("§f这个鱼饵可以钓到任何物品"),
+                    ("§f他存在于过去或者是未来"),
+                    ("§f你现在看到的他并非真正的他")),
                     "fishLureFinal")
     );
 
@@ -81,12 +90,6 @@ public class PlayerFishingListener implements Listener {
         ItemStack rod = player.getInventory().getItemInMainHand();
 
         SlimefunItem sfItem = SlimefunItem.getByItem(rod);
-
-
-
-
-
-
 
         if (!(sfItem instanceof FishingRod fishingRod)) return;
 

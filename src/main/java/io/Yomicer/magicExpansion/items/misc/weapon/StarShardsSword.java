@@ -17,14 +17,17 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 
@@ -37,6 +40,8 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implements RecipeDisplayItem, Listener {
 
@@ -152,6 +157,19 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
                 }
             }
         };
+    }
+
+    private static final Set<UUID> holyProtectedPlayers = ConcurrentHashMap.newKeySet();
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+    public void onEntityDamage(EntityDamageEvent event) {
+        if (!(event.getEntity() instanceof Player)) return;
+        Player p = (Player) event.getEntity();
+        if (holyProtectedPlayers.contains(p.getUniqueId())) {
+            event.setCancelled(true);
+            if (event.getCause() != EntityDamageEvent.DamageCause.VOID) {
+                p.getWorld().spawnParticle(Particle.CLOUD, p.getLocation().add(0, 0.5, 0), 5, 0.2, 0.2, 0.2, 0.01);
+            }
+        }
     }
 
     // ✅ 攻击事件监听（SF9 唯一方式）
@@ -306,7 +324,19 @@ public class StarShardsSword extends SimpleSlimefunItem<ItemUseHandler> implemen
         player.setInvulnerable(true);
         Bukkit.getScheduler().runTaskLater(getAddon().getJavaPlugin(), () -> {
             if (player.isOnline()) player.setInvulnerable(false);
-        }, 40);
+        }, 100);
+
+        holyProtectedPlayers.add(player.getUniqueId());
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                holyProtectedPlayers.remove(player.getUniqueId());
+                if (player.isOnline()) {
+                    player.sendMessage(ChatColor.GRAY + "§7星界護盾已消散...");
+                }
+            }
+        }.runTaskLater(MagicExpansion.getInstance(), 100L);
+
     }
 
     private void useInstantBlink(Player player) {
