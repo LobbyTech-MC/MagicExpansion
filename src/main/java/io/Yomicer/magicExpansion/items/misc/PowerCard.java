@@ -1,6 +1,5 @@
 package io.Yomicer.magicExpansion.items.misc;
 
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
 import static io.Yomicer.magicExpansion.utils.ColorGradient.getRandomGradientName;
 
 import java.util.ArrayList;

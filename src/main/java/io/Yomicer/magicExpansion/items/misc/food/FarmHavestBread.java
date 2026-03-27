@@ -1,11 +1,7 @@
 package io.Yomicer.magicExpansion.items.misc.food;
 
-import io.Yomicer.magicExpansion.core.MagicExpansionItems;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.core.handlers.ItemConsumptionHandler;
-import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
+import java.util.Random;
+
 import org.bukkit.Effect;
 import org.bukkit.Sound;
 import org.bukkit.inventory.ItemStack;
@@ -13,7 +9,12 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Random;
+import io.Yomicer.magicExpansion.core.MagicExpansionItems;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.handlers.ItemConsumptionHandler;
+import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
 
 public class FarmHavestBread extends SimpleSlimefunItem<ItemConsumptionHandler> {
 

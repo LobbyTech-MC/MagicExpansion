@@ -1,6 +1,7 @@
 package io.Yomicer.magicExpansion.utils;
 
 import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
+import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientNameVer2;
 import static io.Yomicer.magicExpansion.utils.CreateItem.createItem;
 
 import java.util.ArrayList;
@@ -26,19 +27,6 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
 import net.guizhanss.guizhanlib.minecraft.helper.inventory.ItemStackHelper;
-import org.bukkit.Material;
-import org.bukkit.Sound;
-import org.bukkit.entity.AreaEffectCloud;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.*;
-
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientNameVer2;
-import static io.Yomicer.magicExpansion.utils.CreateItem.createItem;
-import static io.Yomicer.magicExpansion.utils.ColorGradient.getGradientName;
 
 public class FishingGuideMenu {
 

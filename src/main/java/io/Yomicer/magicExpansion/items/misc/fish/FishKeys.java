@@ -44,7 +44,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import io.Yomicer.magicExpansion.MagicExpansion;
 import io.Yomicer.magicExpansion.core.MagicExpansionItems;
 import io.Yomicer.magicExpansion.items.misc.fish.Fish.WeightRarity;
-import io.Yomicer.magicExpansion.utils.ColorGradient;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 
 public class FishKeys {
