@@ -62,6 +62,7 @@ import io.Yomicer.magicExpansion.items.misc.SfTimingsMachine;
 import io.Yomicer.magicExpansion.items.misc.TestMusicRightClick;
 import io.Yomicer.magicExpansion.items.misc.WeightedItem;
 import io.Yomicer.magicExpansion.items.misc.WindElfMB;
+import io.Yomicer.magicExpansion.items.misc.WordClear;
 import io.Yomicer.magicExpansion.items.misc.fish.CommonFish;
 import io.Yomicer.magicExpansion.items.misc.fish.CommonFishHidden;
 import io.Yomicer.magicExpansion.items.misc.fish.FishingBook;
