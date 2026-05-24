@@ -3,6 +3,21 @@ package io.Yomicer.magicExpansion;
 import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionenergy;
 import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionrecipemachine;
 import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.magicexpansionrscmagic;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.BASIC_ENCHANT_STONE;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_CAPACITY_ULTRA;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_19;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_RANDOM_SPAWNER;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.PURE_ELEMENT_EARTH;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.PURE_ELEMENT_FIRE;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.PURE_ELEMENT_GOLD;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.PURE_ELEMENT_INGOT;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.PURE_ELEMENT_WATER;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.PURE_ELEMENT_WOOD;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.PURE_FIVE_ELEMENT;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.RESEARCH_UNLOCKER_PAPER;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.SCHRODINGER_FRAME_INFINITE;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.SCHRODINGER_FRAME_ONE;
+import static io.Yomicer.magicExpansion.core.MagicExpansionItems.WIND_SPIRIT;
 import static io.Yomicer.magicExpansion.utils.ConvertItem.AdvancedCreateItem;
 import static io.Yomicer.magicExpansion.utils.ConvertItem.IfItemXist;
 import static io.Yomicer.magicExpansion.utils.ConvertItem.stoneCreateItem;
@@ -26,21 +41,6 @@ import io.Yomicer.magicExpansion.utils.itemUtils.NamedTagBuilder;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
-
-import javax.annotation.Nonnull;
-
-import static io.Yomicer.magicExpansion.MagicExpansionItemSetup.*;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.*;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.MAGIC_EXPANSION_MAGIC_SUGAR_9;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.PURE_ELEMENT_EARTH;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.PURE_ELEMENT_INGOT;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.PURE_ELEMENT_WOOD;
-import static io.Yomicer.magicExpansion.core.MagicExpansionItems.PURE_FIVE_ELEMENT;
-import static io.Yomicer.magicExpansion.utils.ConvertItem.*;
-import static io.Yomicer.magicExpansion.utils.Utils.doGlow;
-import static io.Yomicer.magicExpansion.utils.itemUtils.sfItemUtils.sfItemAmount;
 
 public class MagicExpansionRecipeMachineSetup {
 
